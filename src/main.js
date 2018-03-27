@@ -5,8 +5,7 @@ import App from './App'
 import router from './router'
 
 import VueParticles from './vue-particles'
-import VuePrism from 'vue-prism'
-Vue.use(VueParticles, VuePrism)
+Vue.use(VueParticles)
 
 Vue.config.productionTip = false
 

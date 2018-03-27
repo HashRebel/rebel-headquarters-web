@@ -1,0 +1,45 @@
+//  Github button
+.gh-button {
+  background-color: $gh-background-color;
+  background-image: linear-gradient($gh-background-gradiant, $gh-background-color);
+  border: 1px solid $gh-boder-color;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: $gh-bn-color-init;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  height: 24px;
+  line-height: 16px;
+  overflow: hidden;
+  padding: 2px 5px 2px 4px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 $gh-shadow-color;
+  white-space: nowrap;
+
+  &:focus,
+  &:hover {
+    background-color: $gh-background-color-focus;
+    background-image: linear-gradient($gh-background-gradiant-focus, $gh-background-color-focus);
+    border-color: $gh-boder-color-focus;
+    color: $gh-bn-color-focus;
+    text-decoration: none;
+  }
+
+  &:active {
+    background: $gh-background-color-active
+    border-color: $gh-boder-color-active;
+    box-shadow: inset 0 2px 4px $gh-shadow-color-active;
+  }
+}
+
+.gh-button-icon {
+  background-image: $gh-logo-url
+  background-size: contain;
+  display: inline-block;
+  height: 16px;
+  margin-right: 4px;
+  vertical-align: top;
+  width: 16px;
+}
