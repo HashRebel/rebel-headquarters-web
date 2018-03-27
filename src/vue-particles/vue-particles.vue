@@ -20,6 +20,7 @@
   ></div>
 </template>
 <script>
+  import YellowFillFirst from "../assets/logos/svgs/YellowFillFist.svg"
   export default {
     name: 'vue-particles',
     data: function () {
@@ -147,10 +148,15 @@
               "type": shapeType,
               "stroke": {
                 "width": 0,
-                "color": "#192231"
+                "color": "#000000"
               },
               "polygon": {
                 "nb_sides": 5
+              },
+              'image': {
+                'src': YellowFillFirst,
+                'width': 100,
+                'height': 100
               }
             },
             "opacity": {
@@ -168,8 +174,8 @@
               "random": true,
               "anim": {
                 "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
+                "speed": 7,
+                "size_min": 1,
                 "sync": false
               }
             },
@@ -183,8 +189,8 @@
             "move": {
               "enable": true,
               "speed": moveSpeed,
-              "direction": "none",
-              "random": false,
+              "direction": "top-left",
+              "random": true,
               "straight": false,
               "out_mode": "out",
               "bounce": false,
@@ -207,11 +213,9 @@
                 "mode": clickMode
               },
               "onresize": {
-
                 "enable": true,
                 "density_auto": true,
                 "density_area": 400
-
               }
             },
             "modes": {
@@ -222,14 +226,14 @@
                 }
               },
               "bubble": {
-                "distance": 400,
-                "size": 40,
-                "duration": 2,
+                "distance": 175,
+                "size": 25,
+                "duration": 10,
                 "opacity": 8,
                 "speed": 3
               },
               "repulse": {
-                "distance": 200,
+                "distance": 250,
                 "duration": 0.4
               },
               "push": {
@@ -243,7 +247,6 @@
           "retina_detect": true
         });
       }
-
     }
   }
 </script>
