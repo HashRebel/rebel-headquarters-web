@@ -14,6 +14,7 @@ The following section details the stack choices for the overall site and any sub
 
 #### Workflow
 * Babel - manages pushing front end code to the client? (at least that is what it seems to be doing). I think this sort of acts like a mini webserver.
+* Gulp - right now I am just using to manage Sass compilation but I imagine I will use for more.
 
 #### Linters
 * eslint

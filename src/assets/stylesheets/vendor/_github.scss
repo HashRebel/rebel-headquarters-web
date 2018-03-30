@@ -1,3 +1,5 @@
+@import '../base/vars';
+
 //  Github button
 .gh-button {
   background-color: $gh-background-color;
@@ -5,7 +7,7 @@
   border: 1px solid $gh-boder-color;
   border-radius: 3px;
   box-sizing: border-box;
-  color: $gh-bn-color-init;
+  color: $gh-bn-color;
   cursor: pointer;
   display: inline-block;
   font-size: 11px;
@@ -28,14 +30,14 @@
   }
 
   &:active {
-    background: $gh-background-color-active
+    background: $gh-background-color-active;
     border-color: $gh-boder-color-active;
     box-shadow: inset 0 2px 4px $gh-shadow-color-active;
   }
 }
 
 .gh-button-icon {
-  background-image: $gh-logo-url
+  background-image: $gh-logo-url;
   background-size: contain;
   display: inline-block;
   height: 16px;
