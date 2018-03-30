@@ -9,6 +9,7 @@ yarn-error.log*
 selenium-debug.log
 /src/assets/possible
 css/
+linters/
 
 # Editor directories and files
 .idea

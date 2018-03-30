@@ -1,0 +1,41 @@
+// TODO: use a function to pull out variables based on a parameter like in the gitcoin project.
+
+// defaults
+$defult-margin: 0;
+$defult-padding: 0;
+
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 600;
+
+// Base Font
+$base-font-family: sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 13px;
+$base-line-height: 1.4;
+
+// Fixed Font
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;
+
+// Headings
+$header-font-weight: $bold;
+
+// Footer
+$footer-margins: 1rem 0;
+
+// Variables for Github vender stylesheet
+$gh-background-color: #eee;
+$gh-background-color-active: #dcdcdc;
+$gh-background-color-focus: #ddd;
+$gh-background-gradiant: #fcfcfc;
+$gh-background-gradiant-focus: #eee;
+$gh-bn-color: #333;
+$gh-bn-color-focus: #000;
+$gh-boder-color: #d5d5d5;
+$gh-boder-color-focus: #ccc;
+$gh-boder-color-active: #b5b5b5;
+$gh-shadow-color: #fff;
+$gh-shadow-color-active: rgba(0, 0, 0, .15);

@@ -38,4 +38,10 @@ npm run e2e
 
 # run all tests
 npm test
+
+# Linter - Sass
+gulp lint
 ```
+
+To create CSS run the following:
+gulp sass
