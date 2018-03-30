@@ -8,6 +8,8 @@ yarn-error.log*
 /test/e2e/reports/
 selenium-debug.log
 /src/assets/possible
+css/
+linters/
 
 # Editor directories and files
 .idea

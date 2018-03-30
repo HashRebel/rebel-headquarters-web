@@ -1,0 +1,42 @@
+.main-title {
+  color: #fff;
+  z-index: 999;
+
+  h2 {
+    margin: $defult-margin;
+    font-family: 'Teko', sans-serif;
+    font-size: 7rem;
+    text-shadow: 8px 8px #000000;
+    text-transform: uppercase;
+    @media (max-width: 767px) {
+      font-size: 3rem;
+    }
+  }
+  p.subtitle {
+    margin: $defult-margin;
+    font-size: 1.7rem;
+    @media (max-width: 767px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.wrap-banner {
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 1000px;
+  justify-content: center;
+}
+
+.logo-fill {
+  fill: #e7bb21;
+}
+
+.logo-fill:hover,
+.logo-fill:focus {
+  fill: #ffffff;
+}
