@@ -5,6 +5,10 @@ The following section details the stack choices for the overall site and any sub
 
 ### Overall
 
+### Package management
+* NPM - for obvious reasons
+* Yarn - this seems to give the benifit of insureing packages are the right versions and seems to improve the npm flow.
+
 #### Styling
 * Sass - CSS framework
 

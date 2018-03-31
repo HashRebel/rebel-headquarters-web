@@ -1,6 +1,6 @@
 {
   "name": "rebel-headquarters-website",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "The Rebel Headquarters is a sandbox for all Hash Rebel related content",
   "author": "Brian Henze <brian.henze@hashrebel.com>",
   "private": true,
@@ -105,5 +105,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "index.js",
+  "repository": "git@github.com:HashRebel/rebel-headquarters-web.git",
+  "license": "MIT"
 }
