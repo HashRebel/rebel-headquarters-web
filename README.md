@@ -17,6 +17,7 @@ Branches should start with the ISSUE number so I can quick tab.
 
 ### Build Setup
 
+#### NPM Build and Run Commands
 ``` bash
 # install dependencies
 npm install
@@ -43,5 +44,15 @@ npm test
 gulp lint
 ```
 
+#### Docker Builds
+I created a docker image for containing the rebel headquarters website. This cane be found at [hashrebel/rebel-headquarters](https://hub.docker.com/r/hashrebel/rebel-headquarters/)
+
+To run the site through docker use the following:
+``` bash
+docker-compose up
+```
+
+
+#### SACC
 To create CSS run the following:
 gulp sass
