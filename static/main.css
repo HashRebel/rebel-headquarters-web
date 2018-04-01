@@ -46,7 +46,7 @@ ul {
   padding: 0; }
 
 li {
-  display: inline-block;
+ display: inline-block;
   margin: 0 10px; }
 
 a {
@@ -57,7 +57,9 @@ h3 {
   font-size: 2rem; }
 
 .footer {
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  z-index: 999;
+ }
 
 .main-title {
   color: #fff;
