@@ -1,0 +1,10 @@
+version: "3"
+services:
+  client:
+    build: .
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/home/hash_rebel/rebelheadquarters
+    # TODO: put environment variables here
+    #environment:
