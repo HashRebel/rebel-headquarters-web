@@ -3,5 +3,8 @@
 .git
 *Dockerfile*
 *docker-compose*
-node_modules
-dist
+node_modules/
+dist/
+docs/
+test/
+favicon.ico # TDOD: Figure out if this is even needed
