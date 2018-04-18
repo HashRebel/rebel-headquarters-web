@@ -1,0 +1,49 @@
+# Get the LTS version of node
+FROM node:carbon
+
+MAINTAINER Brian henze <brian.henze@hashrebel.com>
+
+# Creating new user and use to run the container.
+# According to the following article the container is run as root. This will help
+# secure the container.
+# https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#non-root-user
+RUN usermod -d /home/hash_rebel -l hash_rebel node && \
+  usermod -aG sudo hash_rebel
+
+# Create app directory
+WORKDIR /home/hash_rebel/rebelheadquarters
+
+#RUN chown -R $USER:$(id -gn $USER) /home/hash_rebel/.config
+#run chmod -R 777 /home/hash_rebel/rebelheadquarters
+
+ENV NODE_ENV="production"
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json yarn.lock ./
+
+COPY package.json yarn.lock ./
+RUN set -ex && yarn install --no-cache --frozen-lockfile
+#RUN yarn install
+# If you are building your code for production
+# RUN npm install --only=production
+
+# Bundle app source
+COPY . .
+
+# TODO: enviornment variable to switch for development.
+EXPOSE 80
+
+# FIXME: installing some tools to help me diagnose issues. These are only for hacking
+# purposes and should be removed in prodduction versions
+CMD [ "apt-get", "update" ]
+CMD [ "apt-get", "install curl netstat" ]
+
+#CMD [ "chmod", "-R 777 /home/hash_rebel/rebelheadquarters"]
+
+CMD [ "yarn", "start" ]
+
+# Swtich to the user we created ealier
+# QUESTION: When should I set the user? Can I set it above or at the end?
+USER hash_rebel
