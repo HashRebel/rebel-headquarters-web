@@ -10,6 +10,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
+/******************************************************************************
+ * Note that I enabled mode=development on the CLI call in the package.json
+ * file. https://webpack.js.org/concepts/mode/ This is actually a bit reduntant
+ * since it looks like we are manually setting the values specified in that link
+ ******************************************************************************/
+
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 

@@ -11,6 +11,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
+/******************************************************************************
+ * Note that I enabled mode=production on the CLI call in the package.json
+ * file. https://webpack.js.org/concepts/mode/ This is actually a bit reduntant
+ * since it looks like we are manually setting the values specified in that link
+ ******************************************************************************/
+
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : require('../config/prod.env')
