@@ -20,7 +20,7 @@
   ></div>
 </template>
 <script>
-  import YellowFillFirst from "../assets/images/logos/svgs/YellowFillFist.svg"
+  import YellowFillFirst from "../assets/images/icons/hash_rebel/svgs/YellowFillFist.svg"
   export default {
     name: 'vue-particles',
     data: function () {

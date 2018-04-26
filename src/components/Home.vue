@@ -2,7 +2,7 @@
   <div class="wrap-banner">
     <vue-particles
       color="#EFB842"
-      :particleOpacity="0.5"
+      :particleOpacity=".5"
       linesColor="#D1FF64"
       :particlesNumber="30"
       shapeType="image"

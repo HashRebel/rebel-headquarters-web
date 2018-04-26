@@ -34,7 +34,7 @@ Woot woot! Nginx comes bundled with dokku. Dokku seems to be a really nice SasS 
 ## Continuous deployment
 * **_Dokku_** -
 ** [Heroku Buildbacks](https://devcenter.heroku.com/articles/buildpacks) - This is the build system that dokku defaults to. Not sure if it is widely used otherwise. Okay dokku turned out to be a bit of a pain in the ass and I think I am going to abandon it for now. Seems like I can get just as much or more with just using a server with simply docker installed.
-** Docker - Dokku can also use a Dockerfile to deploy and app. Apparently this method will exclude some dokku features but seems just as flexable of an options. I can even do multistage build (for multiple environments).
+** Docker - Dokku can also use a Dockerfile to deploy and app. Apparently this method will exclude some dokku features but seems just as flexible of an options. I can even do multistage build (for multiple environments).
 
 ## Package management
 * **_NPM_** - for obvious reasons
@@ -49,9 +49,21 @@ Woot woot! Nginx comes bundled with dokku. Dokku seems to be a really nice SasS 
 ## Routing
 * **_Vue Router_** - Router
 
-## Workflow
-* **_Babel_** - manages pushing front end code to the client? (at least that is what it seems to be doing). I think this sort of acts like a mini web server.
+## Workflow/Compiler
+* **_Babel_** - This is a JavaScript compiler and will compile ES2015 and more into standard javascript
 * **_Gulp_** - right now I am just using to manage Sass compilation but I imagine I will use for more.
+* **_webpack_** - webpack is a dope way to compile the nope code and build and run both production and development environment. I am using it to do things like minification, loading assets and much more.
+  * Base
+    * vue-loader - handles parsing and compiling all vue files
+    * babel-loader - handles compiling ES2015+ JavaScript
+    * url-loader - used for loading assets like images, fonts, etc.
+    * Sass - vue-style-loader, css-loader, and sass-loader are used for compiling sass into css and allow it to be injectable in code.
+    * [vue-svg-loader](https://github.com/visualfanatic/vue-svg-loader) - awesome loader I found that will optimize svg and allow you to easily inject them as vue components.
+  * Development
+    * webpack-dev can be used for development and will automatically rebuild and push any changes
+  * Production
+    * UglifyJs - Compacts the JavaScript and removes all formating and wasted bytes
+
 
 ## Linters
 * eslint
