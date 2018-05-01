@@ -1,7 +1,9 @@
 # File structures
+
 This document explains the rational behind each file structure
 
 ## Sass
+
 .
 |--src
   |--stylesheet
