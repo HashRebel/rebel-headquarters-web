@@ -4,7 +4,7 @@ This document explains the rational behind each file structure
 
 ## Sass
 
-.
+.`
 |--src
   |--stylesheet
     |--base - global sass files (e.g. color, font, etc.)

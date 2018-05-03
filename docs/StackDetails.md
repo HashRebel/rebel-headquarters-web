@@ -58,8 +58,8 @@ Woot woot! Nginx comes bundled with dokku. Dokku seems to be a really nice SasS 
 
 ## Routing
 
-* _Vue Router_ - I am currently using vue router to do basic routing but would like to do benchmarks and compare to express. While not too hard to get a router right it seems to me that Express has more support and has better performance.
-* **_[Express](https://expressjs.com/en/guide/routing.html)_** -
+* _Vue Router_ - I am currently using vue router to do basic routing but would like to do benchmarks and compare to express. While not too hard to get a router right it seems to me that Express has more support and has better performance. __** Note **__ *I had an invalid understanding of the vue_router. Apparently it is for client side routing. I need to do more digging.*
+* **_[Express](https://expressjs.com/en/guide/routing.html)_** - Express seems to be a strong candidate for routing. There is a ton of support. I can use it to host http and any APIs side by side if I wanted. Has cool middleware (little apps which attach to a rout and can be used to analyze and manipulate the request) support builtin and there are lots of pluggins . YOu can also easily write your own. It can do things like parse the cookie off the request, manage authentication, and put it on the request as an object. Can easily write custom loggers and much more.
 
 ## Workflow/Compiler
 
