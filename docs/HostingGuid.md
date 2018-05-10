@@ -27,7 +27,7 @@ Setup your development machine to push to new server
 * Setup git
 
 ``` linux
-# git remote add {remote_name} dokku@dokku.me:ruby-rails-sample
+# git remote add dokku dokku@hashrebel.net:rebel-headquarters
 ```
 
 * Deploying the code is as simple as doing a git push! Yay!
