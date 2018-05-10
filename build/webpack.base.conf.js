@@ -52,7 +52,7 @@ module.exports = {
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.(png|jpe?g|gif)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10,
@@ -73,19 +73,6 @@ module.exports = {
         options: {
           limit: 10,
           name: utils.assetsPath('../fonts/[name].[hash:7].[ext]')
-        }
-      },
-      {
-        test: /\.svg$/,
-        loader: 'vue-svg-loader', // `vue-svg` for webpack 1.x
-        options: {
-          // optional [svgo](https://github.com/svg/svgo) options
-          svgo: {
-            plugins: [
-              {removeXMLNS: true} // removes xmlns attribute (for inline svg, disabled by default)
-              // TODO: Verify that everything else I want is on by default.
-            ]
-          }
         }
       },
       {
