@@ -9,6 +9,7 @@
 @import 'components/header';
 
 // pages
+@import 'pages/app';
 @import 'pages/home';
 
 // layout
@@ -16,5 +17,4 @@
 // utils
 
 // vendor
-@import 'vendor/github';
 @import 'vendor/particles-js';

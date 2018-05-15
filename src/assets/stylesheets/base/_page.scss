@@ -3,17 +3,9 @@ html, body {
 }
 
 body {
-  margin: 0;
-  background: #34393f;
-}
-
-#app {
-  height: 100%;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  margin: $default-margin;
+  padding: $default-padding;
+  background: $default-background-color;
 }
 
 h1, h2 {
@@ -31,10 +23,5 @@ li {
 }
 
 a {
-  color: #42b983;
-}
-
-h3 {
-  font-weight: 100;
-  font-size: 2rem;
+  color: $default-font-body-color;
 }
