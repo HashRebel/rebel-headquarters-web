@@ -1,13 +1,22 @@
 <template>
   <div id="app">
-    <router-view/>
+    <rebel-headquarters-home></rebel-headquarters-home>
+    <rebel-headquarters-footer></rebel-headquarters-footer>
+    <!-- TODO: Add the router view back in when I understand it better  -->
+    <!-- <router-view/> -->
   </div>
 </template>
 <style lang="scss">
     @import 'assets/stylesheets/main.scss';
 </style>
 <script>
-export default {
-  name: 'App'
-}
+  import Home from "./components/Home.vue";
+  import Footer from "./components/Footer.vue";
+
+  export default {
+    components: {
+      rebelHeadquartersHome: Home,
+      rebelHeadquartersFooter: Footer
+    }
+  }
 </script>
