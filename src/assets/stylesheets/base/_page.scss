@@ -3,8 +3,20 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
+}
+
+// Set Image and Objects to have a max-width of 100%
+embed,
+iframe,
+img,
+object,
+video {
+  max-width: 100%;
 }
 
 html, body {
@@ -14,7 +26,7 @@ html, body {
 body {
   margin: $default-margin;
   padding: $default-padding;
-  background: $default-background-color;
+  background: $default-primary-color;
 }
 
 h1, h2 {
@@ -28,7 +40,7 @@ ul {
 
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 7px;
 }
 
 a {

@@ -1,20 +1,24 @@
-// base
-@import 'base/base';
+// Variables: All global variables
+// ==================================================================================
+@import './vars/vars';
 
-// utils
+// Vendors: External vender files and default fall-backs
+// ==================================================================================
+@import './vendor/vendors';
 
-// components
-@import 'components/buttons';
-@import 'components/footer';
-@import 'components/header';
+// Base: All global related CSS
+// ==================================================================================
+@import './base/base';
 
-// pages
-@import 'pages/app';
-@import 'pages/home';
+// Framework: all css related to the framework and layout
+// ==================================================================================
+@import './framework/framework';
 
-// layout
+// Components: All CSS needed for individual components
+// ==================================================================================
+@import './components/components';
 
-// utils
-
-// vendor
-@import 'vendor/particles-js';
+// Shame: Loading this last in order to ensure quick changes are applied globally.
+//  This should only be used for quick hacks.
+// ==================================================================================
+@import './base/shame';

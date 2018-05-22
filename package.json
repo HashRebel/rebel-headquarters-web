@@ -15,7 +15,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "bulma": "^0.7.1",
     "each-async": "^1.1.1",
+    "font-awesome": "^4.7.0",
     "indent-string": "^3.2.0",
     "style-loader": "^0.21.0",
     "vue": "^2.5.2",

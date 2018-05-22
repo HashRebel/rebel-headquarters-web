@@ -1,0 +1,27 @@
+// Import the initial variables in order to overwrite them
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+// Customize the Color Schemes
+// ==================================================================================
+$primary: $default-primary-color;
+$primary-invert: findColorInvert($primary);
+
+// Updating the gap
+// ==================================================================================
+$gap: 0px; // TODO: update from default.
+
+// Customize fonts:
+// ==================================================================================
+$family-primary: "Roboto", san-serif; //'Michroma', sans-serif; //"Roboto", serif;
+
+// Footer overrides
+// ==================================================================================
+$footer-background-color: $primary;
+
+// Updating Title defaults:
+// ==================================================================================
+//$title-color: $blue;
+
+// Import the rest of Bulma
+@import "~bulma/bulma";

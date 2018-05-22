@@ -1,0 +1,8 @@
+.logo-fill {
+  fill: $hash-rebel-brand-color;
+
+  &:hover,
+  &:focus {
+    fill: #fff;
+  }
+}

@@ -1,6 +1,5 @@
 // Import other base files
-@import 'vars';
-@import 'reset';
-@import 'color';
-@import 'page';
-@import 'shame';
+@import './reset';
+@import './page';
+@import './mixins';
+@import './placeholders';

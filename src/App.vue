@@ -6,9 +6,11 @@
     <!-- <router-view/> -->
   </div>
 </template>
+
 <style lang="scss">
-    @import 'assets/stylesheets/main.scss';
+    @import './assets/stylesheets/main.scss';
 </style>
+
 <script>
   import Home from "./components/Home.vue";
   import Footer from "./components/Footer.vue";

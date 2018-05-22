@@ -1,29 +1,34 @@
 <template>
   <div class="footer">
-    <div class="footer-copyright">
-      © 2018 Hash Rebel
-    </div>
-    <div>
-      <img
-        src="../assets/images/icons/hash_rebel/main-fist-code-inlay.svg"
-        height=100px
-        width=100px
-      >
-    </div>
-    <div class="footer-social-media-icons">
-      <ul>
-        <li v-for="icon in socialMediaConfig.iconInfo" :key="icon.name">
-          <a
-            :href="icon.url"
-            target="_blank"
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          © 2018 Hash Rebel
+        </div>
+        <div class="column has-text-centered">
+          <img
+            src="../assets/images/icons/hash_rebel/main-fist-code-inlay.svg"
+            height=100px
+            width=100px
           >
-            <img
-              :src="icon.imgSrc"
-              :alt="icon.name"
-            >
-          </a>
-        </li>
-      </ul>
+        </div>
+        <div class="column has-text-right">
+          <ul>
+            <li v-for="icon in socialMediaConfig.iconInfo" :key="icon.name">
+              <a
+                :href="icon.url"
+                target="_blank"
+              >
+                <img
+                  :src="icon.imgSrc"
+                  :alt="icon.name"
+                >
+              </a>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -42,7 +47,7 @@
           iconInfo: [
             {
               name: "GitHub",
-              url: "https://github.com/HashRebel/rebel-headquarters-web/tree/master/docs",
+              url: "https://github.com/bhenze",
               imgSrc: gitHubIcon
             },
             {
