@@ -1,10 +1,14 @@
 
-// Defaults
-$default-primary-color: #000;
-$default-font-body-color: #e7bb21;
-
-
 // Hash Rebel Branding
+// ==================================================================================
 $hash-rebel-brand-color: #e7bb21;
 $hash-rebel-brand-color-invert: findColorInvert(#e7bb21);
+
+
+
+// Defaults
+// ==================================================================================
+$default-primary-color: #000;
+$default-font-body-color: $hash-rebel-brand-color;
+
 

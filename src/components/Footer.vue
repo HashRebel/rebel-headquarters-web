@@ -20,6 +20,8 @@
                 target="_blank"
               >
                 <img
+                  width="30"
+                  height="30"
                   :src="icon.imgSrc"
                   :alt="icon.name"
                 >

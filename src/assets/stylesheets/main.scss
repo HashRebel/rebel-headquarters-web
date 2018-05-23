@@ -1,24 +1,24 @@
 // Variables: All global variables
 // ==================================================================================
-@import './vars/vars';
+@import './vars/all';
 
 // Vendors: External vender files and default fall-backs
 // ==================================================================================
-@import './vendor/vendors';
+@import './vendor/all';
 
 // Base: All global related CSS
 // ==================================================================================
-@import './base/base';
+@import './base/all';
 
 // Framework: all css related to the framework and layout
 // ==================================================================================
-@import './framework/framework';
+@import './framework/all';
 
 // Components: All CSS needed for individual components
 // ==================================================================================
-@import './components/components';
+@import './components/all';
 
 // Shame: Loading this last in order to ensure quick changes are applied globally.
 //  This should only be used for quick hacks.
 // ==================================================================================
-@import './base/shame';
+@import './base/all';

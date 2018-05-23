@@ -1,8 +1,11 @@
-.logo-fill {
+
+// Hash Rebel branding related icons
+// ==================================================================================
+.hash-rebel-icon-hero {
   fill: $hash-rebel-brand-color;
 
   &:hover,
   &:focus {
-    fill: #fff;
+    fill: #fff; // Come up with a random color generator her to make a random rambo.
   }
 }
