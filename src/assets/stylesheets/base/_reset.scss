@@ -1,19 +1,19 @@
-// Manually reset all margins and
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-li,
-p,
-blockquote {
-  margin: 0;
-  padding: 0;
-}
+/*
+ ************************************************************************************
+ *
+ * This file should be used for resetting browser css defaults in order to work
+ *  with a fresh and consistent canvas on startup no matter what browser is being
+ *  used.
+ *
+ ************************************************************************************
+ */
 
-// Completely hard resets all form items
+// Importing external vender reset sass package. https://jgthms.com/minireset.css/
+// Seems a little slimmer than Normalize.css.
+// ==================================================================================
+@import "../vendor/minireset.scss";
+
+// Hard resetting form items and their actions.
 input,
 textarea,
 button {

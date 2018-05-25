@@ -35,7 +35,7 @@
   </div>
 </template>
 <script>
-  import gitHubIcon from "../assets/images/icons/social-media/github-original.svg";
+  import gitHubIcon from "../assets/images/icons/social-media/github-original.svg"; // TODO: figure out how to replace this with the component I replaced. Will probably need to have some decicion making if it is component or an image.
   import steemitIcon from "../assets/images/icons/social-media/steemit-original.svg";
   import telegramIcon from "../assets/images/icons/social-media/telegram-original.svg";
   import mediumIcon from "../assets/images/icons/social-media/medium-original.svg";

@@ -101,6 +101,16 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: [
+                require('autoprefixer')()
+              ]
+            }
+          },
+          'style-loader',
           'vue-style-loader',
           'css-loader',
           'sass-loader'

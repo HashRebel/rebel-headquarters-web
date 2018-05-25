@@ -1,14 +1,9 @@
 <template>
   <div>
     <svg
-      version="1.1"
-      data-name="Layer 1"
-      width="660px"
-      height="356px"
+      id="HashRebelMainLogo"
       viewBox="0 0 659.63 356.41"
-      enable-background="new 0 65.326 612 502.174"
     >
-      <title>Yellow Fill</title>
       <path id='logo-h1' class="hash-rebel-icon-hero" d="M290.47,18.43V45.6l17.67,0L290.47,68v82.64H258.34V71H235.86v55.63L203.74,94.5V18.43h32.12V42.77h22.48V18.43h32.13" />
       <path id='logo-a'  class="hash-rebel-icon-hero" d="M417.14,18.43V130.84l-12.73,19.83H382.78l-38-34-20.29,27.3-26.23-22.61L320,93.89l-24.94-23.3,21-26.77,24.76,23.1,37.33-48.49h39M382.4,101.11V71L368.89,88.83l13.51,12.28" />
       <path id='logo-s'  class="hash-rebel-icon-hero" d="M515.74,18.43V51.49H469.65L517,114.83l-25.44,35.84h-81l20.12-31.24,48.16,0-53.42-72,16.15-29h66.31" />
@@ -26,6 +21,24 @@
       <path id='logo-mid1'  class="hash-rebel-icon-hero" d="M150.79,49l25.88,25.88-19,19,3.4-8.64L127.72,72.05,150.79,49" />
       <path id='logo-mid2'  class="hash-rebel-icon-hero" d="M91.48,113.61l33.33,13.12-11.49,11.49L90.09,115l1.39-1.38" />
       <path id='logo-index' class="hash-rebel-icon-hero" d="M121.26,19.36l25.88,25.88L122.42,70,85.27,55.35l36-36" />
+    
+      <!-- TODO: Add Fallback image here   -->
     </svg>
   </div>
 </template>
+<script>
+  import layoutStyleSheet from "!!sass-variable-loader!../../assets/stylesheets/vars/layout.scss";
+
+  export default {
+    props: {
+      width: {
+        type: String,
+        default: layoutStyleSheet.socialMediaIconWidth
+      },
+      height: {
+        type: String,
+        default: layoutStyleSheet.socialMediaIconHeight
+      }
+    }
+  };
+</script>

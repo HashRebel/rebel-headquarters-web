@@ -8,7 +8,6 @@ yarn-error.log*
 /test/e2e/reports/
 selenium-debug.log
 /src/assets/possible
-css/
 linters/
 *OBSOLETE*
 
@@ -19,4 +18,4 @@ linters/
 *.ntvs*
 *.njsproj
 *.sln
-*.old
+*.old*
