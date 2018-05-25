@@ -1,3 +1,6 @@
+// TODO: Remove this once I get linting working
+/* eslint-disable */
+
 /**
  * This function validates that the value passed in is in a valid valid HTML
  *      format size. {number}{sizeType} where sizeType is one of the following:
@@ -10,7 +13,7 @@ function validateJsSize(size){
         return false;
     }   
 
-    var sizeSplit = size.spit('\d*');
+    var sizeSplit = size.spit("\d*");
 
     if (sizeSplit.length != 2){
         return false;

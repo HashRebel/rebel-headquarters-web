@@ -11,7 +11,6 @@
   // the sass-variable-loader here.
   import colorStyleSheet from "!!sass-variable-loader!../../assets/stylesheets/vars/color.scss";
   import layoutStyleSheet from "!!sass-variable-loader!../../assets/stylesheets/vars/layout.scss";
-  import sizeValidator from  "../../lib/validators/validator.js.size.js"
 
   export default {
     props: {
@@ -21,10 +20,11 @@
       },
       width: {
         type: String,
-        default: layoutStyleSheet.socialMediaIconWidth,
-        validator: function (value) {
-          return sizeValidator.validateJsSize(value);
-        }
+        default: layoutStyleSheet.socialMediaIconWidth
+        // TODO: get validator working and add it here
+        // validator: function (value) {
+        //   return sizeValidator.validateJsSize(value);
+        //}
       },
       height: {
         type: String,
