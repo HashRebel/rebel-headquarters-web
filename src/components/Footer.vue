@@ -7,7 +7,7 @@
         </div>
         <div class="column has-text-centered">
           <img
-            src="../assets/images/icons/hash_rebel/main-fist-code-inlay.svg"
+            src="../assets/images/icons/hash_rebel/main-fist-code-inlay-optimized.svg"
             height=100px
             width=100px
           >

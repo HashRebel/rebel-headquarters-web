@@ -1,0 +1,16 @@
+.hr-button{
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1.25rem 4rem;
+    border: 1px solid;
+    font: {
+        family: $font-family-heading;
+        size: 1.25rem;
+    }
+
+    &:hover,
+    &:focus {
+        color: $color-link-active;
+        background: $color-link-fill-on;
+    }
+}

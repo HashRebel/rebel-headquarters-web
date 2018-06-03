@@ -18,6 +18,13 @@ $color-social-media-icon-primary: #fff;
 
 // Hero
 // =============================================================================
-$code-background-color: rgba(0, 0, 0, 0.5);
-$code-json-name-color: #ff4f4f;
-$code-json-string-color: $color-brand-primary;
+$color-code-background: rgba(0, 0, 0, 0.5);
+$color-code-json-name: #ff4f4f;
+$color-code-json-string: $color-brand-primary;
+
+// Link
+// =============================================================================
+$color-link: $color-font-primary;
+$color-link-active: $color-brand-primary-light-er;
+$color-link-fill-on: rgba($color-brand-primary, 0.5);
+$color-link-fill-off: rgba($color-brand-primary, 0);

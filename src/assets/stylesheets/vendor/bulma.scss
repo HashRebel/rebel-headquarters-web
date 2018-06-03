@@ -12,7 +12,7 @@
 
 // Text variables
 // =============================================================================
-$body-size: 16px; // This is the base size that the REL or percentage unit uses
+$body-size: $font-family-primary-size; // This is the base size that the REL or percentage unit uses
 $text: $color-font-primary;
 $family-primary: $font-family-primary;
 $body-weight: $font-family-primary-weight;
@@ -20,7 +20,7 @@ $body-weight: $font-family-primary-weight;
 // Code variables
 // =============================================================================
 $code: $color-font-primary;
-$code-background: $code-background-color;
+$code-background: $color-code-background;
 $code-size: 1.5rem;
 $family-code: $font-family-code;
 

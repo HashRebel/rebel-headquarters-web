@@ -28,27 +28,43 @@ body {
     margin: $default-margin;
     padding: $default-padding;
     background: $color-background-primary;
-    line-height: 1.2;
+    line-height: 1.25;
+    text-align: justify;
+    //text-justify: inter-word;
 }
 
 h1 {
     font: {
         family: $font-family-heading;
-        weight: normal;
+        weight: 500;
         size: 3rem;
     }
+    margin-bottom: 2rem;
     color: $color-font-header;
 }
 
-ul {
-    list-style-type: none;
+a{
+    color: $color-link;
+    background: $color-link-fill-off;
+
+    &:hover,
+    &:focus {
+        color: $color-link-active;
+    }
 }
-ol {
-    list-style-type: decimal;
+
+br{
+    display: block;
+    content: " ";
+    margin: 1rem 0;
+}
+
+ul ol {
+    list-style-type: none;
 }
 
 li {
     display: inline-block;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 }
-
-
