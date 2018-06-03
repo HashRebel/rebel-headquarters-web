@@ -1,14 +1,23 @@
 // Hash Rebel Branding
-// ==================================================================================
-$hash-rebel-brand-color: #e7bb21;
-$hash-rebel-brand-color-invert: findColorInvert(#e7bb21);
+// =============================================================================
+$color-brand-primary: #e7bb21;
+$color-brand-primary-light: #f3dc8c;
+$color-brand-primary-light-er: #fbf3d9;
+$color-brand-primary-dark: #927510;
+$color-brand-primary-invert: findColorInvert(#e7bb21);
 
 // Defaults
-// ==================================================================================
-$default-primary-color: #000;
-$default-font-body-color: $hash-rebel-brand-color;
+// =============================================================================
+$color-background-primary: #000;
+$color-font-primary: #fff;
+$color-font-header: $color-brand-primary;
 
 // Social media related
-// ==================================================================================
-$default-social-media-icon-color: #fff;
+// =============================================================================
+$color-social-media-icon-primary: #fff;
 
+// Hero
+// =============================================================================
+$code-background-color: rgba(0, 0, 0, 0.5);
+$code-json-name-color: #ff4f4f;
+$code-json-string-color: $color-brand-primary;

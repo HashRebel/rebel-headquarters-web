@@ -3,35 +3,47 @@
   * https://codepen.io/michaeltcoelho/pen/awGzf
 -->
 <template>
-  <div class="hero is-medium is-primary">
-    <div class="hero-header"></div>
-    <div class="hero-body">
-      <div class="container has-text-centered">
+  <section class="hr-hero">
+    <div class="hr-hero-watermark">
+      <div class="left">
+        <img src="../assets/images/icons/hash_rebel/bullseye-optimized.svg" alt="bullseye logo">
+      </div>
+    </div>
+    <div class="hero-header">
+      <div class="container icon-hero-hash-rebel has-text-centered">
         <hash-rebel-main-logo/>
-        <h1 class="title is-uppercase has-text-white">
-          Decenterlize the world
+      </div>
+    </div>
+    <div class="hr-hero-body">
+      <div class="has-text-centered">
+        <h1 class="is-uppercase">
+          Decentralize the <br> world
         </h1>
-        <h2 class="subtitle">
-          BRIAN HENZE - <br> Developer Sandbox
-        </h2>
-      </div>
-      <div class="level-right">
-        <a
-          target="_blank"
-          href="https://github.com/HashRebel/rebel-headquarters-web"
-        >
-          <github-logo
-            :height="githubIconAnchorHeight"
-            :width="githubIconAnchorWidth"
-          />
-        </a>
-    </div>
-    <div class="hero-footer">
-      <!-- <div class="container has-text-right"> -->
-        
+        <div class="hr-author-code">
+          <code>
+            { <span class="name">author</span>: "<span class="string">Brian Henze</span>" <span class="name">enviornment</span>: "<span class="string">Sandbox</span>" } <span class="blink">|</span>
+          </code>
+        </div>
+        <div class="icon-github-logo">
+          <a
+            target="_blank"
+            href="https://github.com/HashRebel/rebel-headquarters-web"
+          >
+            <github-logo
+              :height="githubIconAnchorHeight"
+              :width="githubIconAnchorWidth"
+            />
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="hr-hero-watermark">
+      <div class="right">
+        <img src="../assets/images/icons/hash_rebel/bullseye-optimized.svg">
+      </div>
+    </div>
+    <div class="hr-hero-background-grad"/>
+  </section>
 </template>
 
 <script>

@@ -1,11 +1,27 @@
-
 // Hash Rebel branding related icons
-// ==================================================================================
-.hash-rebel-icon-hero {
-    fill: $hash-rebel-brand-color;
+// =============================================================================
+.icon-hero-hash-rebel {
+    margin-top: 48px;
+}
+
+.icon-hash-rebel {
+    fill: $color-brand-primary;
 
     &:hover,
     &:focus {
-        fill: #fff; // Come up with a random color generator her to make a random rambo.
+        fill: #fff; // Come up with a random color generator her to make a
+                      //random rainbow.
     }
+}
+
+// Github Logo
+// =============================================================================
+.icon-github-logo{
+    float: right;
+    margin-right: 42px;
+    margin-left: auto;
+
+    // right: 42px;
+    // position: absolute;
+    // z-index: $z-index-logo-github;
 }

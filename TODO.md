@@ -23,4 +23,13 @@ This is a TODO list for things that don't fit into files.
         weight: bold;
       }
     }
-https://sass-lang.com/documentation/file.SASS_REFERENCE.html#nested_rules
+
+[Sass Nested rule documentation](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#nested_rules)
+
+## Tools
+
+### Editors
+
+#### Beautify
+
+Setup beautify so that all files have a consistent feel. Right now it just uses the .editorconfig which may be enough in the end but look into creating a beautify config.

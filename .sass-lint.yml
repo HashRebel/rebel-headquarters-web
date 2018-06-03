@@ -13,14 +13,13 @@ options:
   max-warnings: 50
 # File Options
 files:
-  include: 'src/assets/**/*.scss'
+  include: 'src/assets/stylesheets/**/*.scss'
   ignore:
     - 'sass/vendor/**/*.*'
 # Rule Configuration
 rules:
   extends-before-mixins: 2
   extends-before-declarations: 2
-  placeholder-in-extend: 2
   mixins-before-declarations:
     - 2
     -
@@ -39,7 +38,7 @@ rules:
   indentation:
     - 2
     -
-      size: 2
+      size: 4
   property-sort-order:
     - 1
     -

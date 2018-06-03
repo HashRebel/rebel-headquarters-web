@@ -16,7 +16,7 @@
     props: {
       fill: {
         type: String,
-        default: colorStyleSheet.defaultSocialMediaIconColor
+        default: colorStyleSheet.colorSocialMediaIconPrimary
       },
       width: {
         type: String,

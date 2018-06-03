@@ -1,13 +1,13 @@
 //https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 //https://css-tricks.com/box-sizing/
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 // Set Image and Objects to have a max-width of 100%
@@ -16,32 +16,39 @@ iframe,
 img,
 object,
 video {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 html, body {
-  height: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 body {
-  margin: $default-margin;
-  padding: $default-padding;
-  background: $default-primary-color;
+    margin: $default-margin;
+    padding: $default-padding;
+    background: $color-background-primary;
+    line-height: 1.2;
 }
 
-h1, h2 {
-  font-weight: normal;
+h1 {
+    font: {
+        family: $font-family-heading;
+        weight: normal;
+        size: 3rem;
+    }
+    color: $color-font-header;
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+}
+ol {
+    list-style-type: decimal;
 }
 
 li {
-  display: inline-block;
+    display: inline-block;
 }
 
-a {
-  color: $default-font-body-color;
-}
+
