@@ -8,9 +8,20 @@
         size: 1.25rem;
     }
 
+    /* Actions: 
+     * *************************************************************************
+     */
     &:hover,
     &:focus {
         color: $color-link-active;
         background: $color-link-fill-on;
+    }
+
+    /* Media Queries: 
+     * *************************************************************************
+     */
+    @include touch {
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
 }

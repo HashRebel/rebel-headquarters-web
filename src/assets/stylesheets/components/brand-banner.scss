@@ -1,3 +1,11 @@
+.container {
+    div{
+        @include touch {
+            padding: 0 1rem;
+        }
+    }
+}
+
 .hr-dictionary {
     margin-bottom: 10rem;
     
@@ -20,12 +28,15 @@
             weight: 300;
         }
     }
+    ol {
+        list-style-position: outside;
+    }
     ol li {
         display: list-item;
-        list-style-type: decimal;
-        list-style-position: inside;
-        margin-bottom: .75rem;
+        padding-left: 0.5rem;
+        margin-bottom: 0.75rem;
     }
+
     .right {
         margin-top: 10rem;
     }
@@ -50,10 +61,19 @@
     }
     .right-wm {
         z-index: -1; // Force to the background
-        top: 5rem;
+        top: -30rem;
+        right: -5rem;
         height: 720px;
         width: 720px;
         opacity: 0.16;
+
+        /* Media Queries: 
+        * *************************************************************************
+        */
+        @include touch {
+            top: -35rem;
+            right: -15rem;
+        }
     }
     .avatar {
         top: 115px;
@@ -83,5 +103,12 @@
         font-size: 1rem;
         padding-right: 2rem;
         padding-left: 2rem;
+    }
+
+    /* Media Queries: 
+     * *************************************************************************
+     */
+     @include touch {
+        margin: 0 3rem 10rem;
     }
 }

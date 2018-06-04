@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container is-fluid">
     <div class="columns hr-dictionary">
       <div class="column is-5">
         <h1>hash</h1>
@@ -20,7 +20,7 @@
           </li>
         </ol>
       </div>
-      <div class="column is-5 is-offset-1 right">
+      <div class="column is-5 is-offset-2 right">
         <h1>rebel</h1>
         <h2>/ˈrɛb(ə)l/</h2>
         <h3>noun</h3>
@@ -36,7 +36,7 @@
     </div>
     <div class="mission">
       <div class="columns">
-        <div class="column is-8">
+        <div class="column is-7">
           <h1>
             Mission:
           </h1>
@@ -47,7 +47,7 @@
             <br>
             In the spirit of our fallen revolutionaries, we vow to apply all emerging technologies to form a much fairer and more equal society for all. Bringing democracy to the workplace and changing the way we organize; using automation in order to unlock a wealth of untapped intuition; providing a higher level of transparency within institutions are among the top priorities of the Hash Revolution. 
             <br>
-            This can only be down together, so join me in putting our fists air and taking a stand. Let’s decentralize the world and take back our futures.
+            This can only be down together, so join us in putting our fists air and taking a stand. Let’s decentralize the world and take back our futures.
           </p>
         </div>
       </div>
@@ -67,14 +67,15 @@
           >
           <!-- <img class="avatar" src="../assets/images/avatar-side-profile.jpg" alt=":-) avatar"> -->
         </div>
-        <div class="column is-5 is-offset-1">
+        <div class="column is-5 is-offset-2">
           <div>
             <h1>
               Brian Henze
             </h1>
             <p>
-              Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
-              <br><br>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
+              As a wee lad, I started off my tech adventures early by taking apart random household appliances just to see if I could put it back together. Today my passion is in building a better future by taking advantage of the hacker skills I have picked up along the way. In this ever change environment I believe it is important to always be pushing yourself forward to avoid becoming stale.
+              <br>
+              I am currently focusing on learning as much as I can about emerging technologies and learning the best practices of full stack development so that I can meet the growing need of a diverse set of clients. 
             </p>
             <!-- TODO: update to add a link to my work (for now can just link to my linkedIn profile). -->
             <a 

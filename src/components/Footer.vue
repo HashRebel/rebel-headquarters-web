@@ -1,18 +1,18 @@
 <template>
   <div class="footer">
     <div class="container">
-      <div class="columns">
-        <div class="column">
+      <div class="columns level">
+        <div class="column level-item">
           © 2018 Hash Rebel
         </div>
-        <div class="column has-text-centered">
+        <div class="column level-item has-text-centered">
           <img
             src="../assets/images/icons/hash_rebel/main-fist-code-inlay-optimized.svg"
             height=100px
             width=100px
           >
         </div>
-        <div class="column has-text-right">
+        <div class="column level-item has-text-right">
           <ul>
             <li v-for="icon in socialMediaConfig.iconInfo" :key="icon.name">
               <a
