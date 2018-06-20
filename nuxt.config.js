@@ -7,26 +7,23 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
-    ],
+    title: pkg.longName,
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Michroma|Montserrat:300'}
     ]
   },
 
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#FFFFFF' },
+  loading: { color: '#e7bb21' },
 
   /*
   ** Global CSS
   */
   css: [
+    'minireset.css',
+    '@/assets/styles/main.scss'
   ],
 
   /*
@@ -41,8 +38,13 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma'
+    // Doc: https://pwa.nuxtjs.org/setup.html
+    '@nuxtjs/pwa',
+    // This allows me to import the following files into my vue files.
+    ['nuxt-sass-resources-loader', [
+         '@/assets/styles/main.scss'
+       ]
+    ]
   ],
   /*
   ** Axios module configuration
@@ -78,5 +80,38 @@ module.exports = {
         })
       }
     }
-  }
+  },
+
+  /*
+  ******************************************************************************
+  ** PWA Module configuration
+  ******************************************************************************
+  */
+
+  /*
+    ** Meta data https://pwa.nuxtjs.org/modules/meta.html. NOTE: most standard
+    ** meta is automatically included. mobileApplOS is disabled by default.
+    */
+  meta: {
+  },
+
+  /*
+  ** Manifest configuration (part of the pwa nuxt module)
+  */
+  manifest: {
+    name: pkg.longName,
+    short_name: pkg.name,
+    display: "standalone",
+    background_color: "#000",
+    theme_color: "#e7bb21",
+    description: pkg.description,
+    lang: 'en'
+  },
+
+  /*
+  ** Workerbox options (part of the pwa nuxt module. https://developers.google.com/web/tools/workbox/)
+  */
+  workbox: {
+    // Workbox options
+   }
 }

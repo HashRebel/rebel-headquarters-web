@@ -1,0 +1,28 @@
+.hr-button{
+    display: inline-flex;
+    text-align:center;
+    margin-top: 2rem;
+    padding: 1.25rem 4rem;
+    border: 1px solid;
+    font: {
+        family: $font-family-heading;
+        size: 1.25rem;
+    }
+
+    /* Actions: 
+     * *************************************************************************
+     */
+    &:hover,
+    &:focus {
+        color: $color-link-active;
+        background: $color-link-fill-on;
+    }
+
+    /* Media Queries: 
+     * *************************************************************************
+     */
+    @include touch {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
