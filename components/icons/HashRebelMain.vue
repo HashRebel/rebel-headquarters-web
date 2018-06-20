@@ -34,11 +34,11 @@
     props: {
       width: {
         type: String,
-        default: '454px'
+        default: '363px'
       },
       height: {
         type: String,
-        default: '230px'
+        default: '180px'
       }
     }
   };
