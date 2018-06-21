@@ -2,6 +2,8 @@
 
 > A Sandbox for playing with the technologies of the future
 
+
+
 ## Build Setup
 
 ``` bash
@@ -19,4 +21,3 @@ $ yarn start
 $ yarn run generate
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
