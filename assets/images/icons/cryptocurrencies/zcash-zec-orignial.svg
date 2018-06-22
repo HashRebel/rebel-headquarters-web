@@ -1,0 +1,10 @@
+<?xml version="1.0" ?><svg height="256" viewBox="0 0 256 256" width="256" xmlns="http://www.w3.org/2000/svg"><defs><style>
+      .cls-1 {
+        fill: #252525;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style></defs><g data-name="zcash zec" id="zcash_zec"><g data-name="zcash zec" id="zcash_zec-2"><circle class="cls-1" cx="128" cy="128" data-name="Эллипс 27" id="Эллипс_27" r="128"/><path class="cls-2" d="M568,1958a79,79,0,1,1-79,79A79,79,0,0,1,568,1958Zm0,17.77A61.225,61.225,0,1,1,506.775,2037,61.231,61.231,0,0,1,568,1975.77Zm-27.65,23.7H560.1v-13.82h15.8v13.82h21.725v17.78l-33.575,37.52h33.575v17.78H575.9v13.83H560.1v-13.83H538.375v-17.78l33.575-37.52h-31.6v-17.78Z" data-name="Эллипс 26" id="Эллипс_26" transform="translate(-440 -1909)"/></g></g></svg>
