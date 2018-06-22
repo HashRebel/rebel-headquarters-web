@@ -19,7 +19,8 @@
     "bulma": "^0.7.1",
     "express": "^4.15.3",
     "minireset.css": "^0.0.3",
-    "nuxt": "^1.4.1"
+    "nuxt": "^1.4.1",
+    "nuxt-sass-resources-loader": "^2.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -35,7 +36,6 @@
     "eslint-plugin-vue": "^4.5.0",
     "node-sass": "^4.9.0",
     "nodemon": "^1.11.0",
-    "nuxt-sass-resources-loader": "^2.0.2",
     "sass-loader": "^7.0.3",
     "sass-variable-loader": "^0.1.2"
   }
