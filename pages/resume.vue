@@ -1,128 +1,99 @@
 <template>
-  <section class="hero">
-    <div class="hero-body">
-      <div class="resume-header">
-        <span class="icon"><i class="fas fa-envelope" title="Email"></i></span>
-        <div>
+  <section class="container resume">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="name">
           <h1>
             <span class="brian has-text-grey">
               {{ personal.first }}
             </span>
-            <br>
+            <!-- <br> -->
             <span class="henze">
               {{ personal.last }}
             </span>
           </h1>
         </div>
-
-        <hr>
-
         <div class="columns">
-          <div class="column">
+          <div class="column is-two-fifths">
             <img
+              class="avatar"
               :src="avatar"
               alt="avatar 😎"
             >
           </div>
           <div class="column">
-            <h2>
-              Entrepreneur, Developer, Writer
-            </h2>
-            <p>
-              Software engineer with more than 10 years of experience in enterprise level software development using a wide verity of technologies and software methodologies. Collaborative communicator that freely shares information within a diverse team, across functional lines and across multiple disciplines.
-            </p>
-            <contact-panel
-              :phone="personal.phone"
-              :phoneRef="personal.phoneRef"
-              :web="personal.web"
-              :webRef="personal.webRef"
-              :email="personal.email"
-              :emailRef="personal.emailRef"
-              :location="personal.location"
-              :locationRef="personal.locationRef"
-            ></contact-panel>
-            <p>Somewhere, something incredible is waiting to be known. - Carl Sagan Quote</p>
+            <div class="overview">
+              <h2>
+                Entrepreneur, Developer, Writer
+              </h2>
+              <p class="sumary">
+                Software engineer with more than 10 years of experience in enterprise level software development using a wide verity of technologies and software methodologies. Collaborative communicator that freely shares information within a diverse team, across functional lines and across multiple disciplines.
+              </p>
+              <contact-panel
+                :phone="personal.phone"
+                :phoneRef="personal.phoneRef"
+                :web="personal.web"
+                :webRef="personal.webRef"
+                :email="personal.email"
+                :emailRef="personal.emailRef"
+                :location="personal.location"
+                :locationRef="personal.locationRef"
+              ></contact-panel>
+              <div class="quote">
+                <no-ssr>
+                  <p>
+                    <span class="icon"><i class="fas fa-quote-left"></i></span>
+                    Somewhere, something incredible is waiting to be known.
+                    <span class="icon"><i class="fas fa-quote-right"></i></span>
+                  </p>
+                </no-ssr>
+                <footer>
+                  <i>Carl Sagan Quote</i>
+                </footer>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <hr>
+    <section class="competencies">
+      <h2>Competencies</h2>
 
-        <h2>About Me</h2>
-        <div class="columns">
-          <div class="column is-one-quarter">
-            <h2>Professional</h2>
-            <hr>
-            <ul>
-              <li>
-                <span class="logo">
-                  <i class="fas fa-check-circle fa-lg"></i>
-                </span>
-                <p>Linux Hacker</p>
-              </li>
-              <li>
-                <span class="logo">
-                  <i class="fas fa-check-circle fa-lg"></i>
-                </span>
-                <p>Agile Software Development</p>
-              </li>
-              <li>
-                <span class="logo">
-                  <i class="fas fa-check-circle fa-lg"></i>
-                </span>
-                <p>Full-Stack Developer</p>
-              </li>
-              <li>
-                <span class="logo">
-                  <i class="fas fa-check-circle fa-lg"></i>
-                </span>
-                <p>Scrum Master</p>
-              </li>
-              <li>
-                <span class="logo">
-                  <i class="fas fa-check-circle fa-lg"></i>
-                </span>
-                <p>Continuous Integration</p>
-              </li>
-              <li>
-                <span class="logo">
-                  <i class="fas fa-check-circle fa-lg"></i>
-                </span>
-                <p>Test Driven Development</p>
-              </li>
-              <li>
-                <span class="logo">
-                  <i class="fas fa-check-circle fa-lg"></i>
-                </span>
-                <p>RESTFul APIs</p>
-              </li>
-              <li>
-                <span class="logo">
-                  <i class="fas fa-check-circle fa-lg"></i>
-                </span>
-                <p>Enterprise Software</p>
-              </li>
-              <li>
-                <span class="logo">
-                  <i class="fas fa-check-circle fa-lg"></i>
-                </span>
-                <p>E-Commerce</p>
+        <div class="columns skills">
+
+          <div class="column is-one-quarter has-text-left ">
+            <h3>{{skills.professional.catagory}} </h3>
+            <ul class="professional">
+              <li
+                v-for="skill in skills.professional.data"
+                :key="skill.name"
+              >
+                <p>
+                  <span class="icon has-text-primary is-small">
+                    <i class="fas fa-check-circle fa-sm"></i>
+                  </span> {{skill.name}}
+                </p>
               </li>
             </ul>
           </div>
-          <div class="column">
-            <h2>Technical</h2>
-            <hr>
+
+          <div class="column has-text-left">
+            <h3>Technical</h3>
             <div class="columns">
               <div
                 class="column"
-                v-for="skill in skills"
-                :key="skill.name"
+                v-for="skill in skills.technological"
+                :key="skill.catagory"
               >
-                <h3>
-                  {{ skill.name }}
-                </h3>
-                <ol>
-                  <li v-for="data in skill.data" :key="data.name">
+                <h4>
+                  {{ skill.catagory }}
+                </h4>
+                <ul>
+                  <li
+                    v-for="data in skill.data"
+                    :key="data.name"
+                  >
                     <p>
                       {{ data.name }}
                     </p>
@@ -134,126 +105,132 @@
                       {{ data.experience }}%
                     </progress>
                   </li>
-                </ol>
+                </ul>
               </div>
             </div>
           </div>
         </div>
+    </section>
 
-        <hr>
-
-        <h2>History</h2>
-
-        <div class="columns">
-          <div class="column is-one-third">
-            <h3><span class="month">January</span> <span class="year">2018</span> - <span class="year">Present</span></h3>
-            <img src="~/assets/images/icons/hash_rebel/main-logo-classy.svg" alt="bullseye logo 🎯">
-            <h4>Hash Rebel</h4>
-            <h4>Portland, Oregon</h4>
+    <section class="history">
+      <h2>History</h2>
+      <div
+        class="columns experience"
+        v-for="experience in personal.experience"
+        :key="experience.company"
+      >
+        <div class="column is-one-fifth">
+          <div class="columns">
+            <div class="column">
+              <img
+                :src="experience.logo"
+                :alt="experience.logoAlt"
+              >
+            </div>
           </div>
-          <div class="column">
-            <h3>Entrepreneur, Developer, Writer</h3>
-            <p>
-              Working to present and build a better tomorrow with communities spanning the globe.
-              <br>
-              The blockchain enables us to unlock otherwise forgotten potential. Now almost anyone can contribute to making the technologies of tomorrow possible without the need for a bloated organization. We now live in an age where collaboration across large distances is possible and where innovation and the wealth that follows can now be owned by everyone instead of a select few. Hash Rebel aims to facilitate the transition to a new way of organizing.
-              <br>
-              We will use the blockchain, AI, IoT, and 3D printing to change the world as we know it. We strive to bring awareness to these technologies so we can help guide them to the benefit of all life. We need the hash rebels of the world to help unblock the path to technological prosperity for all while keeping the people safe and the predators at bay.
-              <br>
+        </div>
+        <div class="column">
+          <div class="job-card">
+            <div class="duration">
+              <div class="date">
+                <p class="month"> {{experience.fromMonth}} </p>
+                <p class="year"> {{experience.fromYear}} </p>
+              </div>
+              <div class="date">
+                <p class="year"> &thinsp; - &thinsp;</p>
+              </div>
+              <div class="date">
+                <p class="month"> {{experience.toMonth}} </p>
+                <p class="year"> {{experience.toYear}} </p>
+              </div>
+            </div>
+
+            <div>
+              <h3>{{ experience.title }}</h3>
+              <h4 class="company">{{ experience.company }}</h4>
+              <h5 >{{ experience.location }}</h5>
+            </div>
+
+            <p
+              class="history-content"
+              v-for="description in experience.description"
+              :key="description"
+            >
+              {{ description }}
             </p>
           </div>
         </div>
-
-        <div class="columns">
-          <div class="column is-one-third">
-            <h3><span class="month">November</span> <span class="year">2015</span> - <span class="month">January</span> <span class="year">2017</span></h3>
-            <img src="~/assets/images/logos/carvana.png" alt="Carvana logo">
-            <h4>Carvana</h4>
-            <h4>Phoenix, AZ</h4>
-          </div>
-          <div class="column">
-            <h3>App Developer</h3>
-            <p>
-              Senior full stack web developer who contributes to a dynamic and agile team responsible for collecting, maintaining and displaying vehicles to our customers. This includes our faceted, intelligent and performant search page, lending terms rendered in real time displayed throughout the search experience and our patented vehicle spinner which showcases our inventory.
-            </p>
-          </div>
-        </div>
-
-        <div class="columns">
-          <div class="column is-one-third">
-            <h3><span class="month">November</span> <span class="year">2015</span> - <span class="month">January</span> <span class="year">2017</span></h3>
-            <img src="~/assets/images/logos/godaddy-alt.png" alt="Godaddy logo">
-            <h4>GoDaddy.com</h4>
-            <h4>Scottdale, AZ</h4>
-          </div>
-          <div class="column">
-            <h3>Software Developer</h3>
-            <p>
-              Senior level eCommerce software developer who used various technology stacks to implement a robust set of APIs which were consumed by various business units within GoDaddy as well as external customers. My team was responsible for processing 3 billion dollars in revenue a year while adhering to strict PCI rules. Experienced SCRUM master with a focus on being a servant leader who blocks impediments for teammates, helps guide my team to use best software practices, works with POs and across functional teams to create stories and running SCRUM ceremonies as well as attending other high level planning meetings. This is in addition to having a strong developer role in maintaining an expansive legacy code base, driving new functionality forward, rewriting our platform on the .Net stack and assisting in day to day operations.
-            </p>
-          </div>
-        </div>
-
-        <div class="columns">
-          <div class="column is-one-third">
-            <h3><span class="month">November</span> <span class="year">2015</span> - <span class="month">January</span> <span class="year">2017</span></h3>
-            <img src="~/assets/images/logos/general-dynamics.png" alt="General Dynamic logo">
-            <h4>General Dynamics</h4>
-            <h4>Scottdale, AZ</h4>
-          </div>
-          <div class="column">
-            <h3>Software Engineer</h3>
-            <p>
-              Senior level eCommerce software developer who used various technology stacks to implement a robust set of APIs which were consumed by various business units within GoDaddy as well as external customers. My team was responsible for processing 3 billion dollars in revenue a year while adhering to strict PCI rules. Experienced SCRUM master with a focus on being a servant leader who blocks impediments for teammates, helps guide my team to use best software practices, works with POs and across functional teams to create stories and running SCRUM ceremonies as well as attending other high level planning meetings. This is in addition to having a strong developer role in maintaining an expansive legacy code base, driving new functionality forward, rewriting our platform on the .Net stack and assisting in day to day operations.
-            </p>
-          </div>
-        </div>
-
-        <h2>Internships</h2>
-        <div class ="columns">
-          <div class="column">
-            <h3><span class="month">May</span> <span class="year">2006</span> - <span class="month">May</span> <span class="year">2007</span></h3>
-            <img src="~/assets/images/logos/lockheed-martin.png" alt="Lockheed Martin logo">
-            <h4>Lockheed Martin</h4>
-            <h4>Colorado Springs, Colorado</h4>
-          </div>
-          <div class="column">
-            <h3><span class="month">May</span> <span class="year">2003</span> - <span class="month">November</span> <span class="year">2005</span></h3>
-            <img src="~/assets/images/logos/honeywell.png" alt="Honeywell logo">
-            <h4>Honeywell</h4>
-            <h4>Glendale, AZ</h4>
-          </div>
-        </div>
-
-        <hr>
-
-        <h2>Education</h2>
-        <div class="columns">
-          <div class="column">
-            <img src="~/assets/images/logos/asu-pitchfork.png" alt="ASU logo">
-            <h3>Arizona State University</h3>
-            <h4>Bachelor of Science in Computer Systems Engineering</h4>
-            <p>
-              Designed, implemented and tested a fully automated restaurant using C# .Net and Microsoft Blend. The table top had built in features such as being able to place orders, call for assistance, pay your bill, play a custom built juke box, access to entertainment and games and much much more.
-            </p>
-          </div>
-          <div class="column">
-            <img src="~/assets/images/logos/gcc-main.png" alt="GCC logo">
-            <h3>Arizona State University</h3>
-            <h4>Associate, Applied Science</h4>
-          </div>
-        </div>
-
-        <hr>
-
       </div>
-    </div>
+    </section>
+
+    <section class="intern">
+      <h2>Internships</h2>
+      <div class ="columns has-text-centered">
+        <div
+          class="column"
+          v-for="internship in personal.internships"
+          :key="internship.company"
+        >
+          <div>
+            <div class="date">
+              <p class="month"> {{ internship.fromMonth }} </p>
+              <p class="year"> {{ internship.fromYear }} </p>
+            </div>
+            <div class="date">
+              <p class="year"> &thinsp; - &thinsp;</p>
+            </div>
+            <div class="date">
+              <p class="month"> {{ internship.toMonth }} </p>
+              <p class="year"> {{ internship.toYear }} </p>
+            </div>
+          </div>
+
+          <img :src="internship.logo" :alt="internship.logoAlt">
+          <h4 class="company">{{internship.company}}</h4>
+          <h5>{{internship.location}}</h5>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="education">
+      <h2>Education</h2>
+      <div class="columns has-text-centered">
+        <div
+          class="column"
+          v-for="school in personal.education"
+          :key="school.school"
+        >
+          <img :src="school.logo" :alt="school.logoAlt">
+          <h4>{{school.school}}</h4>
+          <h5>{{school.degree}}</h5>
+        </div>
+      </div>
+    </section>
+
+    <footer clas="has-text-centered">
+      <h2>Cheers!</h2>
+      <img
+        class="beetle"
+        src="~/assets/images/beetle-profile.jpg"
+        alt="Beetle 🐞🚗"
+      >
+    </footer>
+
   </section>
 </template>
 
 <script>
   import contactPanel from '~/components/ContactPanel.vue';
   import avatar from '~/assets/images/avatar-front-fancy.jpg';
+  import hashRebelLogo from "~/assets/images/logos/hash-rebel.png";
+  import carvanaLogo from "~/assets/images/logos/carvana.png";
+  import godaddyLogo from "~/assets/images/logos/godaddy-alt.png";
+  import gdLogo from "~/assets/images/logos/general-dynamics.png";
+  import lockheedLogo from "~/assets/images/logos/lockheed-martin.png";
+  import honeywellLogo from "~/assets/images/logos/honeywell.png";
+  import asuLogo from "~/assets/images/logos/asu-sundevil.png";
+  import gccLogo from "~/assets/images/logos/gcc-main.png";
 
   export default {
     head () {
@@ -280,145 +257,277 @@
           emailRef: "mailto:brian.henze@hashrebel.com",
           location: "Portland, Oregon",
           locationRef: "https://goo.gl/maps/bsHFc2uLFyG2",
-        },
-        skills: [
+          experience: [
           {
-            name: "languages",
+            logo: hashRebelLogo,
+            logoAlt: "bullseye logo 🎯",
+            fromMonth: "January",
+            fromYear: "2018",
+            toMonth: " ",
+            toYear: "Present",
+            title: "Entrepreneur, Developer, Writer",
+            company: "Hash Rebel",
+            location: "Portland, Oregon",
+            description: [
+              "Working to present and build a better tomorrow with communities spanning the globe.",
+              "The blockchain enables us to unlock otherwise forgotten potential. Now almost anyone can contribute to making the technologies of tomorrow possible without the need for a bloated organization. We now live in an age where collaboration across large distances is possible and where innovation and the wealth that follows can now be owned by everyone instead of a select few. Hash Rebel aims to facilitate the transition to a new way of organizing.",
+              "We will use the blockchain, AI, IoT, and 3D printing to change the world as we know it. We strive to bring awareness to these technologies so we can help guide them to the benefit of all life. We need the hash rebels of the world to help unblock the path to technological prosperity for all while keeping the people safe and the predators at bay."
+            ]
+          },{
+            logo: carvanaLogo,
+            logoAlt: "Carvana logo 🚗",
+            fromMonth: "November",
+            fromYear: "2015",
+            toMonth: "June",
+            toYear: "2017",
+            title: "App Developer",
+            company: "Carvana",
+            location: "Phoenix, Arizona",
+            description: [
+              "Senior full stack web developer who contributes to a dynamic and agile team responsible for collecting, maintaining and displaying vehicles to our customers. This includes our faceted, intelligent and performant search page, lending terms rendered in real time displayed throughout the search experience and our patented vehicle spinner which showcases our inventory."
+            ]
+          },{
+            logo: godaddyLogo,
+            logoAlt: "Godaddy logo 👨",
+            fromMonth: "August",
+            fromYear: "2011",
+            toMonth: "November",
+            toYear: "2015",
+            title: "Software Developer",
+            company: "Godaddy.com",
+            location: "Scottsdale, Arizona",
+            description: [
+              "Senior level eCommerce software developer who used various technology stacks to implement a robust set of APIs which were consumed by various business units within GoDaddy as well as external customers. My team was responsible for processing 3 billion dollars in revenue a year while adhering to strict PCI rules. Experienced SCRUM master with a focus on being a servant leader who blocks impediments for teammates, helps guide my team to use best software practices, works with POs and across functional teams to create stories and running SCRUM ceremonies as well as attending other high level planning meetings. This is in addition to having a strong developer role in maintaining an expansive legacy code base, driving new functionality forward, rewriting our platform on the .Net stack and assisting in day to day operations."
+            ]
+          },{
+            logo: gdLogo,
+            logoAlt: "General dynamics logo ⚙️",
+            fromMonth: "May",
+            fromYear: "2007",
+            toMonth: "August",
+            toYear: "2011",
+            title: "Embeded Software Engineer",
+            company: "General Dynamics",
+            location: "Scottsdale, Arizona",
+            description: [
+              "Senior level eCommerce software developer who used various technology stacks to implement a robust set of APIs which were consumed by various business units within GoDaddy as well as external customers. My team was responsible for processing 3 billion dollars in revenue a year while adhering to strict PCI rules. Experienced SCRUM master with a focus on being a servant leader who blocks impediments for teammates, helps guide my team to use best software practices, works with POs and across functional teams to create stories and running SCRUM ceremonies as well as attending other high level planning meetings. This is in addition to having a strong developer role in maintaining an expansive legacy code base, driving new functionality forward, rewriting our platform on the .Net stack and assisting in day to day operations."
+            ]
+          }],
+          internships: [
+          {
+            logo: lockheedLogo,
+            logoAlt: "Lockheed Martin logo ✈️",
+            fromMonth: "May",
+            fromYear: "2006",
+            toMonth: "May",
+            toYear: "2007",
+            company: "Lockheed Martin",
+            location: "Colorado Springs, Colorado",
+          },{
+            logo: honeywellLogo,
+            logoAlt: "Honeywell logo 🍯",
+            fromMonth: "May",
+            fromYear: "2006",
+            toMonth: "May",
+            toYear: "2007",
+            company: "Honeywell",
+            location: "Glendale, Arizona",
+          }
+          ],
+          education: [
+            {
+              logo: asuLogo,
+              logoAlt: "ASU logo 👿",
+              school: "Arizona State University",
+              degree: "Bachelor of Science in Computer Systems Engineering"
+            },{
+              logo: gccLogo,
+              logoAlt: "GCC logo 🤠",
+              school: "Glendale Comunity College",
+              degree: "Associate, Applied Science"
+            }
+          ]
+        },
+        skills: {
+          professional: {
+            catagory: "Professional",
             data: [
               {
-                name: "C#",
+                name: "Linux Hacker",
                 experience: 90
               },
               {
-                name: "C/C++",
+                name: "Agile Software Development",
                 experience: 80
               },
               {
-                name: "Sass/CSS",
+                name: "Full-Stack Developer",
                 experience: 75
               },
               {
-                name: "Java",
+                name: "Scrum Master",
                 experience: 70
               },
               {
-                name: "JavaScript",
+                name: "Continuous Integration",
                 experience: 70
               },
               {
-                name: "Python",
+                name: "Test Driven Development",
                 experience: 60
               },
               {
-                name: "Go",
+                name: "RESTFul APIs",
                 experience: 55
               },
               {
-                name: "Perl",
+                name: "Enterprise Software",
+                experience: 50
+              },
+              {
+                name: "E-Commerce",
                 experience: 50
               }
             ]
           },
-          {
-            name: "tools",
-            data: [
-              {
-                name: "Node.js",
-                experience: 70
-              },
-              {
-                name: "Vue.js",
-                experience: 70
-              },
-              {
-                name: "Express.js",
-                experience: 65
-              },
-              {
-                name: "Webpack",
-                experience: 60
-              },
-              {
-                name: "Ruby",
-                experience: 60
-              },
-              {
-                name: "Linux",
-                experience: 85
-              },
-              {
-                name: "Windows",
-                experience: 95
-              },
-              {
-                name: "django",
-                experience: 55
-              }
-            ]
-          },
-          {
-            name: "data",
-            data: [
-              {
-                name: "SQL",
-                experience: 85
-              },
-              {
-                name: "MongoDB",
-                experience: 80
-              },
-              {
-                name: "ElasticSearch",
-                experience: 75
-              },
-              {
-                name: "Redis",
-                experience: 70
-              },
-              {
-                name: "Cassandra",
-                experience: 65
-              }
-            ]
-          },
-          {
-            name: "DevOps",
-            data: [
-              {
-                name: "SSL",
-                experience: 85
-              },
-              {
-                name: "Docker",
-                experience: 80
-              },
-              {
-                name: "PaaS (Dokku/Kubernetes)",
-                experience: 75
-              },
-              {
-                name: "Nginx",
-                experience: 70
-              },
-              {
-                name: "Microsoft IIS",
-                experience: 70
-              },
-              {
-                name: "Jenkins",
-                experience: 60
-              },
-              {
-                name: "Splunk",
-                experience: 60
-              },
-              {
-                name: "New Relic",
-                experience: 60
-              }
-            ]
-          }
-        ],
+          technological: [ {
+              catagory: "Languages",
+              data: [
+                {
+                  name: "C#",
+                  experience: 90
+                },
+                {
+                  name: "C/C++",
+                  experience: 80
+                },
+                {
+                  name: "Sass/CSS",
+                  experience: 75
+                },
+                {
+                  name: "Java",
+                  experience: 70
+                },
+                {
+                  name: "JavaScript",
+                  experience: 70
+                },
+                {
+                  name: "Python",
+                  experience: 60
+                },
+                {
+                  name: "Go",
+                  experience: 55
+                },
+                {
+                  name: "Perl",
+                  experience: 50
+                }
+              ]
+            },
+            {
+              catagory: "Tools",
+              data: [
+                {
+                  name: "Node.js",
+                  experience: 70
+                },
+                {
+                  name: "Vue.js",
+                  experience: 70
+                },
+                {
+                  name: "Express.js",
+                  experience: 65
+                },
+                {
+                  name: "Webpack",
+                  experience: 60
+                },
+                {
+                  name: "Ruby",
+                  experience: 60
+                },
+                {
+                  name: "Linux",
+                  experience: 85
+                },
+                {
+                  name: "Windows",
+                  experience: 95
+                },
+                {
+                  name: "django",
+                  experience: 55
+                }
+              ]
+            },
+            {
+              catagory: "Data",
+              data: [
+                {
+                  name: "SQL",
+                  experience: 85
+                },
+                {
+                  name: "MongoDB",
+                  experience: 80
+                },
+                {
+                  name: "ElasticSearch",
+                  experience: 75
+                },
+                {
+                  name: "Redis",
+                  experience: 70
+                },
+                {
+                  name: "Cassandra",
+                  experience: 65
+                }
+              ]
+            },
+            {
+              catagory: "DevOps",
+              data: [
+                {
+                  name: "SSL",
+                  experience: 85
+                },
+                {
+                  name: "Docker",
+                  experience: 80
+                },
+                {
+                  name: "PaaS (Dokku/Kubernetes)",
+                  experience: 75
+                },
+                {
+                  name: "Nginx",
+                  experience: 70
+                },
+                {
+                  name: "Microsoft IIS",
+                  experience: 70
+                },
+                {
+                  name: "Jenkins",
+                  experience: 60
+                },
+                {
+                  name: "Splunk",
+                  experience: 60
+                },
+                {
+                  name: "New Relic",
+                  experience: 60
+                }
+              ]
+            }
+          ]
+        },
         avatar
       }
     },
@@ -429,38 +538,199 @@
 </script>
 
 <style lang='scss' rel='stylesheet/scss'>
-  hr {
-    background-color: $color-brand-primary-light-er;
-  }
+$section-margin: 8rem;
+$font-family-primary: 'Titillium Web', sans-serif;
+$font-family-secondary: 'Lato', sans-serif;
 
-  .icon{
-    color: #000;
-  }
+.resume {
+    h1, h2, h3, h4, h5 {
+      font-family: $font-family-primary;
+    }
 
-.resume-header {
-  font-family: 'Lato', sans-serif;
+    hr {
+      border: none;
+      height: 0.15rem;
+      background-color: $color-brand-primary-light-er;
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 2.5rem;
+      color: $color-brand-primary;
+    }
+
+    h3 {
+      font-weight: 400;
+      font-size: 2rem;
+      color: $color-brand-primary;
+    }
+
+    h4 {
+      font-weight: 300;
+      font-size: 1.5rem;
+      color: $grey;
+    }
+
+    h5 {
+      font-size: 0.95rem;
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    li {
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+
+  font-family: $font-family-secondary;
   font-weight: 300;
-  line-height: 0.85;
+  font-size: 1.15rem;
+  line-height: 1.25;
 
-  h1, h2, h3, h4, h5 {
-    font-family: 'Titillium Web', sans-serif;
+  .name {
+    margin-bottom: $section-margin;
   }
 
   .brian {
-    margin-top: 2rem;
-    margin-bottom: 0rem;
-
-    font-size: 6rem;
+    font-size: 8rem;
     font-weight: 100;
-
     text-transform: lowercase;
   }
 
   .henze {
     text-transform: uppercase;
-
-    font-size: 8rem;
-    font-weight: 600;
+    margin-left: 0.5rem;
+    font-size: 10rem;
+    font-weight: 700;
   }
+
+ .avatar{
+    border: 0.15rem solid $color-brand-primary-light-er;
+    border-radius: 50%;
+  }
+
+  .overview{
+    margin-left: 4rem;
+  }
+
+  .sumary {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .quote {
+    text-align: center;
+    font-size: 1.2rem;
+
+    footer {
+      color: $color-brand-primary;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .icon {
+      color: $color-brand-primary;
+      font-size: .75rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+.competencies {
+  margin-top: 4rem;
+
+  h4, h3 {
+    margin-bottom: 1rem;
+  }
+
+  .skills {
+    margin-top: 3rem;
+  }
+
+  .professional {
+    margin-top: 4rem;
+  }
+}
+
+.history {
+  margin-top: 8rem;
+
+  figure {
+    margin-left: auto;
+  }
+
+  h4 {
+    margin-top: 0.75rem;
+    font-weight: 400;
+  }
+
+  .history-content{
+    margin-top: 1.25rem;
+  }
+
+  .experience {
+    margin-top: 4rem;
+  }
+
+  .job-card {
+    margin-left: 4rem;
+  }
+}
+
+.month {
+  color: grey;
+  line-height: .75;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.duration {
+  font-family: $font-family-primary;
+  float: right;
+}
+
+.year {
+  font-weight: 600;
+  font-size: 2rem;
+  color: $color-brand-primary;
+}
+
+.date {
+  display: inline-block;
+}
+
+.company {
+  font-size: 1.25rem;
+}
+
+.intern{
+  margin-top: $section-margin;
+  h2{
+    margin-bottom: 4rem;
+  }
+}
+
+.education {
+    margin-top: $section-margin;
+    margin-bottom: $section-margin;
+
+  h2{
+    margin-bottom: 4rem;
+  }
+}
+
+footer {
+  text-align: center;
+  h2 {
+    margin-bottom: 4rem;
+    text-align: left;
+  }
+}
+
+.beetle {
+  text-align: center;
 }
 </style>

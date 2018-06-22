@@ -24,6 +24,15 @@ $primary-invert: findColorInvert($primary);
 $body-background-color: #000;
 $footer-background-color: $color-background-primary;
 
+// Customizing the Table Schemes
+// =============================================================================
+$table-color: $grey;
+
+$table-background-color: none;
+$table-cell-border: none;
+$table-row-hover-background-color: $primary;
+$table-row-active-background-color: $primary;
+
 // Updating the gap
 // =============================================================================
 //$gap: 32px; // TODO: update from default.

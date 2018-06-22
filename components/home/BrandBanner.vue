@@ -81,13 +81,12 @@
               I am currently focusing on learning as much as I can about emerging technologies and learning the best practices of full stack development so that I can meet the growing need of a diverse set of clients.
             </p>
             <div class="has-text-centered-mobile">
-              <!-- TODO: update to add a link to my work (for now can just link to my linkedIn profile). -->
-              <a
+              <nuxt-link
                 class="hr-button"
-                href="https://www.linkedin.com/in/brian-henze-84403036"
+                to="/resume"
               >
                 See My Work
-              </a>
+              </nuxt-link>
             </div>
           </div>
           <img
@@ -99,6 +98,7 @@
       </div>
     </div>
     <div class="container has-text-centered">
+      <!-- Make the following into a component" -->
       <div class="quote">
         <no-ssr>
           <p>
