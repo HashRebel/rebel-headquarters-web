@@ -1,0 +1,42 @@
+// Import the initial variables in order to overwrite them
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+/*
+ * *****************************************************************************
+ * The following is for testing sass cli locally and can be left commented out.
+ *
+ */
+// @import "../../../../node_modules/bulma/sass/utilities/initial-variables";
+// @import "../../../../node_modules/bulma/sass/utilities/functions";
+
+// Text variables
+// =============================================================================
+$body-size: $font-family-primary-size; // This is the base size that the REL or percentage unit uses
+$text: $color-font-primary;
+$family-primary: $font-family-primary;
+$body-weight: $font-family-primary-weight;
+
+// Code variables
+// =============================================================================
+$code: $color-font-primary;
+$code-background: $color-code-background;
+$code-size: 1.5rem;
+$family-code: $font-family-code;
+
+// Customize the Color Schemes
+// =============================================================================
+$primary: $color-brand-primary;
+$primary-invert: findColorInvert($primary);
+
+$body-background-color: #000;
+$footer-background-color: $color-background-primary;
+
+// Updating the gap
+// =============================================================================
+//$gap: 32px; // TODO: update from default.
+
+// Import the rest of Bulma
+@import "~bulma/bulma";
+
+//@import "../../../../node_modules/bulma/bulma";

@@ -1,20 +1,28 @@
-// base
-@import 'base/base';
+// Reset: Always insure that resetting the css is the first thing that occurs:
+// ==================================================================================
+@import './base/reset';
 
-// utils
+// Variables: All global variables
+// ==================================================================================
+@import './vars/all';
 
-// components
-@import 'components/buttons';
-@import 'components/footer';
-@import 'components/header';
+// Vendors: External vender files and default fall-backs
+// ==================================================================================
+@import './vendor/all';
 
-// pages
-@import 'pages/home';
+// Base: All global related CSS
+// ==================================================================================
+@import './base/all';
 
-// layout
+// Framework: all css related to the framework and layout
+// ==================================================================================
+@import './framework/all';
 
-// utils
+// Components: All CSS needed for individual components
+// ==================================================================================
+@import './components/all';
 
-// vendor
-@import 'vendor/github';
-@import 'vendor/particles-js';
+// Shame: Loading this last in order to ensure quick changes are applied globally.
+//  This should only be used for quick hacks.
+// ==================================================================================
+@import './base/shame';

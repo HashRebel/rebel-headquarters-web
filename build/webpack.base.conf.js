@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+var autoprefixer = require('autoprefixer')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -35,7 +36,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   module: {
@@ -52,18 +53,41 @@ module.exports = {
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 10,
           name: utils.assetsPath('../images/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10,
+              name: utils.assetsPath('../images/icons/[name].[hash:7].[ext]')
+            }
+          },
+          {
+            loader: 'svgo-loader',
+            options: {
+              plugins: [
+                {removeTitle: true},
+                {convertColors: {shorthex: false}},
+                {convertPathData: false},
+                {mergePaths: false},
+              ]
+            }
+          }
+        ]
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 1,
           name: utils.assetsPath('../media/[name].[hash:7].[ext]')
         }
       },
@@ -71,17 +95,27 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 10,
           name: utils.assetsPath('../fonts/[name].[hash:7].[ext]')
         }
       },
       {
         test: /\.scss$/,
         use: [
-          'vue-style-loader',
+          'style-loader',
           'css-loader',
-          'sass-loader'
-        ],
+          'sass-loader',
+          'vue-style-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: [
+                require('autoprefixer')()
+              ]
+            }
+          }
+        ]
       },
       {
         test: /\.sass$/,
@@ -89,7 +123,7 @@ module.exports = {
           'vue-style-loader',
           'css-loader',
           'sass-loader?indentedSyntax'
-        ],
+        ]
       }
     ]
   },

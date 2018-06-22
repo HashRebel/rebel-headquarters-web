@@ -1,31 +1,30 @@
-// Reset browser defaults
-html,
-body,
-ul,
-ol {
-  margin: $defult-margin;
-  padding: $defult-padding;
-}
+/*
+ ************************************************************************************
+ *
+ * This file should be used for resetting browser css defaults in order to work
+ *  with a fresh and consistent canvas on startup no matter what browser is being
+ *  used.
+ *
+ ************************************************************************************
+ */
 
-h1, h2 {
-  font-weight: normal;
-}
+// Importing external vender reset sass package. https://jgthms.com/minireset.css/
+// Seems a little slimmer than Normalize.css.
+// ==================================================================================
+@import "../vendor/minireset.scss";
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+// Hard resetting form items and their actions.
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-
-h3 {
-  font-weight: 100;
-  font-size: 2rem;
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
 }

@@ -8,8 +8,8 @@ yarn-error.log*
 /test/e2e/reports/
 selenium-debug.log
 /src/assets/possible
-css/
 linters/
+*OBSOLETE*
 
 # Editor directories and files
 .idea
@@ -18,3 +18,4 @@ linters/
 *.ntvs*
 *.njsproj
 *.sln
+*.old*

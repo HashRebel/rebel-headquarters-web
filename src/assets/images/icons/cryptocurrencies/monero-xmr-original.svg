@@ -1,0 +1,21 @@
+<?xml version="1.0" ?><svg height="256" viewBox="0 0 256 256" width="256" xmlns="http://www.w3.org/2000/svg"><defs><style>
+      .cls-1 {
+        fill: #ccc;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #ee5922;
+      }
+
+      .cls-3, .cls-4 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        fill: #535354;
+      }
+    </style></defs><g data-name="monero xmr " id="monero_xmr_"><g data-name="monero xmr" id="monero_xmr"><circle class="cls-1" cx="128" cy="128" data-name="Эллипс 15" id="Эллипс_15" r="128"/><circle class="cls-2" cx="128" cy="128" data-name="Эллипс 14" id="Эллипс_14" r="86"/><path class="cls-3" d="M568,1311a86.059,86.059,0,0,1,81.638,113.11c-5.543,0-25.09-.01-25.09-0.01v-71.87l-55.37,56.55-57.726-57.73v73.05s-19.886.06-25.076,0.06A86.066,86.066,0,0,1,568,1311Z" data-name="Эллипс 14 копия 2" id="Эллипс_14_копия_2" transform="translate(-440 -1269)"/><path class="cls-4" d="M606.877,1395.82v47.13s18.98-.13,33.911-0.13a86.019,86.019,0,0,1-145.443.21c9.3,0,34.956-.08,34.956-0.08v-47.13l38.877,38.88Z" data-name="Эллипс 14 копия" id="Эллипс_14_копия" transform="translate(-440 -1269)"/></g></g></svg>

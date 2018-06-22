@@ -1,0 +1,146 @@
+.container {
+    div{
+        @include touch {
+            padding: 0 1rem;
+        }
+    }
+}
+
+.hr-dictionary {
+    margin-bottom: 10rem;
+    
+    h2 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+        font: {
+            size: 1.5rem;
+            weight: medium;
+        }
+    }
+    h3 {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        font: {
+            size: 1rem;
+            style: italic;
+            weight: 300;
+        }
+    }
+    ol {
+        list-style-position: outside;
+        @include mobile {
+            margin-right: 1rem;
+            margin-left: 1rem;
+        }
+    }
+    ol li {
+        display: list-item;
+        padding-left: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .right {
+        margin-top: 10rem;
+        @include mobile {
+            margin-top: 3rem;
+        }
+    }
+
+    @include mobile {
+        h1{
+            font-size: 3rem;
+        }
+    }
+}
+
+.mission {
+    margin-top: 3rem;
+    margin-bottom: 8rem;
+}
+
+.hr-my-work {
+    position: relative;
+    margin-bottom: 12rem;
+
+    .avatar-container
+    {
+        position: relative;
+        //margin-bottom: 20.5rem;
+        height: 30rem;
+        width: 100%;
+        .left-wm {
+            position: absolute;
+            height: 20.5rem;
+            width: 20.5rem;
+            opacity: 0.3;
+
+            @include mobile {
+                top: -1rem;
+                left: -1rem;
+            }
+        }
+        .avatar {
+            position: absolute;
+            top: 7rem;
+            left: 8rem;
+            border-radius: 50%;
+            height: 20.5rem;
+            width: 20.5rem;
+
+            @include mobile {
+                top: 5rem;
+                left: 3rem;
+            }
+        }
+    }
+    .right-wm {
+        position: absolute;
+        z-index: -1; // Force to the background
+        top: -30rem;
+        right: -5rem;
+        height: 45rem;
+        width: 45rem;
+        opacity: 0.16;
+
+        @include touch {
+            top: -35rem;
+            right: -15rem;
+        }
+
+        @include mobile {
+            top: 25rem;
+            right: -20rem;
+        }
+    }
+}
+
+.quote {
+    display: inline-block;
+    margin: 0 10rem 10rem 10rem;
+    position: relative;
+
+    font: {
+        size: 1.5rem;
+        weight: 300;
+    }
+
+    footer {
+        margin-top: 1.5rem;
+        color: $color-brand-primary;
+    }
+    .icon {
+        color: $color-brand-primary;
+        font-size: 1rem;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+
+    /* Media Queries: 
+     * *************************************************************************
+     */
+     @include touch {
+        margin: 0 3rem 10rem;
+    }
+}

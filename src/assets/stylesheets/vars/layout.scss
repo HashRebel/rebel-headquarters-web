@@ -1,0 +1,23 @@
+// Hash Rebel Branding
+// ==================================================================================
+//TODO: Update the following names (and the appropriate javascript)
+$hash-rebel-main-logo-width: 363px;
+$hash-rebel-main-logo-height: 184px;
+
+
+// Social media icon layout
+// ==================================================================================
+$social-media-icon-width: 35px;
+$social-media-icon-height: 36px;
+
+// GitHub logo layout
+// ==================================================================================
+$git-hub-icon-anchor-width: 63px;
+$git-hub-icon-anchor-height: 64px;
+
+// Z-index
+// ==================================================================================
+$z-hero-watermark: 100; // Should be at the same level as the parent
+$z-hero-background: 50; // Should be in the background gradient.
+$z-hero-background-grad: 100; // Should be in the background.
+$z-hero-body: 500; // This should always be on top.
