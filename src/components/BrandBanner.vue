@@ -13,14 +13,12 @@
               In the blockchain, a hash has various uses and is the life line in ensuring trust between parties.
           </li>
         </ol>
-        <div v-if="advancedMode">
-          <h3>noun</h3>
-          <ol>
-            <li>
-                An extract of the cannabis plant, containing concentrations of the psychoactive resins.
-            </li>
-          </ol>
-        </div>
+        <h3>noun</h3>
+        <ol>
+          <li>
+              An extract of the cannabis plant, containing concentrations of the psychoactive resins.
+          </li>
+        </ol>
       </div>
       <div class="column is-5 is-offset-2 right">
         <h1>rebel</h1>
@@ -57,18 +55,17 @@
     <div class="hr-my-work">
       <div class="columns">
         <div class="column is-5">
-          <div class="avatar-container">
-            <img 
-              class="left-wm" 
-              src="../assets/images/icons/hash_rebel/bullseye-optimized.svg" 
-              alt="bullseye logo"
-            >
-            <img 
-              class="avatar" 
-              src="../assets/images/avatar-side-snow.jpg" 
-              alt=":-) avatar"
-            >
-          </div>
+          <img 
+            class="left-wm" 
+            src="../assets/images/icons/hash_rebel/bullseye-optimized.svg" 
+            alt="bullseye logo"
+          >
+          <img 
+            class="avatar" 
+            src="../assets/images/avatar-side-snow.jpg" 
+            alt=":-) avatar"
+          >
+          <!-- <img class="avatar" src="../assets/images/avatar-side-profile.jpg" alt=":-) avatar"> -->
         </div>
         <div class="column is-5 is-offset-2">
           <div>
@@ -80,15 +77,13 @@
               <br>
               I am currently focusing on learning as much as I can about emerging technologies and learning the best practices of full stack development so that I can meet the growing need of a diverse set of clients. 
             </p>
-            <div class="has-text-centered-mobile">
-              <!-- TODO: update to add a link to my work (for now can just link to my linkedIn profile). -->
-              <a 
-                class="hr-button"
-                href="https://www.linkedin.com/in/brian-henze-84403036"
-              >
-                See My Work
-              </a>
-            </div>
+            <!-- TODO: update to add a link to my work (for now can just link to my linkedIn profile). -->
+            <a 
+              class="hr-button"
+              href="https://www.linkedin.com/in/brian-henze-84403036"
+            >
+              See My Work
+            </a>
           </div>
           <img 
             class="right-wm" 
@@ -111,13 +106,3 @@
     </div>
   </section>
 </template>
-
-<script>
-    export default{
-      data() {
-        return {
-          advancedMode: false
-        }
-      }
-    }
-</script>

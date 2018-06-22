@@ -2,21 +2,20 @@
   <div id="app">
     <rebel-headquarters-home></rebel-headquarters-home>
     <rebel-headquarters-body></rebel-headquarters-body>
-    <rebel-headquarters-footer></rebel-headquarters-footer> -->
+    <rebel-headquarters-footer></rebel-headquarters-footer>
+    <!-- TODO: Add the router view back in when I understand it better  -->
+    <!-- <router-view/> -->
   </div>
 </template>
 
 <style lang="scss">
-    // TODO: move all the loading to each componant. I want each component to
-    // only load the css that is needed for that component that way we are not
-    // loading the entire CSS hierarchy for every page.
     @import './assets/stylesheets/main.scss';
 </style>
 
 <script>
-  import Home from "~/components/Header.vue";
-  import Body from "~/components/BrandBanner.vue";
-  import Footer from "~/components/Footer.vue";
+  import Home from "./components/Header.vue";
+  import Body from "./components/BrandBanner.vue";
+  import Footer from "./components/Footer.vue";
 
   export default {
     components: {

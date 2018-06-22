@@ -4,6 +4,7 @@
     // Made relative in order to absolutely position the gradient
     position: relative;
     z-index: $z-hero-background;
+    overflow: hidden;
 
     background: {
         image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #000000), url('assets/images/hero-galaxy-background.jpg');
@@ -15,16 +16,6 @@
 
     h1 {
         font-size: 4rem;
-
-        @include mobile {
-            font-size: 3rem;
-        }
-    }
-
-    code {
-        display: inline-block;
-        line-height: 1.25rem;
-
     }
 }
 
@@ -38,7 +29,6 @@
 .hr-author-code {
     margin-top: 5rem;
     margin-bottom: 5rem;
-    line-height: 5rem;
 
     code {
         padding: 1.5rem;

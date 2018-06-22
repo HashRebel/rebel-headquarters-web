@@ -30,10 +30,6 @@
     }
     ol {
         list-style-position: outside;
-        @include mobile {
-            margin-right: 1rem;
-            margin-left: 1rem;
-        }
     }
     ol li {
         display: list-item;
@@ -43,15 +39,6 @@
 
     .right {
         margin-top: 10rem;
-        @include mobile {
-            margin-top: 3rem;
-        }
-    }
-
-    @include mobile {
-        h1{
-            font-size: 3rem;
-        }
     }
 }
 
@@ -62,57 +49,38 @@
 
 .hr-my-work {
     position: relative;
-    margin-bottom: 12rem;
+    margin-bottom: 15rem;
 
-    .avatar-container
-    {
-        position: relative;
-        //margin-bottom: 20.5rem;
-        height: 30rem;
-        width: 100%;
-        .left-wm {
-            position: absolute;
-            height: 20.5rem;
-            width: 20.5rem;
-            opacity: 0.3;
-
-            @include mobile {
-                top: -1rem;
-                left: -1rem;
-            }
-        }
-        .avatar {
-            position: absolute;
-            top: 7rem;
-            left: 8rem;
-            border-radius: 50%;
-            height: 20.5rem;
-            width: 20.5rem;
-
-            @include mobile {
-                top: 5rem;
-                left: 3rem;
-            }
-        }
+    img {
+        position: absolute;
+    }
+    .left-wm {
+        height: 328px;
+        width: 328px;
+        opacity: 0.3;
     }
     .right-wm {
-        position: absolute;
         z-index: -1; // Force to the background
         top: -30rem;
         right: -5rem;
-        height: 45rem;
-        width: 45rem;
+        height: 720px;
+        width: 720px;
         opacity: 0.16;
 
+        /* Media Queries: 
+        * *************************************************************************
+        */
         @include touch {
             top: -35rem;
             right: -15rem;
         }
-
-        @include mobile {
-            top: 25rem;
-            right: -20rem;
-        }
+    }
+    .avatar {
+        top: 115px;
+        left: 130px;
+        border-radius: 50%;
+        height: 328px;
+        width: 328px;
     }
 }
 

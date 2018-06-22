@@ -102,10 +102,6 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-          'vue-style-loader',
           {
             loader: 'postcss-loader',
             options: {
@@ -114,7 +110,11 @@ module.exports = {
                 require('autoprefixer')()
               ]
             }
-          }
+          },
+          'style-loader',
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
         ]
       },
       {

@@ -17,17 +17,11 @@
     <div class="hr-hero-body">
       <div class="has-text-centered">
         <h1 class="is-uppercase">
-          Decentralize the world
+          Decentralize the <br> world
         </h1>
         <div class="hr-author-code">
-          <code class="is-hidden-mobile"> <!-- TODO: Add version to this json: probably need to make both mobile and destop multilined. -->
+          <code>
             { <span class="name">author</span>: "<span class="string">Brian Henze</span>" <span class="name">enviornment</span>: "<span class="string">Sandbox</span>" } <span class="blink">|</span>
-          </code>
-          <code class="is-hidden-tablet has-text-left">
-            { <br>
-              &emsp; <span  class="name">author</span>: "<span class="string">Brian Henze</span>" <br>
-              &emsp; <span class="name">enviornment</span>: "<span class="string">Sandbox</span>" <br>
-            } <span class="blink">|</span>
           </code>
         </div>
         <div class="icon-github-logo">

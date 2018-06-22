@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="container">
       <div class="columns level">
-        <div class="column level-item has-text-centered-mobile">
+        <div class="column level-item">
           © 2018 Hash Rebel
         </div>
         <div class="column level-item has-text-centered">
@@ -12,7 +12,7 @@
             width=100px
           >
         </div>
-        <div class="column level-item has-text-right has-text-centered-mobile">
+        <div class="column level-item has-text-right">
           <ul>
             <li v-for="icon in socialMediaConfig.iconInfo" :key="icon.name">
               <a
