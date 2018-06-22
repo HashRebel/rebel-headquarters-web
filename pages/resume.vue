@@ -27,7 +27,7 @@
                 Entrepreneur, Developer, Writer
               </h2>
               <p class="sumary">
-                Software engineer with more than 10 years of experience in enterprise level software development using a wide verity of technologies and software methodologies. Collaborative communicator that freely shares information within a diverse team, across functional lines and across multiple disciplines.
+                Software engineer with more than 12 years of experience in enterprise level software development using a wide varity of technologies and software methodologies. Collaborative communicator that freely shares information within a diverse team, across functional lines and across multiple disciplines.
               </p>
               <contact-panel
                 :phone="personal.phone"
@@ -326,10 +326,10 @@
           },{
             logo: honeywellLogo,
             logoAlt: "Honeywell logo 🍯",
-            fromMonth: "May",
-            fromYear: "2006",
-            toMonth: "May",
-            toYear: "2007",
+            fromMonth: "November",
+            fromYear: "2003",
+            toMonth: "Jully",
+            toYear: "2005",
             company: "Honeywell",
             location: "Glendale, Arizona",
           }
@@ -586,7 +586,7 @@ $font-family-secondary: 'Lato', sans-serif;
   font-family: $font-family-secondary;
   font-weight: 300;
   font-size: 1.15rem;
-  line-height: 1.25;
+  line-height: 1.1;
 
   .name {
     margin-bottom: $section-margin;
