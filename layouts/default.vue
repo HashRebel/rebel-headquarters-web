@@ -1,8 +1,11 @@
 <template>
-  <div>
+  <div id="app">
     <nuxt/>
   </div>
 </template>
 
-<style>
+<style lang="scss">
+#app {
+  overflow:hidden
+}
 </style>

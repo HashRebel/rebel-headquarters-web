@@ -5,11 +5,12 @@ module.exports = {
 
   /*
   ** Headers of the page
+  ** TODO: Prun unneeded fonts
   */
   head: {
     title: pkg.longName,
     link: [
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Michroma|Montserrat:300'}
+      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Michroma|Montserrat:300|lato:100,300,400,700'}
     ]
   },
 
@@ -21,10 +22,9 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [
-    'minireset.css',
-    '@/assets/styles/main.scss'
-  ],
+  // css: [
+  //   '@/assets/styles/main.scss'
+  // ],
 
   /*
   ** Plugins to load before mounting the App

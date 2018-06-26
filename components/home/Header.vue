@@ -6,7 +6,7 @@
   <section class="hr-hero">
     <div class="hr-hero-watermark">
       <div class="left">
-        <img src="~/assets/images/icons/hash_rebel/bullseye-optimized.svg" alt="bullseye logo">
+        <img src="@/assets/images/icons/hash_rebel/bullseye-optimized.svg" alt="bullseye logo">
       </div>
     </div>
     <div class="hero-header">
@@ -45,7 +45,7 @@
     <!-- TODO: add a popup that encourages the user to steal my code! -->
     <div class="hr-hero-watermark">
       <div class="right">
-        <img src="~/assets/images/icons/hash_rebel/bullseye-optimized.svg">
+        <img src="@/assets/images/icons/hash_rebel/bullseye-optimized.svg">
       </div>
     </div>
     <div class="hr-hero-background-grad"/>
@@ -53,9 +53,9 @@
 </template>
 
 <script>
-  import HashRebelMainLogo from '~/components/icons/HashRebelMain.vue';
-  import GitHubLogo from '~/components/icons/GitHubOriginal.vue';
-  import pkg from '~/package.json'
+  import HashRebelMainLogo from '@/components/icons/HashRebelMain.vue';
+  import GitHubLogo from '@/components/icons/GitHubOriginal.vue';
+  import pkg from '@/package.json'
 
   export default {
     data(){

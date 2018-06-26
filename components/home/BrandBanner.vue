@@ -60,7 +60,7 @@
           <div class="avatar-container ">
             <img
               class="left-wm"
-              src="~/assets/images/icons/hash_rebel/bullseye-optimized.svg"
+              src="@/assets/images/icons/hash_rebel/bullseye-optimized.svg"
               alt="bullseye logo"
             >
             <img
@@ -91,7 +91,7 @@
           </div>
           <img
             class="right-wm"
-            src="~/assets/images/icons/hash_rebel/bullseye-optimized.svg"
+            src="@/assets/images/icons/hash_rebel/bullseye-optimized.svg"
             alt="bullseye logo 🎯"
           >
         </div>
@@ -114,7 +114,7 @@
 </template>
 
 <script>
-  import avatar from '~/assets/images/avatar-side-snow.jpg';
+  import avatar from '@/assets/images/avatar-side-snow.jpg';
 
   export default{
     data() {
@@ -126,7 +126,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
     div{
         @include touch {

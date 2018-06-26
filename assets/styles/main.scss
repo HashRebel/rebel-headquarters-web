@@ -10,11 +10,11 @@
 // ==================================================================================
 @import './base/all';
 
-// Components: All CSS needed for individual components
+// Components: stores all global custom components
 // ==================================================================================
 @import './components/all';
 
 // Shame: Loading this last in order to ensure quick changes are applied globally.
 //  This should only be used for quick hacks.
 // ==================================================================================
-@import './base/shame';
+@import './shame';

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <rebel-headquarters-home></rebel-headquarters-home>
     <rebel-headquarters-body></rebel-headquarters-body>
     <rebel-headquarters-footer></rebel-headquarters-footer>
@@ -7,9 +7,9 @@
 </template>
 
 <script>
-  import Home from "~/components/home/Header.vue";
-  import Body from "~/components/home/BrandBanner.vue";
-  import Footer from "~/components/home/Footer.vue";
+  import Home from "@/components/home/Header.vue";
+  import Body from "@/components/home/BrandBanner.vue";
+  import Footer from "@/components/home/Footer.vue";
 
   export default {
     head () {

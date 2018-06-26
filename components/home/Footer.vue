@@ -7,7 +7,7 @@
         </div>
         <div class="column level-item has-text-centered">
           <img
-            src="~/assets/images/icons/hash_rebel/main-fist-code-inlay-optimized.svg"
+            src="@/assets/images/icons/hash_rebel/main-fist-code-inlay-optimized.svg"
             height=100px
             width=100px
           >
@@ -34,12 +34,12 @@
   </div>
 </template>
 <script>
-  import gitHubIcon from "~/assets/images/icons/social-media/github-original.svg";
-  import steemitIcon from "~/assets/images/icons/social-media/steemit-original.svg";
-  import telegramIcon from "~/assets/images/icons/social-media/telegram-original.svg";
-  import mediumIcon from "~/assets/images/icons/social-media/medium-original.svg";
-  import dockerIcon from "~/assets/images/icons/social-media/docker-original.svg";
-  import twiterIcon from "~/assets/images/icons/social-media/twitter-original.svg";
+  import gitHubIcon from "@/assets/images/icons/social-media/github-original.svg";
+  import steemitIcon from "@/assets/images/icons/social-media/steemit-original.svg";
+  import telegramIcon from "@/assets/images/icons/social-media/telegram-original.svg";
+  import mediumIcon from "@/assets/images/icons/social-media/medium-original.svg";
+  import dockerIcon from "@/assets/images/icons/social-media/docker-original.svg";
+  import twiterIcon from "@/assets/images/icons/social-media/twitter-original.svg";
 
   export default{
     data() {

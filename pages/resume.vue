@@ -1,5 +1,9 @@
 <template>
   <section class="container resume">
+    <resume-overview :personal="personal"></resume-overview>
+
+
+
     <section class="hero">
       <div class="hero-body">
         <div class="name">
@@ -17,7 +21,7 @@
           <div class="column is-two-fifths">
             <img
               class="avatar"
-              :src="avatar"
+              :src="require('~/assets/images/avatar-front-fancy.jpg')"
               alt="avatar 😎"
             >
           </div>
@@ -212,7 +216,7 @@
       <h2>Cheers!</h2>
       <img
         class="beetle"
-        src="~/assets/images/beetle-profile.jpg"
+        :src="require('~/assets/images/beetle-profile.jpg')"
         alt="Beetle 🐞🚗"
       >
     </footer>
@@ -221,16 +225,8 @@
 </template>
 
 <script>
-  import contactPanel from '~/components/ContactPanel.vue';
-  import avatar from '~/assets/images/avatar-front-fancy.jpg';
-  import hashRebelLogo from "~/assets/images/logos/hash-rebel.png";
-  import carvanaLogo from "~/assets/images/logos/carvana.png";
-  import godaddyLogo from "~/assets/images/logos/godaddy-alt.png";
-  import gdLogo from "~/assets/images/logos/general-dynamics.png";
-  import lockheedLogo from "~/assets/images/logos/lockheed-martin.png";
-  import honeywellLogo from "~/assets/images/logos/honeywell.png";
-  import asuLogo from "~/assets/images/logos/asu-sundevil.png";
-  import gccLogo from "~/assets/images/logos/gcc-main.png";
+  import overview from "~/components/resume/Overview.vue";
+  //import contactPanel from '~/components/ContactPanel.vue';
 
   export default {
     head () {
@@ -246,6 +242,7 @@
     data(){
       return {
         personal: {
+          avatar: 'avatar-front-fancy',
           first: 'Brian',
           last: 'Henze',
           full: "Brian Scott Henze",
@@ -259,7 +256,7 @@
           locationRef: "https://goo.gl/maps/bsHFc2uLFyG2",
           experience: [
           {
-            logo: hashRebelLogo,
+            logo: require("~/assets/images/logos/hash-rebel.png"),
             logoAlt: "bullseye logo 🎯",
             fromMonth: "January",
             fromYear: "2018",
@@ -274,7 +271,7 @@
               "We will use the blockchain, AI, IoT, and 3D printing to change the world as we know it. We strive to bring awareness to these technologies so we can help guide them to the benefit of all life. We need the hash rebels of the world to help unblock the path to technological prosperity for all while keeping the people safe and the predators at bay."
             ]
           },{
-            logo: carvanaLogo,
+            logo: require("~/assets/images/logos/carvana.png"),
             logoAlt: "Carvana logo 🚗",
             fromMonth: "November",
             fromYear: "2015",
@@ -287,7 +284,7 @@
               "Senior full stack web developer who contributes to a dynamic and agile team responsible for collecting, maintaining and displaying vehicles to our customers. This includes our faceted, intelligent and performant search page, lending terms rendered in real time displayed throughout the search experience and our patented vehicle spinner which showcases our inventory."
             ]
           },{
-            logo: godaddyLogo,
+            logo: require("~/assets/images/logos/godaddy-alt.png"),
             logoAlt: "Godaddy logo 👨",
             fromMonth: "August",
             fromYear: "2011",
@@ -300,7 +297,7 @@
               "Senior level eCommerce software developer who used various technology stacks to implement a robust set of APIs which were consumed by various business units within GoDaddy as well as external customers. My team was responsible for processing 3 billion dollars in revenue a year while adhering to strict PCI rules. Experienced SCRUM master with a focus on being a servant leader who blocks impediments for teammates, helps guide my team to use best software practices, works with POs and across functional teams to create stories and running SCRUM ceremonies as well as attending other high level planning meetings. This is in addition to having a strong developer role in maintaining an expansive legacy code base, driving new functionality forward, rewriting our platform on the .Net stack and assisting in day to day operations."
             ]
           },{
-            logo: gdLogo,
+            logo: require("~/assets/images/logos/general-dynamics.png"),
             logoAlt: "General dynamics logo ⚙️",
             fromMonth: "May",
             fromYear: "2007",
@@ -315,7 +312,7 @@
           }],
           internships: [
           {
-            logo: lockheedLogo,
+            logo: require("~/assets/images/logos/lockheed-martin.png"),
             logoAlt: "Lockheed Martin logo ✈️",
             fromMonth: "May",
             fromYear: "2006",
@@ -324,7 +321,7 @@
             company: "Lockheed Martin",
             location: "Colorado Springs, Colorado",
           },{
-            logo: honeywellLogo,
+            logo: require("~/assets/images/logos/honeywell.png"),
             logoAlt: "Honeywell logo 🍯",
             fromMonth: "November",
             fromYear: "2003",
@@ -336,12 +333,12 @@
           ],
           education: [
             {
-              logo: asuLogo,
+              logo: require("~/assets/images/logos/asu-sundevil.png"),
               logoAlt: "ASU logo 👿",
               school: "Arizona State University",
               degree: "Bachelor of Science in Computer Systems Engineering"
             },{
-              logo: gccLogo,
+              logo: require("~/assets/images/logos/gcc-main.png"),
               logoAlt: "GCC logo 🤠",
               school: "Glendale Comunity College",
               degree: "Associate, Applied Science"
@@ -527,210 +524,11 @@
               ]
             }
           ]
-        },
-        avatar
+        }
       }
     },
     components: {
-      contactPanel
+      resumeOverview: overview
     }
   }
 </script>
-
-<style lang='scss' rel='stylesheet/scss'>
-$section-margin: 8rem;
-$font-family-primary: 'Titillium Web', sans-serif;
-$font-family-secondary: 'Lato', sans-serif;
-
-.resume {
-    h1, h2, h3, h4, h5 {
-      font-family: $font-family-primary;
-    }
-
-    hr {
-      border: none;
-      height: 0.15rem;
-      background-color: $color-brand-primary-light-er;
-    }
-
-    h2 {
-      font-weight: 600;
-      font-size: 2.5rem;
-      color: $color-brand-primary;
-    }
-
-    h3 {
-      font-weight: 400;
-      font-size: 2rem;
-      color: $color-brand-primary;
-    }
-
-    h4 {
-      font-weight: 300;
-      font-size: 1.5rem;
-      color: $grey;
-    }
-
-    h5 {
-      font-size: 0.95rem;
-      font-style: italic;
-      font-weight: 300;
-    }
-
-    li {
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-
-
-  font-family: $font-family-secondary;
-  font-weight: 300;
-  font-size: 1.15rem;
-  line-height: 1.1;
-
-  .name {
-    margin-bottom: $section-margin;
-  }
-
-  .brian {
-    font-size: 8rem;
-    font-weight: 100;
-    text-transform: lowercase;
-  }
-
-  .henze {
-    text-transform: uppercase;
-    margin-left: 0.5rem;
-    font-size: 10rem;
-    font-weight: 700;
-  }
-
- .avatar{
-    border: 0.15rem solid $color-brand-primary-light-er;
-    border-radius: 50%;
-  }
-
-  .overview{
-    margin-left: 4rem;
-  }
-
-  .sumary {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .quote {
-    text-align: center;
-    font-size: 1.2rem;
-
-    footer {
-      color: $color-brand-primary;
-      font-size: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .icon {
-      color: $color-brand-primary;
-      font-size: .75rem;
-      padding-right: 1rem;
-      padding-left: 1rem;
-    }
-  }
-}
-
-.competencies {
-  margin-top: 4rem;
-
-  h4, h3 {
-    margin-bottom: 1rem;
-  }
-
-  .skills {
-    margin-top: 3rem;
-  }
-
-  .professional {
-    margin-top: 4rem;
-  }
-}
-
-.history {
-  margin-top: 8rem;
-
-  figure {
-    margin-left: auto;
-  }
-
-  h4 {
-    margin-top: 0.75rem;
-    font-weight: 400;
-  }
-
-  .history-content{
-    margin-top: 1.25rem;
-  }
-
-  .experience {
-    margin-top: 4rem;
-  }
-
-  .job-card {
-    margin-left: 4rem;
-  }
-}
-
-.month {
-  color: grey;
-  line-height: .75;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  text-align: left;
-}
-
-.duration {
-  font-family: $font-family-primary;
-  float: right;
-}
-
-.year {
-  font-weight: 600;
-  font-size: 2rem;
-  color: $color-brand-primary;
-}
-
-.date {
-  display: inline-block;
-}
-
-.company {
-  font-size: 1.25rem;
-}
-
-.intern{
-  margin-top: $section-margin;
-  h2{
-    margin-bottom: 4rem;
-  }
-}
-
-.education {
-    margin-top: $section-margin;
-    margin-bottom: $section-margin;
-
-  h2{
-    margin-bottom: 4rem;
-  }
-}
-
-footer {
-  text-align: center;
-  h2 {
-    margin-bottom: 4rem;
-    text-align: left;
-  }
-}
-
-.beetle {
-  text-align: center;
-}
-</style>

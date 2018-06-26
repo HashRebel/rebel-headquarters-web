@@ -27,4 +27,3 @@ $ yarn start
 # generate static project
 $ yarn run generate
 ```
-
