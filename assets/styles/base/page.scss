@@ -27,37 +27,38 @@ body {
     padding: $default-padding;
     background: $color-background-primary;
     line-height: 1.2;
-    text-align: justify;
 }
 
 h1, h2, h3, h4, h5, h6 {
-      font-family: $font-family-heading;
+    font-family: $font-family-heading;
 }
 
 h1 {
     font-size: 3rem;
+    font-style: bold;
     margin-bottom: 4rem;
     color: $color-font-header;
 }
 
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-style: bold;
   color: $color-brand-primary;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: $color-brand-primary;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: $grey;
 }
 
 h5 {
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   font-style: italic;
 }
 
@@ -81,8 +82,10 @@ ul ol {
     list-style-type: none;
 }
 
-li {
-    display: inline-block;
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
+p {
+    text-align: justify;
+}
+
+section {
+    margin-bottom: $default-section-margin;
 }

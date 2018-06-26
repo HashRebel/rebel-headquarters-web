@@ -9,7 +9,7 @@
 <script>
   import Home from "@/components/home/Header.vue";
   import Body from "@/components/home/BrandBanner.vue";
-  import Footer from "@/components/home/Footer.vue";
+  import Footer from "@/components/Footer.vue";
 
   export default {
     head () {

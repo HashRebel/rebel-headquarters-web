@@ -15,5 +15,7 @@ https://vuejs.org/v2/cookbook/serverless-blog.html
 * [PageKit](https://pagekit.com/)
   * [example 1](https://pagekit.com/docs/developer/vuejs-and-webpack)
 * [Grav](https://getgrav.org/)
+* [CockpitCMS](https://getcockpit.com)
+  * [example 1](https://snipcart.com/blog/cockpit-cms-tutorial-nuxtjs)
 
 

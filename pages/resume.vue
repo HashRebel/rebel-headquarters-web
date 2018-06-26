@@ -1,216 +1,8 @@
 <template>
   <section class="container resume">
     <resume-overview :personal="personal"></resume-overview>
-
-
-
-    <section class="hero">
-      <div class="hero-body">
-        <div class="name">
-          <h1>
-            <span class="brian has-text-grey">
-              {{ personal.first }}
-            </span>
-            <!-- <br> -->
-            <span class="henze">
-              {{ personal.last }}
-            </span>
-          </h1>
-        </div>
-        <div class="columns">
-          <div class="column is-two-fifths">
-            <img
-              class="avatar"
-              :src="require('~/assets/images/avatar-front-fancy.jpg')"
-              alt="avatar 😎"
-            >
-          </div>
-          <div class="column">
-            <div class="overview">
-              <h2>
-                Entrepreneur, Developer, Writer
-              </h2>
-              <p class="sumary">
-                Software engineer with more than 12 years of experience in enterprise level software development using a wide varity of technologies and software methodologies. Collaborative communicator that freely shares information within a diverse team, across functional lines and across multiple disciplines.
-              </p>
-              <contact-panel
-                :phone="personal.phone"
-                :phoneRef="personal.phoneRef"
-                :web="personal.web"
-                :webRef="personal.webRef"
-                :email="personal.email"
-                :emailRef="personal.emailRef"
-                :location="personal.location"
-                :locationRef="personal.locationRef"
-              ></contact-panel>
-              <div class="quote">
-                <no-ssr>
-                  <p>
-                    <span class="icon"><i class="fas fa-quote-left"></i></span>
-                    Somewhere, something incredible is waiting to be known.
-                    <span class="icon"><i class="fas fa-quote-right"></i></span>
-                  </p>
-                </no-ssr>
-                <footer>
-                  <i>Carl Sagan Quote</i>
-                </footer>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="competencies">
-      <h2>Competencies</h2>
-
-        <div class="columns skills">
-
-          <div class="column is-one-quarter has-text-left ">
-            <h3>{{skills.professional.catagory}} </h3>
-            <ul class="professional">
-              <li
-                v-for="skill in skills.professional.data"
-                :key="skill.name"
-              >
-                <p>
-                  <span class="icon has-text-primary is-small">
-                    <i class="fas fa-check-circle fa-sm"></i>
-                  </span> {{skill.name}}
-                </p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="column has-text-left">
-            <h3>Technical</h3>
-            <div class="columns">
-              <div
-                class="column"
-                v-for="skill in skills.technological"
-                :key="skill.catagory"
-              >
-                <h4>
-                  {{ skill.catagory }}
-                </h4>
-                <ul>
-                  <li
-                    v-for="data in skill.data"
-                    :key="data.name"
-                  >
-                    <p>
-                      {{ data.name }}
-                    </p>
-                    <progress
-                      class="progress is-primary is-small"
-                      :value="data.experience"
-                      max="100"
-                    >
-                      {{ data.experience }}%
-                    </progress>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-
-    <section class="history">
-      <h2>History</h2>
-      <div
-        class="columns experience"
-        v-for="experience in personal.experience"
-        :key="experience.company"
-      >
-        <div class="column is-one-fifth">
-          <div class="columns">
-            <div class="column">
-              <img
-                :src="experience.logo"
-                :alt="experience.logoAlt"
-              >
-            </div>
-          </div>
-        </div>
-        <div class="column">
-          <div class="job-card">
-            <div class="duration">
-              <div class="date">
-                <p class="month"> {{experience.fromMonth}} </p>
-                <p class="year"> {{experience.fromYear}} </p>
-              </div>
-              <div class="date">
-                <p class="year"> &thinsp; - &thinsp;</p>
-              </div>
-              <div class="date">
-                <p class="month"> {{experience.toMonth}} </p>
-                <p class="year"> {{experience.toYear}} </p>
-              </div>
-            </div>
-
-            <div>
-              <h3>{{ experience.title }}</h3>
-              <h4 class="company">{{ experience.company }}</h4>
-              <h5 >{{ experience.location }}</h5>
-            </div>
-
-            <p
-              class="history-content"
-              v-for="description in experience.description"
-              :key="description"
-            >
-              {{ description }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="intern">
-      <h2>Internships</h2>
-      <div class ="columns has-text-centered">
-        <div
-          class="column"
-          v-for="internship in personal.internships"
-          :key="internship.company"
-        >
-          <div>
-            <div class="date">
-              <p class="month"> {{ internship.fromMonth }} </p>
-              <p class="year"> {{ internship.fromYear }} </p>
-            </div>
-            <div class="date">
-              <p class="year"> &thinsp; - &thinsp;</p>
-            </div>
-            <div class="date">
-              <p class="month"> {{ internship.toMonth }} </p>
-              <p class="year"> {{ internship.toYear }} </p>
-            </div>
-          </div>
-
-          <img :src="internship.logo" :alt="internship.logoAlt">
-          <h4 class="company">{{internship.company}}</h4>
-          <h5>{{internship.location}}</h5>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="education">
-      <h2>Education</h2>
-      <div class="columns has-text-centered">
-        <div
-          class="column"
-          v-for="school in personal.education"
-          :key="school.school"
-        >
-          <img :src="school.logo" :alt="school.logoAlt">
-          <h4>{{school.school}}</h4>
-          <h5>{{school.degree}}</h5>
-        </div>
-      </div>
-    </section>
+    <resume-skills :skills="personal.skills"></resume-skills>
+    <resume-history :personal="personal"></resume-history>
 
     <footer clas="has-text-centered">
       <h2>Cheers!</h2>
@@ -225,8 +17,9 @@
 </template>
 
 <script>
+  import history from "~/components/resume/History.vue";
   import overview from "~/components/resume/Overview.vue";
-  //import contactPanel from '~/components/ContactPanel.vue';
+  import skills from "~/components/resume/Skills.vue";
 
   export default {
     head () {
@@ -343,192 +136,209 @@
               school: "Glendale Comunity College",
               degree: "Associate, Applied Science"
             }
-          ]
-        },
-        skills: {
-          professional: {
-            catagory: "Professional",
-            data: [
-              {
-                name: "Linux Hacker",
-                experience: 90
-              },
-              {
-                name: "Agile Software Development",
-                experience: 80
-              },
-              {
-                name: "Full-Stack Developer",
-                experience: 75
-              },
-              {
-                name: "Scrum Master",
-                experience: 70
-              },
-              {
-                name: "Continuous Integration",
-                experience: 70
-              },
-              {
-                name: "Test Driven Development",
-                experience: 60
-              },
-              {
-                name: "RESTFul APIs",
-                experience: 55
-              },
-              {
-                name: "Enterprise Software",
-                experience: 50
-              },
-              {
-                name: "E-Commerce",
-                experience: 50
-              }
-            ]
-          },
-          technological: [ {
-              catagory: "Languages",
+          ],
+          skills: {
+            professional: {
+              catagory: "Professional",
               data: [
                 {
-                  name: "C#",
+                  name: "Linux Hacker",
                   experience: 90
                 },
                 {
-                  name: "C/C++",
+                  name: "Agile Software Development",
                   experience: 80
                 },
                 {
-                  name: "Sass/CSS",
+                  name: "Full-Stack Developer",
                   experience: 75
                 },
                 {
-                  name: "Java",
+                  name: "Scrum Master",
                   experience: 70
                 },
                 {
-                  name: "JavaScript",
+                  name: "Continuous Integration",
                   experience: 70
                 },
                 {
-                  name: "Python",
+                  name: "Test Driven Development",
                   experience: 60
                 },
                 {
-                  name: "Go",
+                  name: "RESTFul APIs",
                   experience: 55
                 },
                 {
-                  name: "Perl",
+                  name: "Enterprise Software",
+                  experience: 50
+                },
+                {
+                  name: "E-Commerce",
                   experience: 50
                 }
               ]
             },
-            {
-              catagory: "Tools",
-              data: [
-                {
-                  name: "Node.js",
-                  experience: 70
-                },
-                {
-                  name: "Vue.js",
-                  experience: 70
-                },
-                {
-                  name: "Express.js",
-                  experience: 65
-                },
-                {
-                  name: "Webpack",
-                  experience: 60
-                },
-                {
-                  name: "Ruby",
-                  experience: 60
-                },
-                {
-                  name: "Linux",
-                  experience: 85
-                },
-                {
-                  name: "Windows",
-                  experience: 95
-                },
-                {
-                  name: "django",
-                  experience: 55
-                }
-              ]
-            },
-            {
-              catagory: "Data",
-              data: [
-                {
-                  name: "SQL",
-                  experience: 85
-                },
-                {
-                  name: "MongoDB",
-                  experience: 80
-                },
-                {
-                  name: "ElasticSearch",
-                  experience: 75
-                },
-                {
-                  name: "Redis",
-                  experience: 70
-                },
-                {
-                  name: "Cassandra",
-                  experience: 65
-                }
-              ]
-            },
-            {
-              catagory: "DevOps",
-              data: [
-                {
-                  name: "SSL",
-                  experience: 85
-                },
-                {
-                  name: "Docker",
-                  experience: 80
-                },
-                {
-                  name: "PaaS (Dokku/Kubernetes)",
-                  experience: 75
-                },
-                {
-                  name: "Nginx",
-                  experience: 70
-                },
-                {
-                  name: "Microsoft IIS",
-                  experience: 70
-                },
-                {
-                  name: "Jenkins",
-                  experience: 60
-                },
-                {
-                  name: "Splunk",
-                  experience: 60
-                },
-                {
-                  name: "New Relic",
-                  experience: 60
-                }
-              ]
-            }
-          ]
+            technological: [ {
+                catagory: "Languages",
+                data: [
+                  {
+                    name: "C#",
+                    experience: 90
+                  },
+                  {
+                    name: "C/C++",
+                    experience: 80
+                  },
+                  {
+                    name: "Sass/CSS",
+                    experience: 75
+                  },
+                  {
+                    name: "Java",
+                    experience: 70
+                  },
+                  {
+                    name: "JavaScript",
+                    experience: 70
+                  },
+                  {
+                    name: "Python",
+                    experience: 60
+                  },
+                  {
+                    name: "Go",
+                    experience: 55
+                  },
+                  {
+                    name: "Perl",
+                    experience: 50
+                  }
+                ]
+              },
+              {
+                catagory: "Tools",
+                data: [
+                  {
+                    name: "Node.js",
+                    experience: 70
+                  },
+                  {
+                    name: "Vue.js",
+                    experience: 70
+                  },
+                  {
+                    name: "Express.js",
+                    experience: 65
+                  },
+                  {
+                    name: "Webpack",
+                    experience: 60
+                  },
+                  {
+                    name: "Ruby",
+                    experience: 60
+                  },
+                  {
+                    name: "Linux",
+                    experience: 85
+                  },
+                  {
+                    name: "Windows",
+                    experience: 95
+                  },
+                  {
+                    name: "django",
+                    experience: 55
+                  }
+                ]
+              },
+              {
+                catagory: "Data",
+                data: [
+                  {
+                    name: "SQL",
+                    experience: 85
+                  },
+                  {
+                    name: "MongoDB",
+                    experience: 80
+                  },
+                  {
+                    name: "ElasticSearch",
+                    experience: 75
+                  },
+                  {
+                    name: "Redis",
+                    experience: 70
+                  },
+                  {
+                    name: "Cassandra",
+                    experience: 65
+                  }
+                ]
+              },
+              {
+                catagory: "DevOps",
+                data: [
+                  {
+                    name: "SSL",
+                    experience: 85
+                  },
+                  {
+                    name: "Docker",
+                    experience: 80
+                  },
+                  {
+                    name: "PaaS (Dokku/Kubernetes)",
+                    experience: 75
+                  },
+                  {
+                    name: "Nginx",
+                    experience: 70
+                  },
+                  {
+                    name: "Microsoft IIS",
+                    experience: 70
+                  },
+                  {
+                    name: "Jenkins",
+                    experience: 60
+                  },
+                  {
+                    name: "Splunk",
+                    experience: 60
+                  },
+                  {
+                    name: "New Relic",
+                    experience: 60
+                  }
+                ]
+              }
+            ]
+          }
         }
       }
     },
     components: {
-      resumeOverview: overview
+      resumeOverview: overview,
+      resumeSkills: skills,
+      resumeHistory: history,
     }
   }
 </script>
+
+
+<style lang='scss'>
+footer {
+  text-align: center;
+  h2 {
+    margin-bottom: 4rem;
+    text-align: left;
+  }
+}
+
+.beetle {
+  text-align: center;
+}
+</style>

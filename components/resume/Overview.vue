@@ -47,7 +47,9 @@
                 </p>
               </no-ssr>
               <footer>
-                <i>{{ quote.author }}</i>
+                <p>
+                  <i>{{ quote.author }}</i>
+                </p>
               </footer>
             </div>
           </div>
@@ -133,8 +135,10 @@ export default {
 }
 
 .quote {
-  text-align: center;
-  font-size: 1.2rem;
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+  }
 
   footer {
     color: $color-brand-primary;
