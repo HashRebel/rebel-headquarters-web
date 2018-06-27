@@ -6,20 +6,14 @@
 
     <footer clas="has-text-centered">
       <h2>Cheers!</h2>
-      <img
-        class="beetle"
-        :src="require('~/assets/images/beetle-profile.jpg')"
-        alt="Beetle 🐞🚗"
-      >
     </footer>
-
   </section>
 </template>
 
 <script>
-  import history from "~/components/resume/History.vue";
-  import overview from "~/components/resume/Overview.vue";
-  import skills from "~/components/resume/Skills.vue";
+  import history from "@/components/resume/History.vue";
+  import overview from "@/components/resume/Overview.vue";
+  import skills from "@/components/resume/Skills.vue";
 
   export default {
     head () {
@@ -323,11 +317,10 @@
     components: {
       resumeOverview: overview,
       resumeSkills: skills,
-      resumeHistory: history,
+      resumeHistory: history
     }
   }
 </script>
-
 
 <style lang='scss'>
 footer {
