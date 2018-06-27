@@ -3,7 +3,7 @@
   * https://codepen.io/michaeltcoelho/pen/awGzf
 -->
 <template>
-  <section class="hr-hero">
+  <section class="hero">
     <div class="hr-hero-watermark">
       <div class="left">
         <img src="@/assets/images/icons/hash_rebel/bullseye-optimized.svg" alt="bullseye logo">
@@ -15,7 +15,7 @@
         <hash-rebel-main-logo class="icon-hero-hash-rebel is-hidden-desktop"/>
       </div>
     </div>
-    <div class="hr-hero-body">
+    <div class="hero-body">
       <div class="has-text-centered">
         <h1 class="is-uppercase">
           Decentralize <br> the world
@@ -82,8 +82,8 @@ $z-hero-background: 50; // Should be in the background gradient.
 $z-hero-background-grad: 100; // Should be in the background.
 $z-hero-body: 500; // This should always be on top.
 
-.hr-hero {
-    @extend .hero;
+.hero {
+    //@extend .hero;
 
     // Made relative in order to absolutely position the gradient
     position: relative;
@@ -106,14 +106,15 @@ $z-hero-body: 500; // This should always be on top.
         display: inline-block;
         line-height: 1.25;
 
-        @include touch {
-            font-size: 4vmin;
-        }
+        // @include touch {
+        //     font-size: 4vmin;
+        // }
     }
 }
 
-.hr-hero-body {
-    @extend .hero-body;
+.hero-body {
+    //@extend .hero-body;
+
     padding: 6rem 0 6rem 0;
     position: relative;
     z-index: $z-hero-body;

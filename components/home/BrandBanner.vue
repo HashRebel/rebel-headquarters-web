@@ -253,6 +253,10 @@
     margin: 0 10rem 10rem 10rem;
     position: relative;
 
+    p {
+      text-align: center;
+    }
+
     font: {
         size: 1.5rem;
         weight: 300;

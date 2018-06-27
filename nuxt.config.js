@@ -42,7 +42,8 @@ module.exports = {
     '@nuxtjs/pwa',
     // This allows me to import the following files into my vue files.
     ['nuxt-sass-resources-loader', [
-         '@/assets/styles/main.scss'
+         '@/assets/styles/vars/_all.scss',
+         '@/assets/styles/base/mixins.scss'
        ]
     ]
   ],
