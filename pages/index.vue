@@ -2,14 +2,12 @@
   <div>
     <rebel-headquarters-home></rebel-headquarters-home>
     <rebel-headquarters-body></rebel-headquarters-body>
-    <rebel-headquarters-footer></rebel-headquarters-footer>
   </div>
 </template>
 
 <script>
   import Home from "@/components/home/Header.vue";
   import Body from "@/components/home/BrandBanner.vue";
-  import Footer from "@/components/Footer.vue";
 
   export default {
     head () {
@@ -24,8 +22,7 @@
     },
     components: {
       rebelHeadquartersHome: Home,
-      rebelHeadquartersBody: Body,
-      rebelHeadquartersFooter: Footer
+      rebelHeadquartersBody: Body
     }
   }
 </script>
