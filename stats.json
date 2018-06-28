@@ -1,0 +1,23 @@
+{
+  "errors": [
+    "Entry module not found: Error: Can't resolve './src' in '/home/hashrebel/source/rebel-headquarters-sandbox'\nresolve './src' in '/home/hashrebel/source/rebel-headquarters-sandbox'\n  using description file: /home/hashrebel/source/rebel-headquarters-sandbox/package.json (relative path: .)\n    Field 'browser' doesn't contain a valid alias configuration\n    using description file: /home/hashrebel/source/rebel-headquarters-sandbox/package.json (relative path: ./src)\n      no extension\n        Field 'browser' doesn't contain a valid alias configuration\n        /home/hashrebel/source/rebel-headquarters-sandbox/src doesn't exist\n      .wasm\n        Field 'browser' doesn't contain a valid alias configuration\n        /home/hashrebel/source/rebel-headquarters-sandbox/src.wasm doesn't exist\n      .mjs\n        Field 'browser' doesn't contain a valid alias configuration\n        /home/hashrebel/source/rebel-headquarters-sandbox/src.mjs doesn't exist\n      .js\n        Field 'browser' doesn't contain a valid alias configuration\n        /home/hashrebel/source/rebel-headquarters-sandbox/src.js doesn't exist\n      .json\n        Field 'browser' doesn't contain a valid alias configuration\n        /home/hashrebel/source/rebel-headquarters-sandbox/src.json doesn't exist\n      as directory\n        /home/hashrebel/source/rebel-headquarters-sandbox/src doesn't exist"
+  ],
+  "warnings": [
+    "configuration\nThe 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.\nYou can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/concepts/mode/"
+  ],
+  "version": "4.12.2",
+  "hash": "47563bcc40828fb1cd96",
+  "time": 41,
+  "builtAt": 1530136389653,
+  "publicPath": "",
+  "outputPath": "/home/hashrebel/source/rebel-headquarters-sandbox/dist",
+  "assetsByChunkName": {},
+  "assets": [],
+  "filteredAssets": 0,
+  "entrypoints": {},
+  "namedChunkGroups": {},
+  "chunks": [],
+  "modules": [],
+  "filteredModules": 0,
+  "children": []
+}

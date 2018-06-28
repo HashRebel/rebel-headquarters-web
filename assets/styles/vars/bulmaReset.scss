@@ -1,0 +1,38 @@
+// Import the initial variables in order to overwrite them
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+// Text variables
+// =============================================================================
+$body-size: $font-family-primary-size; // This is the base size that the REL or percentage unit uses
+$text: $color-font-primary;
+$family-primary: $font-family-primary;
+$body-weight: $font-family-primary-weight;
+
+// Code variables
+// =============================================================================
+$code: $color-font-primary;
+$code-background: $color-code-background;
+$code-size: 1.5rem;
+$family-code: $font-family-code;
+
+// Customize the Color Schemes
+// =============================================================================
+$primary: $color-brand-primary;
+$primary-invert: findColorInvert($primary);
+
+$body-background-color: #000;
+$footer-background-color: $color-background-primary;
+
+// Customizing the Table Schemes
+// =============================================================================
+$table-color: $grey;
+
+$table-background-color: none;
+$table-cell-border: none;
+$table-row-hover-background-color: $primary;
+$table-row-active-background-color: $primary;
+
+// Updating the gap
+// =============================================================================
+//$gap: 32px; // TODO: update from default.

@@ -91,8 +91,7 @@
   position: relative;
   margin-bottom: 0;
 
-  padding: 24rem 1.5rem 1rem 1.5rem;
-  //margin: 24rem 1.5rem 1rem 1.5rem;
+  padding: 32rem 1.5rem 1rem 1.5rem;
   background: {
     image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #000000), url('~/assets/images/beetle-profile-crop.jpg');
     position: center bottom;
