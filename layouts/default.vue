@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nuxt/>
-    <main-footer></main-footer>
+    <main-footer/>
   </div>
 </template>
 

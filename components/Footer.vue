@@ -90,8 +90,8 @@
 .footer {
   position: relative;
   margin-bottom: 0;
+  padding: 40vw 0rem 1rem 0rem;
 
-  padding: 32rem 1.5rem 1rem 1.5rem;
   background: {
     image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #000000), url('~/assets/images/beetle-profile-crop.jpg');
     position: center bottom;
@@ -99,6 +99,12 @@
     attachment: fixed;
     size: 100% auto;
   }
+
+  @include mobile{
+    padding: 10vw 0rem 1rem 0rem;
+    background-size: auto 50vw;
+  }
+
   li {
     display: inline-block;
     margin-right: 0.5rem;
@@ -111,18 +117,21 @@
       opacity: 0.5;
     }
   }
-  .column {
-    position: relative;
-  }
-  .fix-bottom {
-    position: absolute;
-    bottom: 0.5rem;
-  }
-  .center{
-    @include center-absolute-element();
-  }
-  .fix-right {
-    right: 0;
+
+  @include tablet{
+    .column {
+      position: relative;
+    }
+    .fix-bottom {
+      position: absolute;
+      bottom: 0.5rem;
+    }
+    .center{
+      @include center-absolute-element();
+    }
+    .fix-right {
+      right: 0;
+    }
   }
 }
 </style>

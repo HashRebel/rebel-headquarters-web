@@ -1,5 +1,5 @@
 <template>
-  <section class="container is-fluid">
+  <section class="container">
     <div class="columns hr-dictionary">
       <div class="column is-5">
         <h1>hash</h1>
@@ -250,7 +250,7 @@
 
 .quote {
     display: inline-block;
-    margin: 0 10rem 10rem 10rem;
+    margin: 0 10rem 6rem 10rem;
     position: relative;
 
     p {
@@ -277,7 +277,7 @@
      * *************************************************************************
      */
      @include touch {
-        margin: 0 3rem 10rem;
+        margin: 0 3rem 4rem;
     }
 }
 </style>
