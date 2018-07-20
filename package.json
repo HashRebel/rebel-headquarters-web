@@ -1,7 +1,7 @@
 {
   "name": "rebel-headquarters-sandbox-test",
   "longName": "Rebel Headquarters - Sandbox to Decentralize the World",
-  "version": "1.0.3-alpha",
+  "version": "1.0.4-alpha",
   "description": "A Sandbox for playing with the technologies of the future",
   "author": "Brian Henze",
   "private": true,
@@ -21,7 +21,8 @@
     "nuxt": "^1.4.1",
     "nuxt-sass-resources-loader": "^2.0.2",
     "sass-loader": "^7.0.3",
-    "sass-variable-loader": "^0.1.2"
+    "sass-variable-loader": "^0.1.2",
+    "vue-mq": "^0.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

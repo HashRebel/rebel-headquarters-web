@@ -2,7 +2,7 @@
   <section class="competencies">
     <h2>Competencies</h2>
 
-    <div class="columns skills">
+    <div class="columns is-mobile skills">
 
       <div class="column is-one-quarter has-text-left ">
         <h3>{{skills.professional.catagory}} </h3>
@@ -19,7 +19,7 @@
 
       <div class="column has-text-left">
         <h3>Technical</h3>
-        <div class="columns">
+        <div class="columns is-mobile">
           <div class="column"
             v-for="skill in skills.technological"
             :key="skill.catagory"

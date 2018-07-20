@@ -1,5 +1,5 @@
 <template>
-  <section class="container resume">
+  <section>
     <resume-overview :personal="personal"></resume-overview>
     <resume-skills :skills="personal.skills"></resume-skills>
     <resume-history :personal="personal"></resume-history>
@@ -16,6 +16,7 @@
   import skills from "@/components/resume/Skills.vue";
 
   export default {
+    layout: 'resume',
     head () {
       return {
         script: [

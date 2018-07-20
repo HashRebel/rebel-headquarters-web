@@ -5,12 +5,12 @@
     <section class="employment">
       <h3>Employment</h3>
       <div
-        class="columns experience"
+        class="columns is-mobile experience"
         v-for="experience in personal.experience"
         :key="experience.company"
       >
         <div class="column is-one-fifth">
-          <div class="columns">
+          <div class="columns is-mobile">
             <div class="column">
               <img
                 :src="experience.logo"
@@ -55,7 +55,7 @@
 
     <section class="intern">
       <h3>Internships</h3>
-      <div class ="columns has-text-centered">
+      <div class ="columns is-mobile has-text-centered">
         <div
           class="column"
           v-for="internship in personal.internships"
@@ -85,7 +85,7 @@
 
     <section class="education">
       <h3>Education</h3>
-      <div class="columns has-text-centered">
+      <div class="columns is-mobile has-text-centered">
         <div
           class="column"
           v-for="school in personal.education"

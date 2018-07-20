@@ -12,7 +12,7 @@
           </span>
         </h1>
       </div>
-      <div class="columns">
+      <div class="columns is-mobile">
         <div class="column is-two-fifths">
           <img
             class="avatar"
@@ -23,7 +23,7 @@
         <div class="column">
           <div class="overview">
             <h2>
-              Entrepreneur, Developer, Writer
+              Entrepreneur, Developer, Consultant
             </h2>
             <p class="sumary">
               Software engineer with more than 12 years of experience in enterprise level software development using a wide varity of technologies and software methodologies. Collaborative communicator that freely shares information within a diverse team, across functional lines and across multiple disciplines.

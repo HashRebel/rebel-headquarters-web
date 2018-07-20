@@ -57,7 +57,7 @@
     <div class="hr-my-work">
       <div class="columns">
         <div class="column is-5">
-          <div class="avatar-container ">
+          <div class="avatar-container">
             <img
               class="left-wm"
               src="@/assets/images/icons/hash_rebel/bullseye-optimized.svg"
@@ -139,7 +139,7 @@
 }
 
 .hr-dictionary {
-    margin-bottom: 10rem;
+    margin-bottom: 8rem;
 
     h2 {
         margin-top: 2rem;
@@ -188,7 +188,6 @@
 }
 
 .mission {
-    margin-top: 3rem;
     margin-bottom: 8rem;
 }
 
@@ -198,19 +197,19 @@
 
     .avatar-container
     {
-        display: inline-box;
         position: relative;
+
         height: 30rem;
         width: 100%;
         .left-wm {
             position: absolute;
-            height: 20.5rem;
+            height: auto;
             width: 20.5rem;
             opacity: 0.3;
 
             @include mobile {
                 top: -1rem;
-                left: -1rem;
+                left:-1rem;
             }
         }
         .avatar {
@@ -218,11 +217,11 @@
             top: 7rem;
             left: 8rem;
             border-radius: 50%;
-            height: 20.5rem;
+            height: auto;
             width: 20.5rem;
 
             @include mobile {
-                top: 5rem;
+                top: 6rem;
                 left: 3rem;
             }
         }
@@ -277,7 +276,7 @@
      * *************************************************************************
      */
      @include touch {
-        margin: 0 3rem 4rem;
+        margin: 0 3rem 3rem;
     }
 }
 </style>

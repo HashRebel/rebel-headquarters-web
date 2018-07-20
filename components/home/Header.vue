@@ -115,7 +115,7 @@ $z-hero-body: 500; // This should always be on top.
 .hero-body {
     //@extend .hero-body;
 
-    padding: 6rem 0 6rem 0;
+    padding: 6rem 0 4rem 0;
     position: relative;
     z-index: $z-hero-body;
 }
