@@ -98,11 +98,11 @@ $z-hero-body: 500; // This should always be on top.
     };
 
     h1 {
-        font-size: 8vmin;
+        font-size:  4vmax;
     }
 
     code {
-        font-size: 3vmin;
+        font-size: 1.75vmax;
         display: inline-block;
         line-height: 1.25;
 
@@ -190,7 +190,7 @@ $z-hero-body: 500; // This should always be on top.
 
 .icon-github-logo{
     float: right;
-    margin-right: 42px;
+    margin-right: 6rem;
     margin-left: auto;
 }
 </style>

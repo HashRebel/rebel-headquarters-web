@@ -2,13 +2,13 @@
   <div id="resume">
     <nuxt/>
     <img src="~/assets/images/beetle-profile-crop.jpg">
+    <main-footer/>
   </div>
 </template>
 
 <script>
-import footer from "@/components/Footer.vue"
-
 export default {
+  scrollToTop: true,
   components: {
     mainFooter: footer
   }

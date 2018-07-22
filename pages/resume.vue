@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="resume">
     <resume-overview :personal="personal"></resume-overview>
     <resume-skills :skills="personal.skills"></resume-skills>
     <resume-history :personal="personal"></resume-history>
@@ -16,7 +16,8 @@
   import skills from "@/components/resume/Skills.vue";
 
   export default {
-    layout: 'resume',
+    scrollToTop: true,
+    //layout: 'resume',
     head () {
       return {
         script: [
@@ -324,6 +325,13 @@
 </script>
 
 <style lang='scss'>
+#resume {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1148px;
+}
+
 footer {
   text-align: center;
   h2 {

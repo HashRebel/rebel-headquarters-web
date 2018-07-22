@@ -10,6 +10,7 @@
   import Body from "@/components/home/BrandBanner.vue";
 
   export default {
+    scrollToTop: true,
     head () {
       return {
         script: [
