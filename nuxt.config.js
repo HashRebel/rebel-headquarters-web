@@ -1,4 +1,4 @@
-const pkg = require('./package')
+const pkg = require('./package');
 
 module.exports = {
   mode: 'universal',
@@ -72,11 +72,17 @@ module.exports = {
   build: {
     postcss: {
       plugins: {
+        // Customize `postcss-cssnext` default options
         'postcss-cssnext': {
-          features: {
-            customProperties: false
-          }
-        }
+            features: {
+                customProperties: false
+            }
+        },
+        'autoprefixer' : {
+            browsers: ['>5%'],
+        },
+        //'postcss-responsive-type': {},
+        'postcss-hexrgba': {}
       }
     },
     vender: ['vue-mq'],
@@ -128,4 +134,4 @@ module.exports = {
   workbox: {
     // Workbox options
    }
-}
+};

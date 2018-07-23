@@ -25,6 +25,7 @@
     "vue-mq": "^0.2.1"
   },
   "devDependencies": {
+    "autoprefixer": "^9.0.1",
     "babel-eslint": "^8.2.1",
     "cross-env": "^5.0.1",
     "eslint": "^4.15.0",
@@ -37,6 +38,8 @@
     "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-vue": "^4.5.0",
     "node-sass": "^4.9.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "postcss-hexrgba": "^1.0.1",
+    "postcss-responsive-type": "^1.0.0"
   }
 }

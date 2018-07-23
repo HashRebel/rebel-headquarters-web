@@ -73,7 +73,7 @@
             },
             {
               name: 'Twitter',
-              url: 'httpshttps://twitter.com/HashRebel',
+              url: 'https://twitter.com/HashRebel',
               imgSrc: twiterIcon
             }
           ]
