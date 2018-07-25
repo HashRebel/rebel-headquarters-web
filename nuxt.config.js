@@ -1,137 +1,153 @@
 const pkg = require('./package');
 
 module.exports = {
-  mode: 'universal',
+    mode: 'universal',
 
-  /*
-  ** Headers of the page
-  ** TODO: Prun unneeded fonts
-  */
-  head: {
-    title: pkg.longName,
-    link: [
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Michroma|Montserrat:300|lato:100,300,400,700'}
-    ]
-  },
+    /*
+     ******************************************************************************
+     ** Global CSS
+     ******************************************************************************
+     */
+    env: {
+        cockpitApiKey: process.env.COCKPIT_API_KEY || 'COCKPIT_API_KEY not found',
+        cockpitBaseUrl: process.env.COCKPIT_URL || 'https://cms.hashrebel.com/api'
+    },
 
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#e7bb21' },
+    /*
+    ******************************************************************************
+     ** Headers of the page
+     ** TODO: Prun unneeded fonts
+     ******************************************************************************
+     */
+    head: {
+        title: pkg.longName,
+        link: [{
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css?family=Michroma|Montserrat:300|lato:100,300,400,700'
+        }]
+    },
 
-  /*
-  ******************************************************************************
-  ** Global CSS
-  ******************************************************************************
-  */
-  css: [
-    '@/assets/styles/main.scss'
-  ],
+    /*
+     ** Customize the progress-bar color
+     */
+    loading: {
+        color: '#e7bb21'
+    },
 
-  /*
-  ******************************************************************************
-  ** Plugins to load before mounting the App
-  ******************************************************************************
-  */
-  plugins: [
-      { src: '~/plugins/vue-mq.js', ssr:false }
-  ],
+    /*
+     ******************************************************************************
+     ** Global CSS
+     ******************************************************************************
+     */
+    css: [
+        '@/assets/styles/main.scss'
+    ],
 
-  /*
-  ******************************************************************************
-  ** Nuxt.js modules
-  ******************************************************************************
-  */
-  modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios',
-    // Doc: https://pwa.nuxtjs.org/setup.html
-    '@nuxtjs/pwa',
-    // This allows me to import the following files into my vue files.
-    ['nuxt-sass-resources-loader', [
-         '@/assets/styles/vars/_all.scss',
-         '@/assets/styles/base/mixins.scss'
-       ]
-    ]
-  ],
+    /*
+     ******************************************************************************
+     ** Plugins to load before mounting the App
+     ******************************************************************************
+     */
+    plugins: [{
+        src: '~/plugins/vue-mq.js',
+        ssr: false
+    }],
 
-  /*
-  ******************************************************************************
-  ** Axios module configuration
-  ******************************************************************************
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
+    /*
+     ******************************************************************************
+     ** Nuxt.js modules
+     ******************************************************************************
+     */
+    modules: [
+        // Doc: https://github.com/nuxt-community/axios-module#usage
+        '@nuxtjs/axios',
+        // Doc: https://pwa.nuxtjs.org/setup.html
+        '@nuxtjs/pwa',
+        // This allows me to import the following files into my vue files.
+        ['nuxt-sass-resources-loader', [
+            '@/assets/styles/vars/_all.scss',
+            '@/assets/styles/base/mixins.scss'
+        ]],
+        // Doc: https://github.com/nuxt-community/dotenv-module#readme
+        '@nuxtjs/dotenv'
+    ],
 
-  /*
-  ******************************************************************************
-  ** Build configuration
-  ******************************************************************************
-  */
-  build: {
-    postcss: {
-      plugins: {
-        // Customize `postcss-cssnext` default options
-        'postcss-cssnext': {
-            features: {
-                customProperties: false
+    /*
+     ******************************************************************************
+     ** Axios module configuration
+     ******************************************************************************
+     */
+    axios: {
+        // See https://github.com/nuxt-community/axios-module#options
+    },
+
+    /*
+     ******************************************************************************
+     ** Build configuration
+     ******************************************************************************
+     */
+    build: {
+        postcss: {
+            plugins: {
+                // Customize `postcss-cssnext` default options
+                'postcss-cssnext': {
+                    browsers: ['>5%'],
+                    features: {
+                        customProperties: false
+                    }
+                },
+                // 'autoprefixer' : {
+                // },
+                'postcss-responsive-type': {},
+                'postcss-hexrgba': {}
             }
         },
-        'autoprefixer' : {
-            browsers: ['>5%'],
-        },
-        //'postcss-responsive-type': {},
-        'postcss-hexrgba': {}
-      }
+        vender: ['vue-mq'],
+        /*
+         ** You can extend webpack config here
+         */
+        extend(config, ctx) {
+            // Run ESLint on save
+            if(ctx.isDev && ctx.isClient) {
+                config.module.rules.push({
+                    enforce: 'pre',
+                    test: /\.(js|vue)$/,
+                    loader: 'eslint-loader',
+                    exclude: /(node_modules)/
+                });
+            }
+        }
     },
-    vender: ['vue-mq'],
+
     /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
+     ******************************************************************************
+     ** PWA Module configuration
+     ******************************************************************************
+     */
+
+    /*
+     ** Meta data https://pwa.nuxtjs.org/modules/meta.html. NOTE: most standard
+     ** meta is automatically included. mobileApplOS is disabled by default.
+     */
+    meta: {},
+
+    /*
+     ** Manifest configuration (part of the pwa nuxt module)
+     */
+    manifest: {
+        name: pkg.longName,
+        short_name: pkg.name,
+        display: 'standalone',
+        background_color: '#000',
+        theme_color: '#e7bb21',
+        description: pkg.description,
+        lang: 'en'
+    },
+
+    /*
+     ** Workerbox options (part of the pwa nuxt module. https://developers.google.com/web/tools/workbox/)
+     */
+    workbox: {
+        // Workbox options
     }
-  },
-
-  /*
-  ******************************************************************************
-  ** PWA Module configuration
-  ******************************************************************************
-  */
-
-  /*
-    ** Meta data https://pwa.nuxtjs.org/modules/meta.html. NOTE: most standard
-    ** meta is automatically included. mobileApplOS is disabled by default.
-    */
-  meta: {
-  },
-
-  /*
-  ** Manifest configuration (part of the pwa nuxt module)
-  */
-  manifest: {
-    name: pkg.longName,
-    short_name: pkg.name,
-    display: "standalone",
-    background_color: "#000",
-    theme_color: "#e7bb21",
-    description: pkg.description,
-    lang: 'en'
-  },
-
-  /*
-  ** Workerbox options (part of the pwa nuxt module. https://developers.google.com/web/tools/workbox/)
-  */
-  workbox: {
-    // Workbox options
-   }
 };

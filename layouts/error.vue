@@ -10,7 +10,14 @@
 
 <script>
 export default {
-  props: ['error'],
-  layout: 'blog' // you can set a custom layout for the error page
-}
+    props: {
+        error: {
+            type: Object,
+            default: () => {
+                return { statusCode: 500, description: 'unknown error occured.' };
+            }
+        }
+    },
+    layout: 'blog' // you can set a custom layout for the error page
+};
 </script>

@@ -7,17 +7,17 @@
         <h3>verb</h3>
         <ol>
           <li>
-              A one way cryptographic function used in computer science to secure and ensure the integrity of data.
+            A one way cryptographic function used in computer science to secure and ensure the integrity of data.
           </li>
           <li>
-              In the blockchain, a hash has various uses and is the life line in ensuring trust between parties.
+            In the blockchain, a hash has various uses and is the life line in ensuring trust between parties.
           </li>
         </ol>
         <div v-if="advancedMode">
           <h3>noun</h3>
           <ol>
             <li>
-                An extract of the cannabis plant, containing concentrations of the psychoactive resins.
+              An extract of the cannabis plant, containing concentrations of the psychoactive resins.
             </li>
           </ol>
         </div>
@@ -28,17 +28,17 @@
         <h3>noun</h3>
         <ol>
           <li>
-              A person who resists the status quo through revolution in favor of progress for all.
+            A person who resists the status quo through revolution in favor of progress for all.
           </li>
           <li>
-              A person having membership with a group of raticals who opposes the Galactic Empire at all costs.
+            A person having membership with a group of raticals who opposes the Galactic Empire at all costs.
           </li>
         </ol>
       </div>
     </div>
     <div class="mission">
       <div class="columns">
-        <div class="column is-8">
+        <div class="column is-9">
           <h1>
             Mission:
           </h1>
@@ -59,14 +59,14 @@
         <div class="column is-5">
           <div class="avatar-container">
             <img
-              class="left-wm"
               src="@/assets/images/icons/hash_rebel/bullseye-optimized.svg"
               alt="bullseye logo"
+              class="left-wm"
             >
             <img
-              class="avatar"
               :src="avatar"
               alt="avatar 😎"
+              class="avatar"
             >
           </div>
         </div>
@@ -102,7 +102,7 @@
       <div class="quote">
         <no-ssr>
           <p>
-            <span class="icon"><i class="fas fa-quote-left"></i></span> A social movement that only moves people is merely a revolt. A movement that changes both people and institutions is a revolution. <span class="icon"><i class="fas fa-quote-right"></i></span>
+            <span class="icon"><i class="fas fa-quote-left"/></span> A social movement that only moves people is merely a revolt. A movement that changes both people and institutions is a revolution. <span class="icon"><i class="fas fa-quote-right"/></span>
           </p>
         </no-ssr>
         <footer>
@@ -114,16 +114,16 @@
 </template>
 
 <script>
-  import avatar from '@/assets/images/avatar-side-snow.jpg';
+import avatar from '@/assets/images/avatar-side-snow.jpg';
 
-  export default{
+export default{
     data() {
-      return {
-        advancedMode: false,
-        avatar
-      }
+        return {
+            advancedMode: false,
+            avatar
+        };
     }
-  }
+};
 </script>
 
 <style lang="scss" scoped>

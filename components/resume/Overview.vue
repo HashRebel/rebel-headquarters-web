@@ -15,9 +15,9 @@
       <div class="columns is-mobile">
         <div class="column is-two-fifths">
           <img
-            class="avatar"
             :src="require('@/assets/images/' + personal.avatar + '.jpg')"
             alt="avatar 😎"
+            class="avatar"
           >
         </div>
         <div class="column">
@@ -30,20 +30,20 @@
             </p>
             <contact-panel
               :phone="personal.phone"
-              :phoneRef="personal.phoneRef"
+              :phone-ref="personal.phoneRef"
               :web="personal.web"
-              :webRef="personal.webRef"
+              :web-ref="personal.webRef"
               :email="personal.email"
-              :emailRef="personal.emailRef"
+              :email-ref="personal.emailRef"
               :location="personal.location"
-              :locationRef="personal.locationRef"
-            ></contact-panel>
+              :location-ref="personal.locationRef"
+            />
             <div class="quote">
               <no-ssr>
                 <p>
-                  <span class="icon"><i class="fas fa-quote-left"></i></span>
+                  <span class="icon"><i class="fas fa-quote-left"/></span>
                   {{ quote.value }}
-                  <span class="icon"><i class="fas fa-quote-right"></i></span>
+                  <span class="icon"><i class="fas fa-quote-right"/></span>
                 </p>
               </no-ssr>
               <footer>
@@ -60,44 +60,44 @@
 </template>
 
 <script>
-import contactPanel from "@/components/ContactPanel.vue";
+import contactPanel from '@/components/ContactPanel.vue';
 
 export default {
-  data() {
-    return {
-      quote: {
-        value: "Somewhere, something incredible is waiting to be known.",
-        author: "Carl Sagan"
-      }
-    };
-  },
-  props: {
-    personal: {
-      type: Object,
-      validator(value) {
-        if (
-          value.hasOwnProperty("first") &&
-          value.hasOwnProperty("avatar") &&
-          value.hasOwnProperty("last") &&
-          value.hasOwnProperty("phone") &&
-          value.hasOwnProperty("phoneRef") &&
-          value.hasOwnProperty("web") &&
-          value.hasOwnProperty("webRef") &&
-          value.hasOwnProperty("email") &&
-          value.hasOwnProperty("emailRef") &&
-          value.hasOwnProperty("location") &&
-          value.hasOwnProperty("locationRef")
-        ) {
-          return true;
-        } else {
-          return false;
+    components: {
+        contactPanel
+    },
+    props: {
+        personal: {
+            type: Object,
+            required: true,
+            validator(value) {
+                if(value.hasOwnProperty('first') &&
+                    value.hasOwnProperty('avatar') &&
+                    value.hasOwnProperty('last') &&
+                    value.hasOwnProperty('phone') &&
+                    value.hasOwnProperty('phoneRef') &&
+                    value.hasOwnProperty('web') &&
+                    value.hasOwnProperty('webRef') &&
+                    value.hasOwnProperty('email') &&
+                    value.hasOwnProperty('emailRef') &&
+                    value.hasOwnProperty('location') &&
+                    value.hasOwnProperty('locationRef'))
+                {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         }
-      }
-    }
-  },
-  components: {
-    contactPanel
-  }
+    },
+    data() {
+        return {
+            quote: {
+                value: 'Somewhere, something incredible is waiting to be known.',
+                author: 'Carl Sagan'
+            }
+        };
+    },
 };
 </script>
 

@@ -18,3 +18,6 @@ sw.js
 
 # Don't push files that aren't needed.
 OBSOLETE
+
+# Don't save secret enviorment information
+.env

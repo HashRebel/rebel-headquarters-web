@@ -1,9 +1,9 @@
 <template>
-
+  <div>contacts</div>
 </template>
 
 <script>
-  export default {
-    scrollToTop: true,
-  }
+export default {
+    scrollToTop: true
+};
 </script>

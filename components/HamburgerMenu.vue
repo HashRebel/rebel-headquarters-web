@@ -1,8 +1,8 @@
 <template>
   <div>
     <div
-      class="hamburger"
       :class="{ active: showMenu }"
+      class="hamburger"
       @click="togoleMenu()"
     >
       <span class="top"/>
@@ -10,14 +10,14 @@
       <span class="bottom"/>
     </div>
     <div
-      class="overlay"
       :class="{ open: showMenu }"
+      class="overlay"
       @click="togoleMenu()"
     >
       <nav class="overlay-menu">
         <ul>
           <li>
-            <nuxt-link  to="/">Home</nuxt-link>
+            <nuxt-link to="/">Home</nuxt-link>
           </li>
           <li>
             <nuxt-link to="/blog">Blog</nuxt-link>
@@ -36,17 +36,17 @@
 
 <script>
 export default {
-  data() {
-    return {
-      showMenu: false
+    data() {
+        return {
+            showMenu: false
+        };
+    },
+    methods: {
+        togoleMenu() {
+            this.showMenu = !this.showMenu;
+        }
     }
-  },
-  methods: {
-    togoleMenu () {
-       this.showMenu = !this.showMenu;
-    }
-  }
-}
+};
 </script>
 
 <style lang="scss" scoped>

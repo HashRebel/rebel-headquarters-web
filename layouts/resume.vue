@@ -8,11 +8,11 @@
 
 <script>
 export default {
-  scrollToTop: true,
-  components: {
-    mainFooter: footer
-  }
-}
+    scrollToTop: true,
+    components: {
+        mainFooter: footer
+    }
+};
 </script>
 
 

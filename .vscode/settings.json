@@ -2,5 +2,13 @@
     "cSpell.words": [
         "fullhd",
         "mobilesmall"
+    ],
+    "eslint.trace.server": "messages",
+    "eslint.options": {
+        "extentions": [".js", ".vue"]
+    },
+    "eslint.validate": [
+        "javascript",
+        "vue"
     ]
 }

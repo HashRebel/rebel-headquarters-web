@@ -6,12 +6,17 @@
   <section class="hero">
     <div class="hr-hero-watermark">
       <div class="left">
-        <img src="@/assets/images/icons/hash_rebel/bullseye-optimized.svg" alt="bullseye logo">
+        <img
+          src="@/assets/images/icons/hash_rebel/bullseye-optimized.svg"
+          alt="bullseye logo">
       </div>
     </div>
     <div class="hero-header">
       <div class="container has-text-centered">
-        <hash-rebel-main-logo height="230px" width="454px" class="icon-hero-hash-rebel is-hidden-touch"/>
+        <hash-rebel-main-logo
+          height="230px"
+          width="454px"
+          class="icon-hero-hash-rebel is-hidden-touch"/>
         <hash-rebel-main-logo class="icon-hero-hash-rebel is-hidden-desktop"/>
       </div>
     </div>
@@ -23,9 +28,9 @@
         <div class="hr-author-code">
           <code class="has-text-left">
             { <br>
-              &emsp; <span class="name">author</span>: " <span class="string">{{author}}</span>" <br>
-              &emsp; <span class="name">enviornment</span>: "<span class="string">{{enviornment}}</span>" <br>
-              &emsp; <span class="name">version</span>: "<span class="string">{{version}}</span>" <br>
+            &emsp; <span class="name">author</span>: " <span class="string">{{ author }}</span>" <br>
+            &emsp; <span class="name">enviornment</span>: "<span class="string">{{ enviornment }}</span>" <br>
+            &emsp; <span class="name">version</span>: "<span class="string">{{ version }}</span>" <br>
             }<span class="blink">|</span>
           </code>
         </div>
@@ -53,25 +58,25 @@
 </template>
 
 <script>
-  import HashRebelMainLogo from '@/components/icons/HashRebelMain.vue';
-  import GitHubLogo from '@/components/icons/GitHubOriginal.vue';
-  import pkg from '@/package.json'
+import HashRebelMainLogo from '@/components/icons/HashRebelMain.vue';
+import GitHubLogo from '@/components/icons/GitHubOriginal.vue';
+import pkg from '@/package.json';
 
-  export default {
-    data(){
-      return {
-        githubIconAnchorHeight: '63px',
-        githubIconAnchorWidth: '64px',
-        author: 'Brian Henze',
-        enviornment: 'Sandbox',
-        version: pkg.version
-      }
-    },
+export default {
     components: {
-      hashRebelMainLogo: HashRebelMainLogo,
-      githubLogo: GitHubLogo
-    }
-  }
+        hashRebelMainLogo: HashRebelMainLogo,
+        githubLogo: GitHubLogo
+    },
+    data(){
+        return {
+            githubIconAnchorHeight: '63px',
+            githubIconAnchorWidth: '64px',
+            author: 'Brian Henze',
+            enviornment: 'Sandbox',
+            version: pkg.version
+        };
+    },
+};
 </script>
 
 <style lang="scss" scoped>

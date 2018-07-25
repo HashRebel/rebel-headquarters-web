@@ -9,11 +9,13 @@ const port = process.env.PORT || 3000;
 
 app.set('port', port);
 
+// TODO: Extend this service to include a CRM API for managing the retrieval of data. I want this agnostic layer for two reasons. One being security. This way the only place that has control of the API key is the server. The client will have to go through my API in order to make this happen.
+
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js');
 config.dev = !(process.env.NODE_ENV === 'production');
 
-async function start() {
+async function startServer() {
     // Init Nuxt.js
     const nuxt = new Nuxt(config);
 
@@ -30,4 +32,4 @@ async function start() {
     app.listen(port, host);
     console.log('Server listening on http://' + host + ':' + port); // eslint-disable-line no-console
 }
-start();
+startServer();

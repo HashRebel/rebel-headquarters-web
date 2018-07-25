@@ -11,11 +11,11 @@ import header from '@/components/HamburgerMenu.vue';
 import footer from '@/components/Footer.vue';
 
 export default {
-  components: {
-    mainFooter: footer,
-    mainHeader: header
-  }
-}
+    components: {
+        mainFooter: footer,
+        mainHeader: header
+    }
+};
 </script>
 
 

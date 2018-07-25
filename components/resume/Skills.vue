@@ -5,13 +5,16 @@
     <div class="columns is-mobile skills">
 
       <div class="column is-one-quarter has-text-left ">
-        <h3>{{skills.professional.catagory}} </h3>
+        <h3>{{ skills.professional.catagory }} </h3>
         <ul class="professional">
-          <li v-for="skill in skills.professional.data" :key="skill.name">
+          <li
+            v-for="skill in skills.professional.data"
+            :key="skill.name"
+          >
             <p>
               <span class="icon has-text-primary is-small">
-                <i class="fas fa-check-circle fa-sm"></i>
-              </span> {{skill.name}}
+                <i class="fas fa-check-circle fa-sm"/>
+              </span> {{ skill.name }}
             </p>
           </li>
         </ul>
@@ -20,21 +23,25 @@
       <div class="column has-text-left">
         <h3>Technical</h3>
         <div class="columns is-mobile">
-          <div class="column"
+          <div
             v-for="skill in skills.technological"
             :key="skill.catagory"
+            class="column"
           >
             <h4>
               {{ skill.catagory }}
             </h4>
             <ul>
-              <li v-for="data in skill.data" :key="data.name">
+              <li
+                v-for="data in skill.data"
+                :key="data.name"
+              >
                 <p>
                   {{ data.name }}
                 </p>
                 <progress
-                  class="progress is-primary is-small"
                   :value="data.experience"
+                  class="progress is-primary is-small"
                   max="100"
                 >
                   {{ data.experience }}%
@@ -49,31 +56,30 @@
 </template>
 
 <script>
-import contactPanel from "@/components/ContactPanel.vue";
+import contactPanel from '@/components/ContactPanel.vue';
 
 export default {
-  data() {
-    return {
-    };
-  },
-  props: {
-    skills: {
-      type: Object,
-      validator(value) {
-        if (
-          value.hasOwnProperty("professional") &&
-          value.hasOwnProperty("technological")
-        ) {
-          return true;
-        } else {
-          return false;
+    components: {
+        contactPanel
+    },
+    props: {
+        skills: {
+            type: Object,
+            required: true,
+            validator(value) {
+                if(value.hasOwnProperty('professional') &&
+                    value.hasOwnProperty('technological')) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         }
-      }
-    }
-  },
-  components: {
-    contactPanel
-  }
+    },
+    data() {
+        return {
+        };
+    },
 };
 </script>
 

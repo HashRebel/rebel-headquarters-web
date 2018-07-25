@@ -5,9 +5,9 @@
     <section class="employment">
       <h3>Employment</h3>
       <div
-        class="columns is-mobile experience"
         v-for="experience in personal.experience"
         :key="experience.company"
+        class="columns is-mobile experience"
       >
         <div class="column is-one-fifth">
           <div class="columns is-mobile">
@@ -23,15 +23,15 @@
           <div class="job-card">
             <div class="duration">
               <div class="date">
-                <p class="month"> {{experience.fromMonth}} </p>
-                <p class="year"> {{experience.fromYear}} </p>
+                <p class="month"> {{ experience.fromMonth }} </p>
+                <p class="year"> {{ experience.fromYear }} </p>
               </div>
               <div class="date">
                 <p class="year"> &thinsp; - &thinsp;</p>
               </div>
               <div class="date">
-                <p class="month"> {{experience.toMonth}} </p>
-                <p class="year"> {{experience.toYear}} </p>
+                <p class="month"> {{ experience.toMonth }} </p>
+                <p class="year"> {{ experience.toYear }} </p>
               </div>
             </div>
 
@@ -42,9 +42,9 @@
             </div>
 
             <p
-              class="history-content"
               v-for="description in experience.description"
               :key="description"
+              class="history-content"
             >
               {{ description }}
             </p>
@@ -57,9 +57,9 @@
       <h3>Internships</h3>
       <div class ="columns is-mobile has-text-centered">
         <div
-          class="column"
           v-for="internship in personal.internships"
           :key="internship.company"
+          class="column"
         >
           <div>
             <div class="date">
@@ -75,9 +75,12 @@
             </div>
           </div>
 
-          <img :src="internship.logo" :alt="internship.logoAlt">
-          <h4 class="company">{{internship.company}}</h4>
-          <h5>{{internship.location}}</h5>
+          <img
+            :src="internship.logo"
+            :alt="internship.logoAlt"
+          >
+          <h4 class="company">{{ internship.company }}</h4>
+          <h5>{{ internship.location }}</h5>
         </div>
       </div>
 
@@ -87,13 +90,16 @@
       <h3>Education</h3>
       <div class="columns is-mobile has-text-centered">
         <div
-          class="column"
           v-for="school in personal.education"
           :key="school.school"
+          class="column"
         >
-          <img :src="school.logo" :alt="school.logoAlt">
-          <h4>{{school.school}}</h4>
-          <h5>{{school.degree}}</h5>
+          <img
+            :src="school.logo"
+            :alt="school.logoAlt"
+          >
+          <h4>{{ school.school }}</h4>
+          <h5>{{ school.degree }}</h5>
         </div>
       </div>
     </section>
@@ -101,32 +107,31 @@
 </template>
 
 <script>
-import contactPanel from "@/components/ContactPanel.vue";
+import contactPanel from '@/components/ContactPanel.vue';
 
 export default {
-  data() {
-    return {
-    };
-  },
-  props: {
-    personal: {
-      type: Object,
-      validator(value) {
-        if (
-          value.hasOwnProperty("experience") &&
-          value.hasOwnProperty("internships") &&
-          value.hasOwnProperty("education")
-        ) {
-          return true;
-        } else {
-          return false;
+    components: {
+        contactPanel
+    },
+    props: {
+        personal: {
+            type: Object,
+            required: true,
+            validator(value) {
+                if(value.hasOwnProperty('experience') &&
+                    value.hasOwnProperty('internships') &&
+                    value.hasOwnProperty('education')) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         }
-      }
-    }
-  },
-  components: {
-    contactPanel
-  }
+    },
+    data() {
+        return {
+        };
+    },
 };
 </script>
 
