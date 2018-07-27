@@ -29,16 +29,18 @@
             <p class="sumary">
               {{ summary }}
             </p>
-            <!-- <contact-panel
-              :phone="personal.phone"
-              :phone-ref="TODO"
+            <!-- TODO: HACK: Clean up the contact info and figure out where to put the slice code.-->
+            <contact-panel
               :web="personal.web"
-              :web-ref="TODO"
+              :phone="personal.phone"
               :email="personal.email"
-              :email-ref="TODO"
-              :location="personal.location"
-              :location-ref="TODO"
-            /> -->
+              :location="personal.location.address.slice(0, -26)"
+              phone-ref="tel:+01-480-747-0781"
+              web-ref="https://hashrebel.com"
+              email-ref="mailto:brian.henze@hashrebel.com"
+              location-ref="https://goo.gl/maps/bsHFc2uLFyG2O"
+              class="contactPannel"
+            />
             <div class="quote">
               <no-ssr>
                 <p>
@@ -135,6 +137,10 @@ export default {
 .avatar {
   border: 0.15rem solid $color-brand-primary-light-er;
   border-radius: 50%;
+}
+
+.contactPannel{
+  //margin-left: 8rem;
 }
 
 .overview{

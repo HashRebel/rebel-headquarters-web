@@ -38,7 +38,7 @@
             <div>
               <h3>{{ experience.value.title }}</h3>
               <h4 class="company">{{ experience.value.company }}</h4>
-              <h5 >{{ experience.value.location.address.slice(0, -27) }}</h5>
+              <h5 >{{ experience.value.location.address.slice(0, -26) }}</h5>
             </div>
 
             <p class="history-content">
@@ -76,7 +76,7 @@
             alt="company logo"
           >
           <h4 class="company">{{ internship.value.company }}</h4>
-          <h5>{{ internship.value.location.address.slice(0, -27) }}</h5>
+          <h5>{{ internship.value.location.address.slice(0, -26) }}</h5>
         </div>
       </div>
 
@@ -157,6 +157,7 @@ export default {
 
   .history-content {
     margin-top: 1.25rem;
+    white-space: pre-line;
   }
 
   .experience {
