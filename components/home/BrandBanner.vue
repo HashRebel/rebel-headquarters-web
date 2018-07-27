@@ -45,11 +45,13 @@
           <p>
             What does it mean to be a hash rebel?
             <br>
-            To be a hash rebel means to dedicate oneself to challenging the status quo in order to advance the progress of all mankind through the use of technology such as the blockchain, 3D printing, AI, and IOT. We believe these technologies will fundamentally reshape the world as we know it and that research, education and development in these areas is critical to the progress of humankind.
-            <br>
+            To be a hash rebel means to dedicate oneself to challenging the status quo in order to advance the progress of all mankind through the use of technology such as blockchains, 3D printing, AI, and IOT. We believe these technologies will fundamentally reshape the world as we know it. Due to this, research, education, and development of these technologies are critical to the progress of humankind.
+            <br> <!--TODO: I would like to make the end of this paragraph into bullet points. -->
             In the spirit of our fallen revolutionaries, we vow to apply all emerging technologies to form a much fairer and more equal society for all. Bringing democracy to the workplace and changing the way we organize; using automation in order to unlock a wealth of untapped intuition; providing a higher level of transparency within institutions are among the top priorities of the Hash Revolution.
+            <!--TODO: In the spirit of our fallen revolutionaries, we vow to apply all emerging technologies to form a society of prosperity for ALL. We achieve that by bringing democracy to the workplace. By challenging the way we organize our institutions. Using automation in order to unlock a wealth of untapped human intuition. Providing a higher level of transparency in our governing bodies. And most of all, we achieve this by working together.-->
             <br>
             This can only be down together, so join us in putting our fists air and taking a stand. Let’s decentralize the world and take back our futures.
+            <!-- TODO: So join us in putting our fists air in solidarity and let's get to work. It's time to decentralize the world and take back our futures!-->
           </p>
         </div>
       </div>

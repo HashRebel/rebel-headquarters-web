@@ -5,16 +5,16 @@
     <section class="employment">
       <h3>Employment</h3>
       <div
-        v-for="experience in personal.experience"
-        :key="experience.company"
+        v-for="experience in experience"
+        :key="experience.value.company"
         class="columns is-mobile experience"
       >
         <div class="column is-one-fifth">
           <div class="columns is-mobile">
             <div class="column">
               <img
-                :src="experience.logo"
-                :alt="experience.logoAlt"
+                :src="getBaseUrl() + experience.value.logo.path"
+                alt="copany logo"
               >
             </div>
           </div>
@@ -23,30 +23,26 @@
           <div class="job-card">
             <div class="duration">
               <div class="date">
-                <p class="month"> {{ experience.fromMonth }} </p>
-                <p class="year"> {{ experience.fromYear }} </p>
+                <p class="month"> {{ experience.value.fromMonth }} </p>
+                <p class="year"> {{ experience.value.fromYear }} </p>
               </div>
               <div class="date">
                 <p class="year"> &thinsp; - &thinsp;</p>
               </div>
               <div class="date">
-                <p class="month"> {{ experience.toMonth }} </p>
-                <p class="year"> {{ experience.toYear }} </p>
+                <p class="month"> {{ experience.value.toMonth }} </p>
+                <p class="year"> {{ experience.value.toYear }} </p>
               </div>
             </div>
 
             <div>
-              <h3>{{ experience.title }}</h3>
-              <h4 class="company">{{ experience.company }}</h4>
-              <h5 >{{ experience.location }}</h5>
+              <h3>{{ experience.value.title }}</h3>
+              <h4 class="company">{{ experience.value.company }}</h4>
+              <h5 >{{ experience.value.location.address.slice(0, ', United States of America'.length) }}</h5>
             </div>
 
-            <p
-              v-for="description in experience.description"
-              :key="description"
-              class="history-content"
-            >
-              {{ description }}
+            <p class="history-content">
+              {{ experience.value.description }}
             </p>
           </div>
         </div>
@@ -57,30 +53,30 @@
       <h3>Internships</h3>
       <div class ="columns is-mobile has-text-centered">
         <div
-          v-for="internship in personal.internships"
-          :key="internship.company"
+          v-for="internship in internships"
+          :key="internship.value.company"
           class="column"
         >
           <div>
             <div class="date">
-              <p class="month"> {{ internship.fromMonth }} </p>
-              <p class="year"> {{ internship.fromYear }} </p>
+              <p class="month"> {{ internship.value.fromMonth }} </p>
+              <p class="year"> {{ internship.value.fromYear }} </p>
             </div>
             <div class="date">
               <p class="year"> &thinsp; - &thinsp;</p>
             </div>
             <div class="date">
-              <p class="month"> {{ internship.toMonth }} </p>
-              <p class="year"> {{ internship.toYear }} </p>
+              <p class="month"> {{ internship.value.toMonth }} </p>
+              <p class="year"> {{ internship.value.toYear }} </p>
             </div>
           </div>
 
           <img
-            :src="internship.logo"
-            :alt="internship.logoAlt"
+            :src="getBaseUrl() + internship.value.logo.path"
+            alt="company logo"
           >
-          <h4 class="company">{{ internship.company }}</h4>
-          <h5>{{ internship.location }}</h5>
+          <h4 class="company">{{ internship.value.company }}</h4>
+          <h5>{{ internship.value.location.address.slice(0, ', United States of America'.length) }}</h5>
         </div>
       </div>
 
@@ -90,16 +86,16 @@
       <h3>Education</h3>
       <div class="columns is-mobile has-text-centered">
         <div
-          v-for="school in personal.education"
-          :key="school.school"
+          v-for="school in education"
+          :key="school.value.school"
           class="column"
         >
           <img
-            :src="school.logo"
-            :alt="school.logoAlt"
+            :src="getBaseUrl() + school.value.logo.path"
+            alt="school logo"
           >
-          <h4>{{ school.school }}</h4>
-          <h5>{{ school.degree }}</h5>
+          <h4>{{ school.value.school }}</h4>
+          <h5>{{ school.value.degree }}</h5>
         </div>
       </div>
     </section>
@@ -114,24 +110,33 @@ export default {
         contactPanel
     },
     props: {
-        personal: {
-            type: Object,
+        experience: {
+            type: Array,
             required: true,
             validator(value) {
-                if(value.hasOwnProperty('experience') &&
-                    value.hasOwnProperty('internships') &&
-                    value.hasOwnProperty('education')) {
+                //TODO: add validation
+                if(true) {
                     return true;
                 } else {
                     return false;
                 }
             }
+        },
+        internships: {
+            type: Array,
+            required: true,
+        },
+        education: {
+            type: Array,
+            required: true
         }
     },
-    data() {
-        return {
-        };
-    },
+    methods:
+    {
+        getBaseUrl: () => {
+            return process.env.cockpitBaseUrl + '/';
+        }
+    }
 };
 </script>
 

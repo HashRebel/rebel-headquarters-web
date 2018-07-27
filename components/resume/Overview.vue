@@ -3,11 +3,12 @@
     <div class="hero-body">
       <div class="name">
         <h1>
-          <span class="firstName has-text-grey">
+          <span
+            class="firstName has-text-grey">
             {{ personal.first }}
           </span>
-          <!-- <br> -->
-          <span class="lastName">
+          <span
+            class="lastName">
             {{ personal.last }}
           </span>
         </h1>
@@ -15,7 +16,7 @@
       <div class="columns is-mobile">
         <div class="column is-two-fifths">
           <img
-            :src="require('@/assets/images/' + personal.avatar + '.jpg')"
+            :src="getBaseUrl() + personal.avatar.path"
             alt="avatar 😎"
             class="avatar"
           >
@@ -23,21 +24,21 @@
         <div class="column">
           <div class="overview">
             <h2>
-              Entrepreneur, Developer, Consultant
+              {{ title }}
             </h2>
             <p class="sumary">
-              Software engineer with more than 12 years of experience in enterprise level software development using a wide varity of technologies and software methodologies. Collaborative communicator that freely shares information within a diverse team, across functional lines and across multiple disciplines.
+              {{ summary }}
             </p>
-            <contact-panel
+            <!-- <contact-panel
               :phone="personal.phone"
-              :phone-ref="personal.phoneRef"
+              :phone-ref="TODO"
               :web="personal.web"
-              :web-ref="personal.webRef"
+              :web-ref="TODO"
               :email="personal.email"
-              :email-ref="personal.emailRef"
+              :email-ref="TODO"
               :location="personal.location"
-              :location-ref="personal.locationRef"
-            />
+              :location-ref="TODO"
+            /> -->
             <div class="quote">
               <no-ssr>
                 <p>
@@ -72,32 +73,43 @@ export default {
             required: true,
             validator(value) {
                 if(value.hasOwnProperty('first') &&
-                    value.hasOwnProperty('avatar') &&
-                    value.hasOwnProperty('last') &&
-                    value.hasOwnProperty('phone') &&
-                    value.hasOwnProperty('phoneRef') &&
-                    value.hasOwnProperty('web') &&
-                    value.hasOwnProperty('webRef') &&
-                    value.hasOwnProperty('email') &&
-                    value.hasOwnProperty('emailRef') &&
-                    value.hasOwnProperty('location') &&
-                    value.hasOwnProperty('locationRef'))
-                {
+                   value.hasOwnProperty('last') &&
+                   value.hasOwnProperty('phone') &&
+                   value.hasOwnProperty('email') &&
+                   value.hasOwnProperty('avatar')){
                     return true;
                 } else {
                     return false;
                 }
             }
+        },
+        quote: {
+            type: Object,
+            required: true,
+            validator(value) {
+                if(value.hasOwnProperty('content') &&
+                   value.hasOwnProperty('author')){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        summary: {
+            type: String,
+            required: true
+        },
+        title: {
+            type: String,
+            required: true
         }
     },
-    data() {
-        return {
-            quote: {
-                value: 'Somewhere, something incredible is waiting to be known.',
-                author: 'Carl Sagan'
-            }
-        };
-    },
+    methods:
+    {
+        getBaseUrl: () => {
+            return process.env.cockpitBaseUrl + '/';
+        }
+    }
 };
 </script>
 

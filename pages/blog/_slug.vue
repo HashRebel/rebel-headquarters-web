@@ -16,6 +16,7 @@ export default {
     },
     async asyncData({ params }) {
         const test = await cmsApi.getPostBySlug(params.slug);
+        // eslint-disable-next-line
         console.log('*************** Cockpit data', test);
         return test;
     },

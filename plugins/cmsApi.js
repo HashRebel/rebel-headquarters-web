@@ -33,4 +33,22 @@ async function getPostBySlug(slug){
     }
 }
 
-export default{ getPostBySlug };
+async function getDataForResume(){
+    try {
+        const baseUrl = process.env.cockpitBaseUrl;
+        const apiKey = process.env.cockpitApiKey;
+
+        const { data } = await axios.get(`${baseUrl}/api/singletons/get/resume?token=${apiKey}`);
+
+        if(data.error) throw { error: data.error };
+
+        return data;
+    }
+    catch(error) {
+        return {
+            error
+        };
+    }
+}
+
+export default{ getPostBySlug, getDataForResume };

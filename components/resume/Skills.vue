@@ -5,16 +5,16 @@
     <div class="columns is-mobile skills">
 
       <div class="column is-one-quarter has-text-left ">
-        <h3>{{ skills.professional.catagory }} </h3>
+        <h3>Professional</h3>
         <ul class="professional">
           <li
-            v-for="skill in skills.professional.data"
-            :key="skill.name"
+            v-for="skill in professionalSkills"
+            :key="skill.value.name"
           >
             <p>
               <span class="icon has-text-primary is-small">
                 <i class="fas fa-check-circle fa-sm"/>
-              </span> {{ skill.name }}
+              </span> {{ skill.value.name }}
             </p>
           </li>
         </ul>
@@ -24,27 +24,27 @@
         <h3>Technical</h3>
         <div class="columns is-mobile">
           <div
-            v-for="skill in skills.technological"
-            :key="skill.catagory"
+            v-for="skill in technicalSkills"
+            :key="skill.value.category"
             class="column"
           >
             <h4>
-              {{ skill.catagory }}
+              {{ skill.value.category }}
             </h4>
             <ul>
               <li
-                v-for="data in skill.data"
-                :key="data.name"
+                v-for="data in skill.value.data"
+                :key="data.value.name"
               >
                 <p>
-                  {{ data.name }}
+                  {{ data.value.name }}
                 </p>
                 <progress
-                  :value="data.experience"
+                  :value="data.value.experience"
                   class="progress is-primary is-small"
                   max="100"
                 >
-                  {{ data.experience }}%
+                  {{ data.value.experience }}%
                 </progress>
               </li>
             </ul>
@@ -63,12 +63,22 @@ export default {
         contactPanel
     },
     props: {
-        skills: {
-            type: Object,
+        professionalSkills: {
+            type: Array,
             required: true,
             validator(value) {
-                if(value.hasOwnProperty('professional') &&
-                    value.hasOwnProperty('technological')) {
+                if(true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        technicalSkills: {
+            type: Array,
+            required: true,
+            validator(value) {
+                if(true) {
                     return true;
                 } else {
                     return false;
@@ -76,10 +86,14 @@ export default {
             }
         }
     },
-    data() {
-        return {
-        };
-    },
+    // data() {
+    //     return {
+    //     };
+    // },
+    // computed: {
+    // },
+    // methods:{
+    // },
 };
 </script>
 
