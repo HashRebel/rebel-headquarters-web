@@ -2,6 +2,15 @@
   <section>
     <div v-if="post">
       <h1>{{ post.title }}</h1>
+      <object
+        :data="featuredImgPath()"
+        type="image/jpg"
+      >
+        <img
+          :src="defaultImage()"
+          alt="defaultImage"
+        >
+      </object>
       <p>{{ post.article }}</p>
     </div>
   </section>
@@ -10,12 +19,12 @@
 <script>
 export default {
     props: {
-        props:{
+        post:{
             type: Object,
             required: true,
-            validator: () => {
+            validator: (value) => {
                 // TODO: validate all the expected fields are pressent.
-                if(post.title  && post.article){
+                if(value.title  && value.article){
                     return true;
                 }
 
@@ -24,13 +33,14 @@ export default {
         }
 
     },
-    data() {
-        return {
-            // post: {
-            //     title:'Placeholder for New Story',
-            //     article:'#Testing my placeholder/n/nThis is a pretty dope placeholder yo!'
-            // }
-        };
+    methods: {
+        featuredImgPath(){
+            return process.env.cockpitBaseUrl + this.post.featuredImage.path;
+        },
+        defaultImage(){
+            const image = require('@/assets/images/beetle-profile-crop.jpg'); // TODO: pick a better default image and put in variable
+            return image;
+        }
     }
 };
 </script>

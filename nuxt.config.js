@@ -4,16 +4,6 @@ module.exports = {
     mode: 'universal',
 
     /*
-     ******************************************************************************
-     ** Global CSS
-     ******************************************************************************
-     */
-    env: {
-        cockpitApiKey: process.env.COCKPIT_API_KEY || 'COCKPIT_API_KEY not found',
-        cockpitBaseUrl: process.env.COCKPIT_URL || 'https://cms.hashrebel.com/api'
-    },
-
-    /*
     ******************************************************************************
      ** Headers of the page
      ** TODO: Prun unneeded fonts
@@ -71,6 +61,16 @@ module.exports = {
         // Doc: https://github.com/nuxt-community/dotenv-module#readme
         '@nuxtjs/dotenv'
     ],
+
+    /*
+     ******************************************************************************
+     ** setting environment variables
+     ******************************************************************************
+     */
+    env: {
+        cockpitApiKey: process.env.COCKPIT_API_KEY || 'INVALID.KEY',
+        cockpitBaseUrl: process.env.COCKPIT_URL || 'https://cms.hashrebel.com'
+    },
 
     /*
      ******************************************************************************
