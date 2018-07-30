@@ -1,5 +1,5 @@
 <template>
   <div>
-    Blog Feed Bitches!
+    test
   </div>
 </template>
