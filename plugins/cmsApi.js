@@ -37,7 +37,7 @@ export default class CmsApi {
 
     async getDataForResume(){
         try {
-            const baseUrl = process.env.cockpitBaseUrl;
+            const baseUrl = process.env.cmsBaseUrl;
             const apiKey = process.env.cockpitApiKey;
 
             const { data } = await axios.get(`${this.baseUrl}/api/singletons/get/resume?token=${this.apiKey}`);

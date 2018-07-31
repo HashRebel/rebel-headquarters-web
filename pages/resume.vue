@@ -27,7 +27,7 @@
 import history from '@/components/resume/History.vue';
 import overview from '@/components/resume/Overview.vue';
 import skills from '@/components/resume/Skills.vue';
-import cmsApi from '@/plugins/cmsApi.js';
+import CmsApi from '@/plugins/cmsApi.js';
 
 export default {
     scrollToTop: true,
@@ -46,7 +46,8 @@ export default {
         resumeSkills: skills,
         resumeHistory: history
     },
-    async asyncData({ params }) {
+    async asyncData(context) {
+        const cmsApi = new CmsApi(context.env.cmsBaseUrl, context.env.cmsApiKey);
         const cms = await cmsApi.getDataForResume();
         return {
             cms

@@ -134,7 +134,7 @@ export default {
     methods:
     {
         getBaseUrl: () => {
-            return process.env.cockpitBaseUrl + '/';
+            return process.env.cmsBaseUrl + '/';
         }
     }
 };
