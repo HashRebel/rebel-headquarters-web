@@ -25,7 +25,6 @@
     "vue-mq": "^0.2.1"
   },
   "devDependencies": {
-    "@nuxtjs/dotenv": "^1.1.1",
     "autoprefixer": "^9.0.1",
     "babel-eslint": "^8.2.6",
     "cross-env": "^5.2.0",

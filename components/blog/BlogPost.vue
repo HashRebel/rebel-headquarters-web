@@ -35,7 +35,7 @@ export default {
     },
     methods: {
         featuredImgPath(){
-            return process.env.cockpitBaseUrl + this.post.featuredImage.path;
+            return process.env.cmsBaseUrl + this.post.featuredImage.path;
         },
         defaultImage(){
             const image = require('@/assets/images/beetle-profile-crop.jpg'); // TODO: pick a better default image and put in variable

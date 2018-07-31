@@ -57,9 +57,7 @@ module.exports = {
         ['nuxt-sass-resources-loader', [
             '@/assets/styles/vars/_all.scss',
             '@/assets/styles/base/mixins.scss'
-        ]],
-        // Doc: https://github.com/nuxt-community/dotenv-module#readme
-        '@nuxtjs/dotenv'
+        ]]
     ],
 
     /*
@@ -68,8 +66,8 @@ module.exports = {
      ******************************************************************************
      */
     env: {
-        cockpitApiKey: process.env.COCKPIT_API_KEY || 'INVALID.KEY',
-        cockpitBaseUrl: process.env.COCKPIT_URL || 'https://cms.hashrebel.com'
+        cmsApiKey:  process.env.COCKPIT_API_KEY || 'INVALID.KEY',
+        cmsBaseUrl: process.env.COCKPIT_URL || 'http://localhost:4000'
     },
 
     /*

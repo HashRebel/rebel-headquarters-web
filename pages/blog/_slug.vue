@@ -1,5 +1,5 @@
 <template>
-  <section v-if="post">
+  <section>
     <blog-post :post="post"/>
   </section>
 </template>
@@ -7,18 +7,22 @@
 <script>
 import blogNav from '@/components/blog/BlogNav.vue';
 import blogPost from '@/components/blog/BlogPost.vue';
-import cmsApi from '@/plugins/cmsApi.js';
+import CmsApi from '@/plugins/cmsApi.js';
 
 export default {
     components: {
         blogNav,
         blogPost
     },
-    async asyncData({ params }) {
-        const test = await cmsApi.getPostBySlug(params.slug);
-        // eslint-disable-next-line
-        console.log('*************** Cockpit data', test);
-        return test;
+    async asyncData(context) {
+        try {
+            const cmsApi = new CmsApi(context.env.cmsBaseUrl, context.env.cmsApiKey);
+            return await cmsApi.getPostBySlug(context.params.slug);
+        }
+        catch(error){
+            // Handel error cases
+            return {};
+        }
     },
     // data() {
     //     return {
