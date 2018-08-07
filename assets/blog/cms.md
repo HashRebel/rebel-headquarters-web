@@ -37,7 +37,7 @@ Cool self hosted solution. I am seeing if I can selfhost on my current Dokku ins
 
 Fork and clone the [pagekit repo](https://github.com/pagekit/pagekit) 
 
-''' git clone git@github.com:HashRebel/pagekit.git '''
+``` git clone git@github.com:HashRebel/pagekit.git ```
 
 Doesn't work so well with dokku so I would need to come up with something else to deploy it. I could do an old school style deploy to get it working for now but it would be nice to have a nice dokku push.
 
@@ -48,7 +48,7 @@ Self-hosted solution that seems to play nice with Dokku. I just had to push the 
 [Dokku install guide that I used](https://github.com/woutervddn/cockpit-dokku)
 
 The following was left out of the guide and must be executed to install the mongoDB dokku plugin
-'''sudo dokku plugin:install https://github.com/dokku/dokku-mongo.git mongo'''
+```sudo dokku plugin:install https://github.com/dokku/dokku-mongo.git mongo```
 
 ## Storyblok
 Starting with Storyblok since I found a nice [nuxtjs guide](https://www.storyblok.com/tp/headless-cms-nuxtjs). 

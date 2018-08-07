@@ -11,7 +11,7 @@
           alt="defaultImage"
         >
       </object>
-      <p>{{ post.article }}</p>
+      <div v-html="$md.render(post.article)"/>
     </div>
   </section>
 </template>
@@ -22,9 +22,9 @@ export default {
         post:{
             type: Object,
             required: true,
-            validator: (value) => {
+            validator: (post) => {
                 // TODO: validate all the expected fields are pressent.
-                if(value.title  && value.article){
+                if(post.title  && post.article){
                     return true;
                 }
 
@@ -33,6 +33,11 @@ export default {
         }
 
     },
+    // computed: {
+    //     articlePost() {
+    //         return marked(this.post.article, { sanitize: true });
+    //     }
+    // },
     methods: {
         featuredImgPath(){
             return process.env.cmsBaseUrl + this.post.featuredImage.path;

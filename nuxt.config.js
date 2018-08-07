@@ -49,6 +49,8 @@ module.exports = {
      ******************************************************************************
      */
     modules: [
+        // Doc: https://github.com/nuxt-community/modules/tree/master/packages/markdownit
+        '@nuxtjs/markdownit',
         // Doc: https://github.com/nuxt-community/axios-module#usage
         '@nuxtjs/axios',
         // Doc: https://pwa.nuxtjs.org/setup.html
@@ -116,6 +118,19 @@ module.exports = {
             }
         }
     },
+
+        /*
+     ******************************************************************************
+     ** Nuxt Markdown module. Markdownit options defined:
+     ** https://github.com/markdown-it/markdown-it
+     ******************************************************************************
+     */
+    markdownit: {
+        injected: true,
+        linkify: true,
+        breaks: true
+    },
+
 
     /*
      ******************************************************************************
