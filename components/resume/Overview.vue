@@ -29,7 +29,7 @@
             <p class="sumary">
               {{ summary }}
             </p>
-            <!-- TODO: HACK: Clean up the contact info and figure out where to put the slice code.-->
+            <!-- TODO: HACK: clearn up contact pannel and put contact info into global cotainer (vuex)-->
             <contact-panel
               :web="personal.web"
               :phone="personal.phone"
@@ -57,6 +57,13 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="center">
+        <a
+          href="https://cms.hashrebel.com/storage/uploads/2018/09/18/5ba092928d790Brians-Resume-v2.pdf"
+          class="hr-button">
+          Download CV PDF
+        </a>
       </div>
     </div>
   </section>
@@ -139,8 +146,10 @@ export default {
   border-radius: 50%;
 }
 
-.contactPannel{
-  //margin-left: 8rem;
+.center{
+    text-align: center;
+    //width: 50%;
+    margin-top: 4rem;
 }
 
 .overview{

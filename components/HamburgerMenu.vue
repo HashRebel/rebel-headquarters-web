@@ -20,7 +20,8 @@
             <nuxt-link to="/">Home</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/blog">Blog</nuxt-link>
+            <!-- <nuxt-link to="/blog">Blog</nuxt-link> -->
+            <a href="https://medium.com/@henze.brian" >Blog</a>
           </li>
           <li>
             <nuxt-link to="/resume">Resume</nuxt-link>

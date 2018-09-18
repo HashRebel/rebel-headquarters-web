@@ -129,6 +129,11 @@ export default{
 </script>
 
 <style lang="scss" scoped>
+.center{
+    margin: auto;
+    width: 50%;
+}
+
 .container {
     div{
         @include touch {

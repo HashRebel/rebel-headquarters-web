@@ -119,7 +119,7 @@ module.exports = {
         }
     },
 
-        /*
+    /*
      ******************************************************************************
      ** Nuxt Markdown module. Markdownit options defined:
      ** https://github.com/markdown-it/markdown-it
