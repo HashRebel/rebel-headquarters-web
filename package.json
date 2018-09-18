@@ -24,10 +24,12 @@
     "sass-loader": "^7.0.3",
     "sass-variable-loader": "^0.1.2",
     "vue-mq": "^0.2.1",
-    "yarn": "^1.9.4"
+    "yarn": "^1.9.4",
+    "postcss-hexrgba": "^1.0.1",
+    "autoprefixer": "^9.0.1",
+    "postcss-responsive-type": "^1.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.0.1",
     "babel-eslint": "^8.2.6",
     "cross-env": "^5.2.0",
     "eslint": "^5.2.0",
@@ -40,8 +42,6 @@
     "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-vue": "^4.7.1",
     "node-sass": "^4.9.2",
-    "nodemon": "^1.18.3",
-    "postcss-hexrgba": "^1.0.1",
-    "postcss-responsive-type": "^1.0.0"
+    "nodemon": "^1.18.3"
   }
 }
