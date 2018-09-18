@@ -5,16 +5,16 @@
     <section class="employment">
       <h3>Employment</h3>
       <div
-        class="columns experience"
-        v-for="experience in personal.experience"
-        :key="experience.company"
+        v-for="experience in experience"
+        :key="experience.value.company"
+        class="columns is-mobile experience"
       >
         <div class="column is-one-fifth">
-          <div class="columns">
+          <div class="columns is-mobile">
             <div class="column">
               <img
-                :src="experience.logo"
-                :alt="experience.logoAlt"
+                :src="getBaseUrl() + experience.value.logo.path"
+                alt="copany logo"
               >
             </div>
           </div>
@@ -23,30 +23,26 @@
           <div class="job-card">
             <div class="duration">
               <div class="date">
-                <p class="month"> {{experience.fromMonth}} </p>
-                <p class="year"> {{experience.fromYear}} </p>
+                <p class="month"> {{ experience.value.fromMonth }} </p>
+                <p class="year"> {{ experience.value.fromYear }} </p>
               </div>
               <div class="date">
                 <p class="year"> &thinsp; - &thinsp;</p>
               </div>
               <div class="date">
-                <p class="month"> {{experience.toMonth}} </p>
-                <p class="year"> {{experience.toYear}} </p>
+                <p class="month"> {{ experience.value.toMonth }} </p>
+                <p class="year"> {{ experience.value.toYear }} </p>
               </div>
             </div>
 
             <div>
-              <h3>{{ experience.title }}</h3>
-              <h4 class="company">{{ experience.company }}</h4>
-              <h5 >{{ experience.location }}</h5>
+              <h3>{{ experience.value.title }}</h3>
+              <h4 class="company">{{ experience.value.company }}</h4>
+              <h5 >{{ experience.value.location.address.slice(0, -26) }}</h5>
             </div>
 
-            <p
-              class="history-content"
-              v-for="description in experience.description"
-              :key="description"
-            >
-              {{ description }}
+            <p class="history-content">
+              {{ experience.value.description }}
             </p>
           </div>
         </div>
@@ -55,29 +51,32 @@
 
     <section class="intern">
       <h3>Internships</h3>
-      <div class ="columns has-text-centered">
+      <div class ="columns is-mobile has-text-centered">
         <div
+          v-for="internship in internships"
+          :key="internship.value.company"
           class="column"
-          v-for="internship in personal.internships"
-          :key="internship.company"
         >
           <div>
             <div class="date">
-              <p class="month"> {{ internship.fromMonth }} </p>
-              <p class="year"> {{ internship.fromYear }} </p>
+              <p class="month"> {{ internship.value.fromMonth }} </p>
+              <p class="year"> {{ internship.value.fromYear }} </p>
             </div>
             <div class="date">
               <p class="year"> &thinsp; - &thinsp;</p>
             </div>
             <div class="date">
-              <p class="month"> {{ internship.toMonth }} </p>
-              <p class="year"> {{ internship.toYear }} </p>
+              <p class="month"> {{ internship.value.toMonth }} </p>
+              <p class="year"> {{ internship.value.toYear }} </p>
             </div>
           </div>
 
-          <img :src="internship.logo" :alt="internship.logoAlt">
-          <h4 class="company">{{internship.company}}</h4>
-          <h5>{{internship.location}}</h5>
+          <img
+            :src="getBaseUrl() + internship.value.logo.path"
+            alt="company logo"
+          >
+          <h4 class="company">{{ internship.value.company }}</h4>
+          <h5>{{ internship.value.location.address.slice(0, -26) }}</h5>
         </div>
       </div>
 
@@ -85,15 +84,18 @@
 
     <section class="education">
       <h3>Education</h3>
-      <div class="columns has-text-centered">
+      <div class="columns is-mobile has-text-centered">
         <div
+          v-for="school in education"
+          :key="school.value.school"
           class="column"
-          v-for="school in personal.education"
-          :key="school.school"
         >
-          <img :src="school.logo" :alt="school.logoAlt">
-          <h4>{{school.school}}</h4>
-          <h5>{{school.degree}}</h5>
+          <img
+            :src="getBaseUrl() + school.value.logo.path"
+            alt="school logo"
+          >
+          <h4>{{ school.value.school }}</h4>
+          <h5>{{ school.value.degree }}</h5>
         </div>
       </div>
     </section>
@@ -101,32 +103,40 @@
 </template>
 
 <script>
-import contactPanel from "@/components/ContactPanel.vue";
+import contactPanel from '@/components/ContactPanel.vue';
 
 export default {
-  data() {
-    return {
-    };
-  },
-  props: {
-    personal: {
-      type: Object,
-      validator(value) {
-        if (
-          value.hasOwnProperty("experience") &&
-          value.hasOwnProperty("internships") &&
-          value.hasOwnProperty("education")
-        ) {
-          return true;
-        } else {
-          return false;
+    components: {
+        contactPanel
+    },
+    props: {
+        experience: {
+            type: Array,
+            required: true,
+            validator(value) {
+                //TODO: add validation
+                if(true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        internships: {
+            type: Array,
+            required: true,
+        },
+        education: {
+            type: Array,
+            required: true
         }
-      }
+    },
+    methods:
+    {
+        getBaseUrl: () => {
+            return process.env.cmsBaseUrl + '/';
+        }
     }
-  },
-  components: {
-    contactPanel
-  }
 };
 </script>
 
@@ -147,6 +157,7 @@ export default {
 
   .history-content {
     margin-top: 1.25rem;
+    white-space: pre-line;
   }
 
   .experience {

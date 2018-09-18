@@ -1,18 +1,21 @@
 <template>
   <div id="app">
+    <main-header/>
     <nuxt/>
-    <main-footer></main-footer>
+    <main-footer/>
   </div>
 </template>
 
 <script>
-import footer from "@/components/Footer.vue"
+import header from '@/components/HamburgerMenu.vue';
+import footer from '@/components/Footer.vue';
 
 export default {
-  components: {
-    mainFooter: footer
-  }
-}
+    components: {
+        mainFooter: footer,
+        mainHeader: header
+    }
+};
 </script>
 
 

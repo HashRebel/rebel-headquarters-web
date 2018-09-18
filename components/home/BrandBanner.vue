@@ -1,5 +1,5 @@
 <template>
-  <section class="container is-fluid">
+  <section class="container">
     <div class="columns hr-dictionary">
       <div class="column is-5">
         <h1>hash</h1>
@@ -7,17 +7,17 @@
         <h3>verb</h3>
         <ol>
           <li>
-              A one way cryptographic function used in computer science to secure and ensure the integrity of data.
+            A one way cryptographic function used in computer science to secure and ensure the integrity of data.
           </li>
           <li>
-              In the blockchain, a hash has various uses and is the life line in ensuring trust between parties.
+            In the blockchain, a hash has various uses and is the life line in ensuring trust between parties.
           </li>
         </ol>
         <div v-if="advancedMode">
           <h3>noun</h3>
           <ol>
             <li>
-                An extract of the cannabis plant, containing concentrations of the psychoactive resins.
+              An extract of the cannabis plant, containing concentrations of the psychoactive resins.
             </li>
           </ol>
         </div>
@@ -28,28 +28,30 @@
         <h3>noun</h3>
         <ol>
           <li>
-              A person who resists the status quo through revolution in favor of progress for all.
+            A person who resists the status quo through revolution in favor of progress for all.
           </li>
           <li>
-              A person having membership with a group of raticals who opposes the Galactic Empire at all costs.
+            A person having membership with a group of raticals who opposes the Galactic Empire at all costs.
           </li>
         </ol>
       </div>
     </div>
     <div class="mission">
       <div class="columns">
-        <div class="column is-8">
+        <div class="column is-9">
           <h1>
             Mission:
           </h1>
           <p>
             What does it mean to be a hash rebel?
             <br>
-            To be a hash rebel means to dedicate oneself to challenging the status quo in order to advance the progress of all mankind through the use of technology such as the blockchain, 3D printing, AI, and IOT. We believe these technologies will fundamentally reshape the world as we know it and that research, education and development in these areas is critical to the progress of humankind.
-            <br>
+            To be a hash rebel means to dedicate oneself to challenging the status quo in order to advance the progress of all mankind through the use of technology such as blockchains, 3D printing, AI, and IOT. We believe these technologies will fundamentally reshape the world as we know it. Due to this, research, education, and development of these technologies are critical to the progress of humankind.
+            <br> <!--TODO: I would like to make the end of this paragraph into bullet points. -->
             In the spirit of our fallen revolutionaries, we vow to apply all emerging technologies to form a much fairer and more equal society for all. Bringing democracy to the workplace and changing the way we organize; using automation in order to unlock a wealth of untapped intuition; providing a higher level of transparency within institutions are among the top priorities of the Hash Revolution.
+            <!--TODO: In the spirit of our fallen revolutionaries, we vow to apply all emerging technologies to form a society of prosperity for ALL. We achieve that by bringing democracy to the workplace. By challenging the way we organize our institutions. Using automation in order to unlock a wealth of untapped human intuition. Providing a higher level of transparency in our governing bodies. And most of all, we achieve this by working together.-->
             <br>
             This can only be down together, so join us in putting our fists air and taking a stand. Let’s decentralize the world and take back our futures.
+            <!-- TODO: So join us in putting our fists air in solidarity and let's get to work. It's time to decentralize the world and take back our futures!-->
           </p>
         </div>
       </div>
@@ -57,16 +59,16 @@
     <div class="hr-my-work">
       <div class="columns">
         <div class="column is-5">
-          <div class="avatar-container ">
+          <div class="avatar-container">
             <img
-              class="left-wm"
               src="@/assets/images/icons/hash_rebel/bullseye-optimized.svg"
               alt="bullseye logo"
+              class="left-wm"
             >
             <img
-              class="avatar"
               :src="avatar"
               alt="avatar 😎"
+              class="avatar"
             >
           </div>
         </div>
@@ -102,7 +104,7 @@
       <div class="quote">
         <no-ssr>
           <p>
-            <span class="icon"><i class="fas fa-quote-left"></i></span> A social movement that only moves people is merely a revolt. A movement that changes both people and institutions is a revolution. <span class="icon"><i class="fas fa-quote-right"></i></span>
+            <span class="icon"><i class="fas fa-quote-left"/></span> A social movement that only moves people is merely a revolt. A movement that changes both people and institutions is a revolution. <span class="icon"><i class="fas fa-quote-right"/></span>
           </p>
         </no-ssr>
         <footer>
@@ -114,19 +116,24 @@
 </template>
 
 <script>
-  import avatar from '@/assets/images/avatar-side-snow.jpg';
+import avatar from '@/assets/images/avatar-side-snow.jpg';
 
-  export default{
+export default{
     data() {
-      return {
-        advancedMode: false,
-        avatar
-      }
+        return {
+            advancedMode: false,
+            avatar
+        };
     }
-  }
+};
 </script>
 
 <style lang="scss" scoped>
+.center{
+    margin: auto;
+    width: 50%;
+}
+
 .container {
     div{
         @include touch {
@@ -139,7 +146,7 @@
 }
 
 .hr-dictionary {
-    margin-bottom: 10rem;
+    margin-bottom: 8rem;
 
     h2 {
         margin-top: 2rem;
@@ -188,7 +195,6 @@
 }
 
 .mission {
-    margin-top: 3rem;
     margin-bottom: 8rem;
 }
 
@@ -198,19 +204,19 @@
 
     .avatar-container
     {
-        display: inline-box;
         position: relative;
+
         height: 30rem;
         width: 100%;
         .left-wm {
             position: absolute;
-            height: 20.5rem;
+            height: auto;
             width: 20.5rem;
             opacity: 0.3;
 
             @include mobile {
                 top: -1rem;
-                left: -1rem;
+                left:-1rem;
             }
         }
         .avatar {
@@ -218,11 +224,11 @@
             top: 7rem;
             left: 8rem;
             border-radius: 50%;
-            height: 20.5rem;
+            height: auto;
             width: 20.5rem;
 
             @include mobile {
-                top: 5rem;
+                top: 6rem;
                 left: 3rem;
             }
         }
@@ -250,7 +256,7 @@
 
 .quote {
     display: inline-block;
-    margin: 0 10rem 10rem 10rem;
+    margin: 0 10rem 6rem 10rem;
     position: relative;
 
     p {
@@ -277,7 +283,7 @@
      * *************************************************************************
      */
      @include touch {
-        margin: 0 3rem 10rem;
+        margin: 0 3rem 3rem;
     }
 }
 </style>

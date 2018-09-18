@@ -3,47 +3,50 @@
     <div class="hero-body">
       <div class="name">
         <h1>
-          <span class="firstName has-text-grey">
+          <span
+            class="firstName has-text-grey">
             {{ personal.first }}
           </span>
-          <!-- <br> -->
-          <span class="lastName">
+          <span
+            class="lastName">
             {{ personal.last }}
           </span>
         </h1>
       </div>
-      <div class="columns">
+      <div class="columns is-mobile">
         <div class="column is-two-fifths">
           <img
-            class="avatar"
-            :src="require('@/assets/images/' + personal.avatar + '.jpg')"
+            :src="getBaseUrl() + personal.avatar.path"
             alt="avatar 😎"
+            class="avatar"
           >
         </div>
         <div class="column">
           <div class="overview">
             <h2>
-              Entrepreneur, Developer, Writer
+              {{ title }}
             </h2>
             <p class="sumary">
-              Software engineer with more than 12 years of experience in enterprise level software development using a wide varity of technologies and software methodologies. Collaborative communicator that freely shares information within a diverse team, across functional lines and across multiple disciplines.
+              {{ summary }}
             </p>
+            <!-- TODO: HACK: clearn up contact pannel and put contact info into global cotainer (vuex)-->
             <contact-panel
-              :phone="personal.phone"
-              :phoneRef="personal.phoneRef"
               :web="personal.web"
-              :webRef="personal.webRef"
+              :phone="personal.phone"
               :email="personal.email"
-              :emailRef="personal.emailRef"
-              :location="personal.location"
-              :locationRef="personal.locationRef"
-            ></contact-panel>
+              :location="personal.location.address.slice(0, -26)"
+              phone-ref="tel:+01-480-747-0781"
+              web-ref="https://hashrebel.com"
+              email-ref="mailto:brian.henze@hashrebel.com"
+              location-ref="https://goo.gl/maps/bsHFc2uLFyG2O"
+              class="contactPannel"
+            />
             <div class="quote">
               <no-ssr>
                 <p>
-                  <span class="icon"><i class="fas fa-quote-left"></i></span>
+                  <span class="icon"><i class="fas fa-quote-left"/></span>
                   {{ quote.value }}
-                  <span class="icon"><i class="fas fa-quote-right"></i></span>
+                  <span class="icon"><i class="fas fa-quote-right"/></span>
                 </p>
               </no-ssr>
               <footer>
@@ -55,49 +58,68 @@
           </div>
         </div>
       </div>
+      <div class="center">
+        <a
+          href="https://cms.hashrebel.com/storage/uploads/2018/09/18/5ba092928d790Brians-Resume-v2.pdf"
+          target="_blank"
+          class="hr-button">
+          Download CV PDF
+        </a>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-import contactPanel from "@/components/ContactPanel.vue";
+import contactPanel from '@/components/ContactPanel.vue';
 
 export default {
-  data() {
-    return {
-      quote: {
-        value: "Somewhere, something incredible is waiting to be known.",
-        author: "Carl Sagan"
-      }
-    };
-  },
-  props: {
-    personal: {
-      type: Object,
-      validator(value) {
-        if (
-          value.hasOwnProperty("first") &&
-          value.hasOwnProperty("avatar") &&
-          value.hasOwnProperty("last") &&
-          value.hasOwnProperty("phone") &&
-          value.hasOwnProperty("phoneRef") &&
-          value.hasOwnProperty("web") &&
-          value.hasOwnProperty("webRef") &&
-          value.hasOwnProperty("email") &&
-          value.hasOwnProperty("emailRef") &&
-          value.hasOwnProperty("location") &&
-          value.hasOwnProperty("locationRef")
-        ) {
-          return true;
-        } else {
-          return false;
+    components: {
+        contactPanel
+    },
+    props: {
+        personal: {
+            type: Object,
+            required: true,
+            validator(value) {
+                if(value.hasOwnProperty('first') &&
+                   value.hasOwnProperty('last') &&
+                   value.hasOwnProperty('phone') &&
+                   value.hasOwnProperty('email') &&
+                   value.hasOwnProperty('avatar')){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        quote: {
+            type: Object,
+            required: true,
+            validator(value) {
+                if(value.hasOwnProperty('content') &&
+                   value.hasOwnProperty('author')){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        summary: {
+            type: String,
+            required: true
+        },
+        title: {
+            type: String,
+            required: true
         }
-      }
+    },
+    methods:
+    {
+        getBaseUrl: () => {
+            return process.env.cmsBaseUrl + '/';
+        }
     }
-  },
-  components: {
-    contactPanel
-  }
 };
 </script>
 
@@ -123,6 +145,12 @@ export default {
 .avatar {
   border: 0.15rem solid $color-brand-primary-light-er;
   border-radius: 50%;
+}
+
+.center{
+    text-align: center;
+    //width: 50%;
+    margin-top: 4rem;
 }
 
 .overview{

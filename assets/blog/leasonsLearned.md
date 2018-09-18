@@ -34,3 +34,9 @@ Then you can update the variables. Later when you can import:
 
 
 TODO: a better idea would be to come up with a better global theme strategy) 
+
+
+# NUXT
+
+## Scroll to top
+You need to set scrollToTo on each component you want to start at the top. This also doesn't work if you switch layouts because it uses the layout's scroll to top and ignores the component. This seems to be a bug as of 7/5/2018 (v1.4.1)

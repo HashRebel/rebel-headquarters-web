@@ -17,4 +17,13 @@ package-lock.json
 sw.js
 
 # Don't push files that aren't needed.
-OBSOLETE
+OBSOLETE/
+
+# Don't save secret enviorment information
+.env
+
+# not needed for deploymnets
+blog/
+cryptocurrencies/
+asssets/images/icon/misc/
+logos/

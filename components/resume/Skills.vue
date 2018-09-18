@@ -2,16 +2,19 @@
   <section class="competencies">
     <h2>Competencies</h2>
 
-    <div class="columns skills">
+    <div class="columns is-mobile skills">
 
       <div class="column is-one-quarter has-text-left ">
-        <h3>{{skills.professional.catagory}} </h3>
+        <h3>Professional</h3>
         <ul class="professional">
-          <li v-for="skill in skills.professional.data" :key="skill.name">
+          <li
+            v-for="skill in professionalSkills"
+            :key="skill.value.name"
+          >
             <p>
               <span class="icon has-text-primary is-small">
-                <i class="fas fa-check-circle fa-sm"></i>
-              </span> {{skill.name}}
+                <i class="fas fa-check-circle fa-sm"/>
+              </span> {{ skill.value.name }}
             </p>
           </li>
         </ul>
@@ -19,25 +22,29 @@
 
       <div class="column has-text-left">
         <h3>Technical</h3>
-        <div class="columns">
-          <div class="column"
-            v-for="skill in skills.technological"
-            :key="skill.catagory"
+        <div class="columns is-mobile">
+          <div
+            v-for="skill in technicalSkills"
+            :key="skill.value.category"
+            class="column"
           >
             <h4>
-              {{ skill.catagory }}
+              {{ skill.value.category }}
             </h4>
             <ul>
-              <li v-for="data in skill.data" :key="data.name">
+              <li
+                v-for="data in skill.value.data"
+                :key="data.value.name"
+              >
                 <p>
-                  {{ data.name }}
+                  {{ data.value.name }}
                 </p>
                 <progress
+                  :value="data.value.experience"
                   class="progress is-primary is-small"
-                  :value="data.experience"
                   max="100"
                 >
-                  {{ data.experience }}%
+                  {{ data.value.experience }}%
                 </progress>
               </li>
             </ul>
@@ -49,31 +56,44 @@
 </template>
 
 <script>
-import contactPanel from "@/components/ContactPanel.vue";
+import contactPanel from '@/components/ContactPanel.vue';
 
 export default {
-  data() {
-    return {
-    };
-  },
-  props: {
-    skills: {
-      type: Object,
-      validator(value) {
-        if (
-          value.hasOwnProperty("professional") &&
-          value.hasOwnProperty("technological")
-        ) {
-          return true;
-        } else {
-          return false;
+    components: {
+        contactPanel
+    },
+    props: {
+        professionalSkills: {
+            type: Array,
+            required: true,
+            validator(value) {
+                if(true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        technicalSkills: {
+            type: Array,
+            required: true,
+            validator(value) {
+                if(true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         }
-      }
-    }
-  },
-  components: {
-    contactPanel
-  }
+    },
+    // data() {
+    //     return {
+    //     };
+    // },
+    // computed: {
+    // },
+    // methods:{
+    // },
 };
 </script>
 
