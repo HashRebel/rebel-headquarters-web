@@ -61,6 +61,7 @@
       <div class="center">
         <a
           href="https://cms.hashrebel.com/storage/uploads/2018/09/18/5ba092928d790Brians-Resume-v2.pdf"
+          target="_blank"
           class="hr-button">
           Download CV PDF
         </a>
